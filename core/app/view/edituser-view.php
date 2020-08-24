@@ -1,4 +1,4 @@
-<?php $user = UserData::getById($_GET["id"]);?>
+<?php $user = UserData::getById($_GET["IdUsuario"]);?>
 <div class="row">
 	<div class="col-md-12">
 	<h1>Editar Usuario</h1>

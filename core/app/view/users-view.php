@@ -4,20 +4,7 @@
 		<h1>Lista de Usuarios</h1>
 <br>
 		<?php
-		/*
-		$u = new UserData();
-		print_r($u);
-		$u->name = "Agustin";
-		$u->lastname = "Ramos";
-		$u->email = "evilnapsis@gmail.com";
-		$u->password = sha1(md5("l00lapal00za"));
-		$u->add();
-
-
-		$f = $u->createForm();
-		print_r($f);
-		echo $f->label("name")." ".$f->render("name");
-		*/
+		
 		?>
 		<?php
 
@@ -38,8 +25,8 @@
 			foreach($users as $user){
 				?>
 				<tr>
-				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td><?php echo $user->username; ?></td>
+				<td><?php echo $user->NombreUsuario." ".$user->ApellidoUsuario; ?></td>
+				<td><?php echo $user->Usuario; ?></td>
 				<td><?php echo $user->email; ?></td>
 				<td>
 					<?php if($user->is_active):?>
@@ -51,7 +38,7 @@
 						<i class="glyphicon glyphicon-ok"></i>
 					<?php endif; ?>
 				</td>
-				<td style="width:30px;"><a href="index.php?view=edituser&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a></td>
+				<td style="width:30px;"><a href="index.php?view=edituser&IdUsuario=<?php echo $user->IdUsuario;?>" class="btn btn-warning btn-xs">Editar</a></td>
 				</tr>
 				<?php
 
