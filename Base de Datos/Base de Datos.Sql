@@ -1,6 +1,19 @@
 create database TesisDB;
 
 use TesisDB;
+CREATE TABLE IF NOT EXISTS `Producto` (
+  `IdProducto` int(11) NOT NULL AUTO_INCREMENT,
+  `NombreProducto` varchar(50) DEFAULT NULL,
+  `IdCategoria` int(11) NOT NULL,
+  `IdPresentacion` int(11) NOT NULL,
+  `Cantidad` varchar(255) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`IdProducto`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `Producto` (`IdProducto`, `NombreProducto`, `IdCategoria`, `IdPresentacion`,`Cantidad`, `user_id`) VALUES
+(2, 'Bote de Alcohol', 1, 1,200, 1);
+
 
 
 CREATE TABLE IF NOT EXISTS `Usuario` (

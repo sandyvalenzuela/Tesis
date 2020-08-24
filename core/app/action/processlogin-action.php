@@ -6,8 +6,7 @@ $pass = $_POST['Password'];
 
 $base = new Database();
 $con = $base->connect();
- $sql = "select * from Usuario where (email= \"".$user."\" or Usuario= \"".$user."\") and Password= \"".$pass."\" and is_active=1";
-
+$sql = "select * from Usuario where Usuario= \"".$user."\" and Password= \"".$pass."\" ";
 $query = $con->query($sql);
 $found = false;
 $userid = null;

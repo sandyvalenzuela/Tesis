@@ -74,7 +74,9 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class=""><?php if(isset($_SESSION["user_id"]) ){ echo UserData::getById($_SESSION["user_id"])->name; 
+                  <span class=""><?php if(isset($_SESSION["user_id"]) ){ echo UserData::getById($_SESSION["user_id"])->NombreUsuario; 
+                  echo"       ";
+                  echo UserData::getById($_SESSION["user_id"])->ApellidoUsuario; 
 
                   }?> <b class="caret"></b> </span>
 
@@ -123,13 +125,16 @@
                 <li><a href="./?view=autor">Listado de Clinicas</a></li>
 				<li><a href="./?view=notas">Consulta de Clinicas</a></li>
 			   </ul>
-             </li>			 
-
-			
-		
-          
+             </li>		
 
 
+             <li class="treeview">
+              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="./?view=user">Listado de Usuarios</a></li>
+				<li><a href="./?view=notas">Consulta de Usuarios</a></li>
+			   </ul>
+             </li>	 
             
           <?php endif;?>
 
@@ -139,7 +144,7 @@
       </aside>
     <?php endif;?>
 
-      <!-- Content Wrapper. Contains page content -->
+      <!-- codigo del loguin -->
       <?php if(isset($_SESSION["user_id"]) || isset($_SESSION["client_id"])):?>
       <div class="content-wrapper">
       <div class="content">
@@ -156,7 +161,7 @@
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./">Sistema<b>Pedidos</b></a>
+        <a href="./"><b>Sistema </b><b> de  </b><b> Pedidos</b></a>
         <body style="background-color: cyan">
       </div>
       <img src="img/photo.jpg" height="255">
@@ -168,7 +173,7 @@
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="Password" name="Password" required class="form-control" placeholder="Password"/>
+            <input type="password" name="Password" required class="form-control" placeholder="password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
