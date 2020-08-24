@@ -28,7 +28,7 @@
 			foreach($Presentaciones as $Presentacion){
 			?>
 				<tr>
-				<td><?php echo $Categoria->nombreCategoria; ?></td>
+				<td><?php echo $Presentacion->nombrePresentacion; ?></td>
 				<td style="width:150px;">
 				<a href="index.php?view=editPresentacion&IdPresentacion=<?php echo $Presentacion->IdPresentacion;?>" class="btn btn-warning btn-xs">Editar</a>
 				<a href="index.php?view=delPresentacion&IdPresentacion=<?php echo $Presentacion->IdPresentacion;?>" class="btn btn-danger btn-xs">Eliminar</a>

@@ -36,7 +36,7 @@ class PresentacionData {
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new PresentacionData();
-			$array[$cnt]->IdCategoria = $r['IdCategoria'];
+			$array[$cnt]->IdPresentacion = $r['IdPresentacion'];
 			$array[$cnt]->nombrePresentacion = $r['nombrePresentacion'];
 			$cnt++;
 		}
