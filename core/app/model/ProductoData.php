@@ -2,7 +2,7 @@
 class ProductoData {
 	public static $tablename = "Producto";
 
-	public function LibrosData(){
+	public function ProductoData(){
      	$this->IdProducto = "";
 	    $this->NombreProducto = "";
 		$this->IdCategoria = "";
