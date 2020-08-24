@@ -1,5 +1,5 @@
 <?php
-$Categoria = CategoriaData::getById($_GET["IdCategoria"]);
+$Categorias = CategoriaData::getById($_GET["IdCategoria"]);
 
 if($Producto!=null):
 ?>
@@ -14,7 +14,7 @@ if($Producto!=null):
     <label for="inputEmail1" class="col-lg-3 control-label">Nombre</label>
     <div class="col-md-6">
 	<fieldset disabled>
-      <input type="text" name="nombre" class="form-control" id="nombreCategoria" value="<?php echo $Categoria->nombre; ?>" placeholder="Nombre">
+      <input type="text" name="nombreCategoria" class="form-control" id="nombreCategoria" value="<?php echo $Categoria->nombre; ?>" placeholder="Nombre">
     </div>
   </div> 
   

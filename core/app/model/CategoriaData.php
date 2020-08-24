@@ -53,7 +53,7 @@ class CategoriaData {
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new AutorData();
+			$array[$cnt] = new CategoriaData();
 			$array[$cnt]->IdCategoria = $r['IdCategoria'];
 			$array[$cnt]->nombre = $r['nombreCategoria'];
 			$cnt++;
