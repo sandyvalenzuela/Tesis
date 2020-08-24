@@ -1,6 +1,33 @@
 create database TesisDB;
 
 use TesisDB;
+
+CREATE TABLE IF NOT EXISTS `Presentacion` (
+  `IdPresentacion` int(11) NOT NULL AUTO_INCREMENT,
+  `nombrePresentacion` varchar(50) DEFAULT NULL, 
+  PRIMARY KEY (`IdPresentacion`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `Presentacion` (`IdPresentacion`, `nombrePresentacion`) VALUES
+(1, 'Bote');
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `Categoria` (
+  `IdCategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreCategoria` varchar(50) DEFAULT NULL, 
+  PRIMARY KEY (`IdCategoria`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+INSERT INTO `Categoria` (`IdCategoria`, `nombreCategoria`) VALUES
+(1, 'MedicoQuirurgico');
+
+
+
+
+
 CREATE TABLE IF NOT EXISTS `Producto` (
   `IdProducto` int(11) NOT NULL AUTO_INCREMENT,
   `NombreProducto` varchar(50) DEFAULT NULL,

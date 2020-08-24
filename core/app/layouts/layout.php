@@ -116,7 +116,14 @@
               <ul class="treeview-menu">
               <li><a href="./?view=newProducto">Nuevo Producto</a></li>
                 <li><a href="./?view=Producto">Listado de Productos</a></li>
-				<li><a href="./?view=notas">Consulta de Productos</a></li>
+			   </ul>
+             </li>
+
+             <li class="treeview">
+              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Categoria</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+              <li><a href="./?view=newCategoria">Nueva Categoria</a></li>
+                <li><a href="./?view=Categoria">Listado de Categorias</a></li>
 			   </ul>
              </li>
 
