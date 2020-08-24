@@ -23,7 +23,7 @@ $Presentaciones = PresentacionData::getAll();
     <select name="IdCategoria" required class="form-control">
     <option value="">-- NINGUNO --</option>
     <?php foreach($Categorias as $Categoria):?>
-      <option value="<?php echo $Categoria->IdCategoria;?>"><?php echo $Categoria->NombreCategoria;?></option>
+      <option value="<?php echo $Categoria->IdCategoria;?>"><?php echo $Categoria->nombreCategoria;?></option>
     <?php endforeach;?>
       </select>    </div>
   </div>  
@@ -35,7 +35,7 @@ $Presentaciones = PresentacionData::getAll();
     <select name="IdPresentacion" required class="form-control">
     <option value="">-- NINGUNO --</option>
     <?php foreach($Presentaciones as $Presentacion):?>
-      <option value="<?php echo $Presentacion->IdPresentacion;?>"><?php echo $Presentacion->NombrePresentacion;?></option>
+      <option value="<?php echo $Presentacion->IdPresentacion;?>"><?php echo $Presentacion->nombrePresentacion;?></option>
     <?php endforeach;?>
       </select>    </div>
   </div>  
