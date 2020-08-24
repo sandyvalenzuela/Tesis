@@ -11,8 +11,6 @@ class ProductoData {
 		
 	}
 	
-
-
 	public function getUser(){ return UserData::getById($this->user_id);}
 	public function getCategoria(){ return CategoriaData::getById($this->IdCategoria;}
 	public function getPresentacion(){ return PresentacionData::getById($this->IdPresentacion;}

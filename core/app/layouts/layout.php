@@ -114,18 +114,13 @@
 			<li class="treeview">
               <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=libros">Listado de Productos</a></li>
+              <li><a href="./?view=newProducto">Nuevo Producto</a></li>
+                <li><a href="./?view=Producto">Listado de Productos</a></li>
 				<li><a href="./?view=notas">Consulta de Productos</a></li>
 			   </ul>
              </li>
 
-              <li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Clinicas</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="./?view=autor">Listado de Clinicas</a></li>
-				<li><a href="./?view=notas">Consulta de Clinicas</a></li>
-			   </ul>
-             </li>		
+             	
 
 
              <li class="treeview">

@@ -125,8 +125,8 @@ endforeach;
 }else{
 	?>
 	<div class="jumbotron">
-		<h2>No hay existencia de libros</h2>
-		<p>No hay existencia de libros en la biblioteca....</p>
+		<h2>No hay existencia de Productos</h2>
+		<p>No hay existencia de Productos en la biblioteca....</p>
 	</div>
 	<?php
 }

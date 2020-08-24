@@ -1,17 +1,20 @@
 <?php
 
 if(count($_POST)>0){
-	$libro = new LibrosData();
-	$libro->nombre = $_POST["nombre"];
-	$libro->autor_id = $_POST["autor_id"];
-	$libro->anio_edicion = $_POST["sd"];
-	$libro->user_id = $_SESSION["user_id"];
-	$libro->add();
+	$Producto = new ProductoData();
+	$Producto->NombreProducto = $_POST["NombreProducto"];
+	$Producto->IdCategoria = $_POST["IdCategoria"];
+	$Producto->IdPresentacion = $_POST["IdPresentacion"];
+	$Producto->Cantidad = $_POST["Cantidad"];
+	$Producto->user_id = $_SESSION["user_id"];
+	$Producto->add();
 	
-print "<script>window.location='index.php?view=libros';</script>";
+print "<script>window.location='index.php?view=Producto';</script>";
 
 
 }
 
 
 ?>
+
+
