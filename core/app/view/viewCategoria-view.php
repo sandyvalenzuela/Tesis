@@ -1,7 +1,6 @@
 <?php
 $Categorias = CategoriaData::getById($_GET["IdCategoria"]);
 
-if($Producto!=null):
 ?>
 <div class="row">
 	<div class="col-md-8">
@@ -27,5 +26,5 @@ if($Producto!=null):
 
 <br><br><br><br><br><br><br><br><br>
 	</div>
-</div>
+
 <?php endif; ?>

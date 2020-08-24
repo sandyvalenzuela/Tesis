@@ -1,7 +1,6 @@
 <?php
 $Presentaciones = PresentacionData::getById($_GET["IdPresentacion"]);
-
-if($Producto!=null):
+if($Presentaciones!=null):
 ?>
 <div class="row">
 	<div class="col-md-8">
