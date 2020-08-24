@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Sistema Biblioteca | Dashboard</title>
+    <title>Sistema Pedidos </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -55,7 +55,7 @@
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>B</b>S</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Biblioteca</b>SySTEM</span>
+          <span class="logo-lg"><b>Sistema</b>Pedidos</span>
         </a>
 
         <!-- Header Navbar -->
@@ -110,31 +110,21 @@
                         <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
             
 			<li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Libros</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=libros">Listado de Libros</a></li>
-				<li><a href="./?view=notas">Consulta de Libros</a></li>
+                <li><a href="./?view=libros">Listado de Productos</a></li>
+				<li><a href="./?view=notas">Consulta de Productos</a></li>
 			   </ul>
              </li>
 
               <li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Autores</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Clinicas</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=autor">Listado de Autores</a></li>
-				<li><a href="./?view=notas">Consulta de Autores</a></li>
+                <li><a href="./?view=autor">Listado de Clinicas</a></li>
+				<li><a href="./?view=notas">Consulta de Clinicas</a></li>
 			   </ul>
              </li>			 
 
-            <li class="treeview">
-              <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
-              <ul class="treeview-menu">
-                <li><a href="./?view=nacionalidad">Nacionalidades</a></li>
-				<li><a href="./?view=users">Usuarios</a></li>
-
-				 
-              </ul>
-            </li>
-			
 			
 		
           
@@ -155,27 +145,30 @@
       <div class="content">
         <?php View::load("index");?>
         </div>
-      </div><!-- /.content-wrapper -->
+      </div>
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
           <b>Version</b> 1.0
         </div>
-        <strong>Copyright &copy; 2019 </strong>
+        <strong>Copyright &copy; 2020 </strong>
       </footer>
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./">BIBLIOTECA<b>SySTEM</b></a>
-      </div><!-- /.login-logo -->
+        <a href="./">Sistema<b>Pedidos</b></a>
+        <body style="background-color: cyan">
+      </div>
+      <img src="img/photo.jpg" height="255">
       <div class="login-box-body">
         <form action="./?action=processlogin" method="post">
           <div class="form-group has-feedback">
-            <input type="text" name="username" required class="form-control" placeholder="Usuario"/>
+
+            <input type="text" name="Usuario" required class="form-control" placeholder="Usuario"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" name="password" required class="form-control" placeholder="Password"/>
+            <input type="Password" name="Password" required class="form-control" placeholder="Password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -186,7 +179,7 @@
           </div>
         </form>
       </div><!-- /.login-box-body -->
-    </div><!-- /.login-box -->  
+    </div><
       <?php endif;?>
 
 

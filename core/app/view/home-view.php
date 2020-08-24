@@ -6,7 +6,7 @@ $libros = LibrosData::getAll();
 	
 <div class="row">
 	<div class="col-md-12 text-white bg-blue">
-	    <h1>Bienvenido a Sistema de Biblioteca para la gestion de libros</h1>
+	    <h1>Bienvenido al Sistema de Pedidos </h1>
 </div>
 </div>
 <br><br><br><br>

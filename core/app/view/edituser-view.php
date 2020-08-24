@@ -9,19 +9,19 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="name" required value="<?php echo $user->name;?>" class="form-control" id="name" placeholder="Nombre">
+      <input type="text" name="NombreUsuario" required value="<?php echo $user->name;?>" class="form-control" id="NombreUsuario" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="lastname" value="<?php echo $user->lastname;?>" required class="form-control" id="lastname" placeholder="Apellido">
+      <input type="text" name="ApellidoUsuario" value="<?php echo $user->ApellidoUsuario;?>" required class="form-control" id="ApellidoUsuario" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
-      <input type="text" name="username" value="<?php echo $user->username;?>" class="form-control" required id="username" placeholder="Nombre de usuario">
+      <input type="text" name="Usuario" value="<?php echo $user->Usuario;?>" class="form-control" required id="Usuario" placeholder="Nombre de usuario">
     </div>
   </div>
   <div class="form-group">
@@ -34,7 +34,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a</label>
     <div class="col-md-6">
-      <input type="password" required name="password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
+      <input type="Password" required name="Password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
 <p class="help-block">La contrase&ntilde;a solo se modificara si escribes algo, en caso contrario no se modifica.</p>
     </div>
   </div>

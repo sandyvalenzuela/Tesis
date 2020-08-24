@@ -8,20 +8,20 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="name" required class="form-control" id="name" placeholder="Nombre">
+      <input type="text" name="NombreUsuario" required class="form-control" id="NombreUsuario" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Apellido">
+      <input type="text" name="ApellidoUsuario" required class="form-control" id="ApellidoUsuario" placeholder="Apellido">
     </div>
   </div>
   
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
-      <input type="text" name="username" class="form-control" required id="username" placeholder="Nombre de usuario">
+      <input type="text" name="Usuario" class="form-control" required id="Usuario" placeholder="Nombre de usuario">
     </div>
   </div>
   
@@ -36,7 +36,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a*</label>
     <div class="col-md-6">
-      <input type="password" name="password"  required class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
+      <input type="Password" name="Password"  required class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
     </div>
   </div>
 
