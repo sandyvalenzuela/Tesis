@@ -9,7 +9,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="NombreUsuario" required value="<?php echo $user->name;?>" class="form-control" id="NombreUsuario" placeholder="Nombre">
+      <input type="text" name="NombreUsuario" required value="<?php echo $user->NombreUsuario;?>" class="form-control" id="NombreUsuario" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">

@@ -141,8 +141,8 @@
              <li class="treeview">
               <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=user">Listado de Usuarios</a></li>
-				<li><a href="./?view=notas">Consulta de Usuarios</a></li>
+              <li><a href="./?view=newuser">Nuevo Usuario</a></li>
+                <li><a href="./?view=users">Listado de Usuarios</a></li>
 			   </ul>
              </li>	 
             

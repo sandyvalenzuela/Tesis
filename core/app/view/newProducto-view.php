@@ -18,7 +18,7 @@ $Presentaciones = PresentacionData::getAll();
   </div>
   
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">$Categoria*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Categoria*</label>
     <div class="col-md-6">
     <select name="IdCategoria" required class="form-control">
     <option value="">-- NINGUNO --</option>
@@ -30,7 +30,7 @@ $Presentaciones = PresentacionData::getAll();
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">$Presentacion*</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Presentacion*</label>
     <div class="col-md-6">
     <select name="IdPresentacion" required class="form-control">
     <option value="">-- NINGUNO --</option>

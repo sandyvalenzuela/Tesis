@@ -1,15 +1,7 @@
 <?php
 
-
-// 13 de Abril del 2014
-// View.php
-// @brief Una vista corresponde a cada componente visual dentro de un modulo.
-
 class View {
-	/**
-	* @function load
-	* @brief la funcion load carga una vista correspondiente a un modulo
-	**/	
+
 	public static function load($view){
 		// Module::$module;
 		if(!isset($_GET['view'])){
@@ -26,7 +18,7 @@ class View {
 			if(Core::$root==""){
 			$url = "core/app/view/".$_GET['view']."-view.php";
 			}else if(Core::$root=="admin/"){
-			$url = "core/app/".Core::$theme."/view/".$_GET['view']."-view.php";				
+			$url = "core/app/".Core::$theme."/view/".$_GET['view']."-View.php";				
 			}
 				include $url;				
 			}else{
