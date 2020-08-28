@@ -1,15 +1,15 @@
-<?php $Categoria = CategoriaData::getById($_GET["IdCategoria"]);?>
+<?php $Presentacion = PresentacionData::getById($_GET["IdPresentacion"]);?>
 <div class="row">
 	<div class="col-md-12">
-	<h1>Editar Categoria</h1>
+	<h1>Editar Presentacion</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addCategoria" action="index.php?view=updateCategoria" role="form">
+		<form class="form-horizontal" method="post" id="addPresentacion" action="index.php?view=updatePresentacion" role="form">
 
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="nombreCategoria" required value="<?php echo $Categoria->nombreCategoria;?>" class="form-control" id="nombreCategoria" placeholder="Nombre">
+      <input type="text" name="nombrePresentacion" required value="<?php echo $Presentacion->nombrePresentacion;?>" class="form-control" id="nombrePresentacion" placeholder="Nombre">
     </div>
   </div>
   
@@ -20,8 +20,8 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-    <input type="hidden" name="IdCategoria" value="<?php echo $Categoria->id;?>">
-      <button type="submit" class="btn btn-primary">Actualizar Categoria</button>
+    <input type="hidden" name="IdPresentacion" value="<?php echo $Presentacion->id;?>">
+      <button type="submit" class="btn btn-primary">Actualizar Presentacion</button>
     </div>
   </div>
 </form>

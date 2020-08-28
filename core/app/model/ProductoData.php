@@ -51,7 +51,11 @@ class ProductoData {
 		return Model::many($query[0],new ProductoData());
 
 	}
-
+	public static function getAllByCategoriaId($IdCaegoria){
+		$sql = "select * from ".self::$tablename." where IdCategoria=$IdCategoria order by created_at desc";
+		$query = Executor::doit($sql);
+		return Model::many($query[0],new ProductoData());
+	}
 
 }
 
