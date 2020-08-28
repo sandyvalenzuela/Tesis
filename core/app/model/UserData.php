@@ -34,7 +34,7 @@ class UserData {
 		Executor::doit($sql);
 	}
 
-	public function update_passwd(){
+	public function update_password(){
 		$sql = "update ".self::$tablename." set Password=\"$this->Password\" where IdUsuario=$this->IdUsuario";
 		Executor::doit($sql);
 	}

@@ -29,22 +29,11 @@ class CategoriaData {
 	
 
 	public static function getById($id){
-	    
 		$sql = "select * from ".self::$tablename." where IdCategoria=$id";
-		//print_r($sql);
 		$query = Executor::doit($sql);
-		$found = null;
-		$data = new CategoriaData();
-		while($r = $query[0]->fetch_array()){
-		$data->id = $r['IdCategoria'];
-			
-			$data->nombreCategoria = $r['nombreCategoria'];
-			$found = $data;
-			break;
-		}
-		return $found;
-	}
+		return Model::one($query[0],new CategoriaData());
 
+	}
 
 	public static function getAll(){
 		$sql = "select * from ".self::$tablename. " order by nombreCategoria asc ";

@@ -27,8 +27,6 @@ class ProductoData {
 	}
 
 
-	// partiendo de que ya tenemos creado un objecto ProductoData previamente utilizamos el contexto
-
 	public function update(){
 	    $sql = "update ".self::$tablename." set NombreProducto=\"$this->NombreProducto\", IdCategoria=\"$this->IdCategoria\", IdPresentacion=\"$this->IdPresentacion\", Cantidad=\"$this->Cantidad\", user_id=\"$this->user_id\" where IdProducto=$this->id";
 		Executor::doit($sql);
