@@ -62,7 +62,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class=""><?php if(isset($_SESSION["Usuario_id"]) ){ echo UserData::getById($_SESSION["Usuario_id"])->name; 
+                  <span class=""><?php if(isset($_SESSION["Usuario_id"]) ){ echo UsuarioData::getById($_SESSION["Usuario_id"])->nombre; 
 
                   }?> <b class="caret"></b> </span>
 

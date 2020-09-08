@@ -2,19 +2,19 @@
 	<div class="col-md-12">
 	<h1>Agregar Usuario</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addproduct" action="index.php?view=adduser" role="form">
+		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=addUsuario" role="form">
 
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="name" class="form-control" id="name" placeholder="Nombre">
+      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="lastname" required class="form-control" id="lastname" placeholder="Apellido">
+      <input type="text" name="apellido" required class="form-control" id="apellido" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
