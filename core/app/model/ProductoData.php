@@ -1,5 +1,5 @@
 <?php
-class ProductData {
+class ProductoData {
 	public static $tablename = "product";
 
 	public function ProductData(){
