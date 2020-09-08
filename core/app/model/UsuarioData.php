@@ -1,12 +1,12 @@
 <?php
-class UserData {
-	public static $tablename = "user";
+class UsuarioData {
+	public static $tablename = "Usuario";
 
 
 
-	public function Userdata(){
-		$this->name = "";
-		$this->lastname = "";
+	public function Usuariodata(){
+		$this->nombre = "";
+		$this->apellido = "";
 		$this->email = "";
 		$this->image = "";
 		$this->password = "";
@@ -14,8 +14,8 @@ class UserData {
 	}
 
 	public function add(){
-		$sql = "insert into user (name,lastname,username,email,is_admin,password,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->username\",\"$this->email\",\"$this->is_admin\",\"$this->password\",$this->created_at)";
+		$sql = "insert into Usuario (nombre,apellido,username,email,is_admin,password,created_at) ";
+		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->username\",\"$this->email\",\"$this->is_admin\",\"$this->password\",$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -30,7 +30,7 @@ class UserData {
 
 // partiendo de que ya tenemos creado un objecto UserData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\",email=\"$this->email\",username=\"$this->username\",lastname=\"$this->lastname\",is_active=\"$this->is_active\",is_admin=\"$this->is_admin\" where id=$this->id";
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",username=\"$this->username\",lastname=\"$this->lastname\",is_active=\"$this->is_active\",is_admin=\"$this->is_admin\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -43,14 +43,14 @@ class UserData {
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
-		return Model::one($query[0],new UserData());
+		return Model::one($query[0],new UsuarioData());
 
 	}
 
 	public static function getByMail($mail){
 		$sql = "select * from ".self::$tablename." where email=\"$mail\"";
 		$query = Executor::doit($sql);
-		return Model::one($query[0],new UserData());
+		return Model::one($query[0],new UsuarioData());
 
 	}
 
@@ -58,14 +58,14 @@ class UserData {
 	public static function getAll(){
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new UserData());
+		return Model::many($query[0],new UsuarioData());
 	}
 
 
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where name like '%$q%'";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new UserData());
+		return Model::many($query[0],new UsuarioData());
 
 	}
 
