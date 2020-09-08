@@ -1,12 +1,12 @@
 <?php
-class CategoryData {
-	public static $tablename = "category";
+class CategoriaData {
+	public static $tablename = "categoria";
 
 
 
-	public function CategoryData(){
-		$this->name = "";
-		$this->lastname = "";
+	public function CategoriaData(){
+		$this->nombre = "";
+		$this->apellido = "";
 		$this->email = "";
 		$this->image = "";
 		$this->password = "";
@@ -14,8 +14,8 @@ class CategoryData {
 	}
 
 	public function add(){
-		$sql = "insert into category (name,created_at) ";
-		$sql .= "value (\"$this->name\",$this->created_at)";
+		$sql = "insert into categoria (nombre,created_at) ";
+		$sql .= "value (\"$this->nombre\",$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -30,7 +30,7 @@ class CategoryData {
 
 // partiendo de que ya tenemos creado un objecto CategoryData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set name=\"$this->name\" where id=$this->id";
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -39,10 +39,10 @@ class CategoryData {
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
 		$found = null;
-		$data = new CategoryData();
+		$data = new CategoriaData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
-			$data->name = $r['name'];
+			$data->nombre = $r['nombre'];
 			$data->created_at = $r['created_at'];
 			$found = $data;
 			break;
@@ -58,9 +58,9 @@ class CategoryData {
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new CategoryData();
+			$array[$cnt] = new CategoriaData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
+			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;
 		}
@@ -69,14 +69,14 @@ class CategoryData {
 
 
 	public static function getLike($q){
-		$sql = "select * from ".self::$tablename." where name like '%$q%'";
+		$sql = "select * from ".self::$tablename." where nombre like '%$q%'";
 		$query = Executor::doit($sql);
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new CategoryData();
+			$array[$cnt] = new CategoriaData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
+			$array[$cnt]->name = $r['nombre'];
 			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;
 		}

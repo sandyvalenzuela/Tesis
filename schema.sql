@@ -44,11 +44,7 @@ create table product(
 	foreign key (user_id) references user(id)
 );
 
-/*
-person kind
-1.- Client
-2.- Provider
-*/
+
 create table person(
 	id int not null auto_increment primary key,
 	image varchar(255),
