@@ -1,11 +1,11 @@
 <?php
-$product = ProductData::getById($_GET["id"]);
-if($product!=null):
+$producto = ProductoData::getById($_GET["id"]);
+if($producto!=null):
 
 ?>
 <div class="row">
 	<div class="col-md-12">
-	<a href="index.php?view=reportsbyproduct" class="pull-right btn btn-lg btn-default	"> <i class="glyphicon glyphicon-chevron-left"></i> Regresar  </a>
+	<a href="index.php?view=reportsbyproducto" class="pull-right btn btn-lg btn-default	"> <i class="glyphicon glyphicon-chevron-left"></i> Regresar  </a>
 	<h1><?php echo $product->name; ?> <small>Reportes</small></h1>
 <div class="jumbotron" id="wellcome">
 	<h2>Bienvenido al sistema de reportes</h2>
@@ -27,7 +27,7 @@ if($product!=null):
 						<td id="endDate">2012-02-25</td>
 						<td id="">
 						<form>
-						<input type="hidden" name="view" value="productreport">
+						<input type="hidden" name="view" value="Productoreport">
 						<input type="hidden" name="id" value="<?php echo $product->id; ?>">
 						<input type="hidden" name="sd" id="stdate">
 						<input type="hidden" name="ed" id="endate">
@@ -49,10 +49,10 @@ if($product!=null):
 	<div class="col-md-12">
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
-			<?php $operations = OperationData::getAllByDateOfficialBP($_GET["id"], $_GET["sd"],$_GET["ed"]);
+			<?php $operaciones = OperacioneData::getAllByDateOfficialBP($_GET["id"], $_GET["sd"],$_GET["ed"]);
 			 ?>
 
-			 <?php if(count($operations)>0):?>
+			 <?php if(count($operaciones)>0):?>
 <script>
 	$("#wellcome").hide();
 </script>
@@ -64,13 +64,13 @@ if($product!=null):
 		<th>Tipo</th>
 		<th>Fecha</th>
 	</thead>
-<?php foreach($operations as $operation):?>
+<?php foreach($operacions as $operacion):?>
 	<tr>
-		<td><?php echo $operation->id; ?></td>
-		<td><?php echo $operation->getProduct()->name; ?></td>
-		<td><?php echo $operation->q; ?></td>
-		<td><?php echo $operation->getOperationType()->name; ?></td>
-		<td><?php echo $operation->created_at; ?></td>
+		<td><?php echo $operacion->id; ?></td>
+		<td><?php echo $operacion->getProduct()->nombre; ?></td>
+		<td><?php echo $operacion->q; ?></td>
+		<td><?php echo $operacion->getOperationType()->nombre; ?></td>
+		<td><?php echo $operacion->created_at; ?></td>
 	</tr>
 <?php endforeach; ?>
 

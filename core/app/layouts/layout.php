@@ -112,7 +112,7 @@
             <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li>
             <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
             <li><a href="./?view=box"><i class='fa fa-cube'></i> <span>Caja</span></a></li>
-            <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+            <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
 
             <li class="treeview">
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>

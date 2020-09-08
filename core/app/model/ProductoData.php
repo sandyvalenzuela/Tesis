@@ -3,25 +3,22 @@ class ProductoData {
 	public static $tablename = "product";
 
 	public function ProductData(){
-		$this->name = "";
-		$this->price_in = "";
-		$this->price_out = "";
-		$this->unit = "";
+		$this->nombre = "";
 		$this->user_id = "";
-		$this->presentation = "0";
+		$this->presentacion = "0";
 		$this->created_at = "NOW()";
 	}
 
-	public function getCategory(){ return CategoryData::getById($this->category_id);}
+	public function getCategoria(){ return CategoriaData::getById($this->categoria_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (barcode,name,description,price_in,price_out,user_id,presentation,unit,category_id,inventary_min,created_at) ";
-		$sql .= "value (\"$this->barcode\",\"$this->name\",\"$this->description\",\"$this->price_in\",\"$this->price_out\",$this->user_id,\"$this->presentation\",\"$this->unit\",$this->category_id,$this->inventary_min,NOW())";
+		$sql = "insert into ".self::$tablename." (nombre,description,user_id,presentacion,categoria_id,created_at) ";
+		$sql .= "value (\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (barcode,image,name,description,price_in,price_out,user_id,presentation,unit,category_id,inventary_min) ";
-		$sql .= "value (\"$this->barcode\",\"$this->image\",\"$this->name\",\"$this->description\",\"$this->price_in\",\"$this->price_out\",$this->user_id,\"$this->presentation\",\"$this->unit\",$this->category_id,$this->inventary_min)";
+		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,unit,category_id,inventary_min) ";
+		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id)";
 		return Executor::doit($sql);
 	}
 
@@ -35,14 +32,14 @@ class ProductoData {
 		Executor::doit($sql);
 	}
 
-// partiendo de que ya tenemos creado un objecto ProductData previamente utilizamos el contexto
+// partiendo de que ya tenemos creado un objecto ProductoData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set barcode=\"$this->barcode\",name=\"$this->name\",price_in=\"$this->price_in\",price_out=\"$this->price_out\",unit=\"$this->unit\",presentation=\"$this->presentation\",category_id=$this->category_id,inventary_min=\"$this->inventary_min\",description=\"$this->description\",is_active=\"$this->is_active\" where id=$this->id";
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
 	public function del_category(){
-		$sql = "update ".self::$tablename." set category_id=NULL where id=$this->id";
+		$sql = "update ".self::$tablename." set categoria_id=NULL where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -55,7 +52,7 @@ class ProductoData {
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
-		return Model::one($query[0],new ProductData());
+		return Model::one($query[0],new ProductoData());
 
 	}
 
@@ -64,29 +61,29 @@ class ProductoData {
 	public static function getAll(){
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ProductData());
+		return Model::many($query[0],new ProductoData());
 	}
 
 
 	public static function getAllByPage($start_from,$limit){
 		$sql = "select * from ".self::$tablename." where id>=$start_from limit $limit";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ProductData());
+		return Model::many($query[0],new ProductoData());
 	}
 
 
 	public static function getLike($p){
-		$sql = "select * from ".self::$tablename." where barcode like '%$p%' or name like '%$p%' or id like '%$p%'";
+		$sql = "select * from ".self::$tablename." where nombre like '%$p%' or id like '%$p%'";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ProductData());
+		return Model::many($query[0],new ProductoData());
 	}
 
 
 
-	public static function getAllByUserId($user_id){
-		$sql = "select * from ".self::$tablename." where user_id=$user_id order by created_at desc";
+	public static function getAllByUserId($Usuario_id){
+		$sql = "select * from ".self::$tablename." where Usuario_id=$Usuario_id order by created_at desc";
 		$query = Executor::doit($sql);
-		return Model::many($query[0],new ProductData());
+		return Model::many($query[0],new ProductoData());
 	}
 
 	public static function getAllByCategoriaId($IdCategoria){
