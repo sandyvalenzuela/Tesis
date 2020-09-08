@@ -21,8 +21,6 @@ class Model {
 	}
 
 	public static function many($query,$aclass){
-	 //print_r($query);
-	// print_r($aclass);
 		$cnt = 0;
 		$array = array();
 		while($r = $query->fetch_array()){
@@ -40,7 +38,6 @@ class Model {
 	}
 	//////////////////////////////////
 	public static function one($query,$aclass){
-	   
 		$cnt = 0;
 		$found = null;
 		$data = new $aclass;

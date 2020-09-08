@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Sistema Pedidos </title>
+    <title>Inventio Lite | Dashboard</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.4 -->
     <link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -24,18 +24,6 @@
 <script src="plugins/morris/morris.js"></script>
   <link rel="stylesheet" href="plugins/morris/morris.css">
   <link rel="stylesheet" href="plugins/morris/example.css">
-  
-  <!-- include alertify.css -->
-<link rel="stylesheet" href="plugins/alertifyJS/css/alertify.css">
-
-<!-- include boostrap theme  -->
-<link rel="stylesheet" href="plugins/alertifyJS/css/themes/bootstrap.css">
-<script src="plugins/alertifyJS/alertify.js"></script>
-
-<!-- include alertify script -->
-
-  
-  
           <script src="plugins/jspdf/jspdf.min.js"></script>
           <script src="plugins/jspdf/jspdf.plugin.autotable.js"></script>
           <?php if(isset($_GET["view"]) && $_GET["view"]=="sell"):?>
@@ -45,17 +33,17 @@
 
   </head>
 
-  <body class="<?php if(isset($_SESSION["user_id"]) || isset($_SESSION["client_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
+  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
     <div class="wrapper">
       <!-- Main Header -->
-      <?php if(isset($_SESSION["user_id"]) || isset($_SESSION["client_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>
       <header class="main-header">
         <!-- Logo -->
         <a href="./" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>B</b>S</span>
+          <span class="logo-mini"><b>I</b>L</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Sistema</b>Pedidos</span>
+          <span class="logo-lg"><b>INVENTIO</b>LITE</span>
         </a>
 
         <!-- Header Navbar -->
@@ -74,16 +62,17 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
                   <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                  <span class=""><?php if(isset($_SESSION["user_id"]) ){ echo UserData::getById($_SESSION["user_id"])->NombreUsuario; 
-                  echo"       ";
-                  echo UserData::getById($_SESSION["user_id"])->ApellidoUsuario; 
+                  <span class=""><?php if(isset($_SESSION["Usuario_id"]) ){ echo UserData::getById($_SESSION["Usuario_id"])->name; 
 
                   }?> <b class="caret"></b> </span>
 
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
-              
+                  <li class="">
+                      <a href="http://evilnapsis.com/" target="_blank" class="">Ir a Evilnapsis</a>
+                      <a href="http://evilnapsis.com/product/inventio-max/" target="_blank" class="">Ver Inventio Max</a>
+                  </li>
                   
                   <!-- Menu Footer-->
                   <li class="user-footer">
@@ -103,50 +92,61 @@
 
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
+<!--
+<div class="user-panel">
+            <div class="pull-left image">
+              <img src="1.jpg" class="img-circle" alt="User Image" />
+            </div>
+            <div class="pull-left info">
+              <p>Alexander Pierce</p>
 
-		  
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          -->
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["user_id"])):?>
-             
                         <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
-            
-			<li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li>
+            <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
+            <li><a href="./?view=box"><i class='fa fa-cube'></i> <span>Caja</span></a></li>
+            <li><a href="./?view=products"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+
+            <li class="treeview">
+              <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="./?view=newProducto">Nuevo Producto</a></li>
-                <li><a href="./?view=Producto">Listado de Productos</a></li>
-			   </ul>
-             </li>
+                <li><a href="./?view=categories">Categorias</a></li>
+                <li><a href="./?view=clients">Clientes</a></li>
+                <li><a href="./?view=providers">Proveedores</a></li>
+              </ul>
+            </li>
 
-             <li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Categoria</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-area-chart'></i> <span>Inventario</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="./?view=newCategoria">Nueva Categoria</a></li>
-                <li><a href="./?view=Categoria">Listado de Categorias</a></li>
-			   </ul>
-             </li>
-
-             <li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Presentacion</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <li><a href="./?view=inventary">Inventario</a></li>
+                <li><a href="./?view=re">Abastecer</a></li>
+                <li><a href="./?view=res">Abastecimientos</a></li>
+              </ul>
+            </li>
+                        <li class="treeview">
+              <a href="#"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="./?view=newPresentacion">Nueva Presentacion</a></li>
-                <li><a href="./?view=Presentacion">Listado de Presentacion</a></li>
-			   </ul>
-             </li>
-
-             	
+                <li><a href="./?view=reports">Inventario</a></li>
+                <li><a href="./?view=sellreports">Ventas</a></li>
+              </ul>
+            </li>
 
 
-             <li class="treeview">
-              <a href="#"><i class='fa fa-shopping-cart'></i> <span>Gestion de Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class="treeview">
+              <a href="#"><i class='fa fa-cog'></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-              <li><a href="./?view=newuser">Nuevo Usuario</a></li>
-                <li><a href="./?view=users">Listado de Usuarios</a></li>
-			   </ul>
-             </li>	 
-            
+                <li><a href="./?view=users">Usuarios</a></li>
+                <li><a href="./?view=settings">Configuracion</a></li>
+              </ul>
+            </li>
           <?php endif;?>
 
           </ul><!-- /.sidebar-menu -->
@@ -155,36 +155,35 @@
       </aside>
     <?php endif;?>
 
-      <!-- codigo del loguin -->
-      <?php if(isset($_SESSION["user_id"]) || isset($_SESSION["client_id"])):?>
+      <!-- Content Wrapper. Contains page content -->
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>
       <div class="content-wrapper">
       <div class="content">
         <?php View::load("index");?>
         </div>
-      </div>
+      </div><!-- /.content-wrapper -->
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0
+          <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2020 </strong>
+        <strong>Copyright &copy; 2020 <a href="http://evilnapsis.com/company/" target="_blank">Evilnapsis</a></strong>
       </footer>
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">
-        <a href="./"><b>Sistema </b><b> de  </b><b> Pedidos</b></a>
-        <body style="background-color: cyan">
-      </div>
-      <img src="img/photo.jpg" height="255">
+      <a href="./"><b>Sistema </b><b> de  </b><b> Pedidos</b></a>
+      <body style="background-color: cyan">
+      </div><!-- /.login-logo -->
+      <img src="Imagenes/photo.jpg" height="255">
       <div class="login-box-body">
         <form action="./?action=processlogin" method="post">
           <div class="form-group has-feedback">
-
-            <input type="text" name="Usuario" required class="form-control" placeholder="Usuario"/>
+            <input type="text" name="username" required class="form-control" placeholder="Usuario"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" name="Password" required class="form-control" placeholder="password"/>
+            <input type="password" name="password" required class="form-control" placeholder="Password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
           </div>
           <div class="row">
@@ -195,7 +194,7 @@
           </div>
         </form>
       </div><!-- /.login-box-body -->
-    </div><
+    </div><!-- /.login-box -->  
       <?php endif;?>
 
 
