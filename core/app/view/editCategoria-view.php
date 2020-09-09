@@ -9,7 +9,15 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="nombre" value="<?php echo $Usaurio->nombre;?>" class="form-control" id="nombre" placeholder="Nombre">
+      <input type="text" name="nombre" value="<?php echo $Usuario->nombre;?>" class="form-control" id="nombre" placeholder="Nombre">
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Descripcion</label>
+    <div class="col-md-8">
+      <textarea name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del Categoria"><?php echo $Categoria->descripcion;?></textarea>
     </div>
   </div>
 

@@ -47,14 +47,14 @@ if($spaginas>0){ $npaginas++;}
 $px=$page-1;
 if($px>0):
 ?>
-<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=products&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
+<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=productos&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
 <?php endif; ?>
 
 <?php 
 $px=$page+1;
 if($px<=$npaginas):
 ?>
-<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=products&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=productos&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
 <?php endif; ?>
 </div>
 <div class="clearfix"></div>

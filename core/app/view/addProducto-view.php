@@ -7,12 +7,8 @@ if(count($_POST)>0){
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];
   $Categoria_id="NULL";
-  if($_POST["Categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
-  $inventary_min="\"\"";
-  if($_POST["inventary_min"]!=""){ $inventary_min=$_POST["inventary_min"];}
-
+  if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
   $Producto->Categoria_id=$Categoria_id;
-  $Producto->inventary_min=$inventary_min;
   $Producto->Usuario_id = $_SESSION["Usuario_id"];
 
 
@@ -33,9 +29,6 @@ if(count($_POST)>0){
   $prod= $producto->add();
 
   }
-
-
-
 
 if($_POST["q"]!="" || $_POST["q"]!="0"){
  $op = new OperacionData();

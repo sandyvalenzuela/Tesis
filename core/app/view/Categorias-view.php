@@ -14,14 +14,13 @@
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th>Nombre</th>
-			<th></th>
 			</thead>
 			<?php
 			foreach($Usuarios as $Usuario){
 				?>
 				<tr>
 				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
-				<td style="width:130px;"><a href="index.php?view=editCategoria&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delcategory&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td style="width:130px;"><a href="index.php?view=editCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 				<?php
 
