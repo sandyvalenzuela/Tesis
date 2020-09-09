@@ -5,7 +5,7 @@ if(count($_POST)>0){
 	if(isset($_POST["is_admin"])){$is_admin=1;}
 	$is_active=0;
 	if(isset($_POST["is_active"])){$is_active=1;}
-	$Usuario = UserData::getById($_POST["Usuario_id"]);
+	$Usuario = UsuarioData::getById($_POST["Usuario_id"]);
 	$Usuario->name = $_POST["nombre"];
 	$Usuario->lastname = $_POST["apellido"];
 	$Usuario->username = $_POST["username"];

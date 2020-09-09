@@ -15,13 +15,6 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Descripcion</label>
-    <div class="col-md-8">
-      <textarea name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del Categoria"><?php echo $Categoria->descripcion;?></textarea>
-    </div>
-  </div>
-
-  <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="Usuario_id" value="<?php echo $Usuario->id;?>">
       <button type="submit" class="btn btn-primary">Actualizar Categoria</button>

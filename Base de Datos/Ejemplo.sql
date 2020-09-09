@@ -19,9 +19,7 @@ insert into Usuario(nombre,apellido,email,password,is_active,is_admin,created_at
 
 create table categoria(
 	id int not null auto_increment primary key,
-	image varchar(255),
 	nombre varchar(50),
-	descripcion text,
 	created_at datetime
 );
 

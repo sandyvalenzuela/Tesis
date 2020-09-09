@@ -15,7 +15,7 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="apellido" value="<?php echo $user->apellido;?>" required class="form-control" id="apellido" placeholder="Apellido">
+      <input type="text" name="apellido" value="<?php echo $Usuario->apellido;?>" required class="form-control" id="apellido" placeholder="Apellido">
     </div>
   </div>
   <div class="form-group">
