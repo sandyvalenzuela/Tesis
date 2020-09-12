@@ -7,17 +7,17 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/clients-word.php">Word 2007 (.docx)</a></li>
+    <li><a href="report/clientes-word.php">Word 2007 (.docx)</a></li>
   </ul>
 </div>
 </div>
-		<h1>Directorio de Clientes</h1>
+		<h1>Personal </h1>
 <br>
 		<?php
 
 		$usuarios = PersonaData::getClientes();
 		if(count($usuarios)>0){
-			// si hay usuarios
+		
 			?>
 
 			<table class="table table-bordered table-hover">

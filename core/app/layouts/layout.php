@@ -33,10 +33,10 @@
 
   </head>
 
-  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
+  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
     <div class="wrapper">
       <!-- Main Header -->
-      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>
       <header class="main-header">
         <!-- Logo -->
         <a href="./" class="logo">
@@ -69,11 +69,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <!-- The user image in the menu -->
-                  <li class="">
-                      <a href="http://evilnapsis.com/" target="_blank" class="">Ir a Evilnapsis</a>
-                      <a href="http://evilnapsis.com/product/inventio-max/" target="_blank" class="">Ver Inventio Max</a>
-                  </li>
-                  
+                                    
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-right">
@@ -92,22 +88,11 @@
 
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-<!--
-<div class="user-panel">
-            <div class="pull-left image">
-              <img src="1.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-              <p>Alexander Pierce</p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-            </div>
-          </div>
-          -->
           <!-- Sidebar Menu -->
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
-            <?php if(isset($_SESSION["user_id"])):?>
+            <?php if(isset($_SESSION["Usuario_id"])):?>
                         <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
             <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li>
             <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
@@ -118,7 +103,7 @@
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=categorias">Categorias</a></li>
-                <li><a href="./?view=clients">Clientes</a></li>
+                <li><a href="./?view=clientes">Clientes</a></li>
                 <li><a href="./?view=providers">Proveedores</a></li>
               </ul>
             </li>
@@ -156,7 +141,7 @@
     <?php endif;?>
 
       <!-- Content Wrapper. Contains page content -->
-      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["client_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>
       <div class="content-wrapper">
       <div class="content">
         <?php View::load("index");?>
@@ -167,7 +152,7 @@
         <div class="pull-right hidden-xs">
           <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2020 <a href="http://evilnapsis.com/company/" target="_blank">Evilnapsis</a></strong>
+        <strong>Copyright &copy; 2020 
       </footer>
       <?php else:?>
 <div class="login-box">
@@ -240,10 +225,7 @@
         });
       });
     </script>
-    <!-- Optionally, you can add Slimscroll and FastClick plugins.
-          Both of these plugins are recommended to enhance the
-          user experience. Slimscroll is required when using the
-          fixed layout. -->
+    
   </body>
 </html>
 
