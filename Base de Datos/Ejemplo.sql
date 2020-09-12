@@ -37,3 +37,29 @@ create table producto(
 	foreign key (categoria_id) references categoria(id),
 	foreign key (Usuario_id) references Usuario(id)
 );
+
+
+
+create table persona(
+	id int not null auto_increment primary key,
+	image varchar(255),
+	nombre varchar(255),
+	apellido varchar(50),
+	direccion varchar(50),
+	telefono varchar(50),
+	email1 varchar(50),
+	kind int,
+	created_at datetime
+);
+
+create table operacion(
+	id int not null auto_increment primary key,
+	producto_id int,
+	q float,
+	tipooperacion_id int,
+	sell_id int,
+	created_at datetime,
+	foreign key (product_id) references producto(id),
+	foreign key (tipooperacion_id) references tipooperacion(id),
+	foreign key (sell_id) references sell(id)
+);

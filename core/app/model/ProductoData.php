@@ -1,8 +1,8 @@
 <?php
 class ProductoData {
-	public static $tablename = "product";
+	public static $tablename = "producto";
 
-	public function ProductData(){
+	public function ProductoData(){
 		$this->nombre = "";
 		$this->user_id = "";
 		$this->presentacion = "0";

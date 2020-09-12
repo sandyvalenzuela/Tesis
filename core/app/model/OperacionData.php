@@ -1,9 +1,9 @@
 <?php
-class OperationData {
-	public static $tablename = "operation";
+class OperacionData {
+	public static $tablename = "operacion";
 
 	public function OperationData(){
-		$this->name = "";
+		$this->nombre = "";
 		$this->product_id = "";
 		$this->q = "";
 		$this->cut_id = "";
@@ -58,8 +58,8 @@ class OperationData {
 		return Model::many($query[0],new OperationData());
 	}
 
-	public static function getAllByDateOfficialBP($product, $start,$end){
- $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and product_id=$product order by created_at desc";
+	public static function getAllByDateOfficialBP($produco, $start,$end){
+ $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and producto_id=$product order by created_at desc";
 		if($start == $end){
 		 $sql = "select * from ".self::$tablename." where date(created_at) = \"$start\" order by created_at desc";
 		}
@@ -67,7 +67,7 @@ class OperationData {
 		return Model::many($query[0],new OperationData());
 	}
 
-	public function getProduct(){ return ProductData::getById($this->product_id);}
+	public function getProducto(){ return ProductoData::getById($this->producto_id);}
 	public function getOperationtype(){ return OperationTypeData::getById($this->operation_type_id);}
 
 

@@ -161,7 +161,7 @@
       <div class="content">
         <?php View::load("index");?>
         </div>
-      </div><!-- /.content-wrapper -->
+      </div>
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
