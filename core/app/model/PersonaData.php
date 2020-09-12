@@ -96,7 +96,7 @@ class PersonaData {
 		return $array;
 	}
 
-	public static function getClients(){
+	public static function getClientes(){
 		$sql = "select * from ".self::$tablename." where kind=1 order by nombre,apellido";
 		$query = Executor::doit($sql);
 		$array = array();

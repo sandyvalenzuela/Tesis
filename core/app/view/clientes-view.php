@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newclient" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Cliente</a>
+	<a href="index.php?view=newcliente" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Cliente</a>
 <div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
@@ -15,8 +15,8 @@
 <br>
 		<?php
 
-		$users = PersonData::getClients();
-		if(count($users)>0){
+		$usuarios = PersonaData::getClientes();
+		if(count($usuarios)>0){
 			// si hay usuarios
 			?>
 
@@ -29,16 +29,16 @@
 			<th></th>
 			</thead>
 			<?php
-			foreach($users as $user){
+			foreach($Usuarios as $Usuario){
 				?>
 				<tr>
-				<td><?php echo $user->name." ".$user->lastname; ?></td>
-				<td><?php echo $user->address1; ?></td>
-				<td><?php echo $user->email1; ?></td>
-				<td><?php echo $user->phone1; ?></td>
+				<td><?php echo $Usuario->nombre." ".$Usuarios->apellido; ?></td>
+				<td><?php echo $Usuario->direccion; ?></td>
+				<td><?php echo $Usuario->email; ?></td>
+				<td><?php echo $Usuario->telefono; ?></td>
 				<td style="width:130px;">
-				<a href="index.php?view=editclient&id=<?php echo $user->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?view=delclient&id=<?php echo $user->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?view=editcliente&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a>
+				<a href="index.php?view=delcliente&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 				</td>
 				</tr>
 				<?php
