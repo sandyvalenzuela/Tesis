@@ -76,7 +76,7 @@ class CategoriaData {
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new CategoriaData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['nombre'];
+			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->created_at = $r['created_at'];
 			$cnt++;
 		}

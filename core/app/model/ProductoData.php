@@ -9,16 +9,16 @@ class ProductoData {
 		$this->created_at = "NOW()";
 	}
 
-	public function getCategoria(){ return CategoriaData::getById($this->categoria_id);}
+	public function getCategoria(){ return CategoriaData::getById($this->Categoria_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (nombre,description,Usuario_id,presentacion,categoria_id,created_at) ";
-		$sql .= "value (\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,NOW())";
+		$sql = "insert into ".self::$tablename." (nombre,description,Usuario_id,presentacion,Categoria_id,created_at) ";
+		$sql .= "value (\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,categoria_id) ";
-		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id)";
+		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,Categoria_id) ";
+		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
 		return Executor::doit($sql);
 	}
 
@@ -34,12 +34,12 @@ class ProductoData {
 
 // partiendo de que ya tenemos creado un objecto ProductoData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",Categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
 	public function del_category(){
-		$sql = "update ".self::$tablename." set categoria_id=NULL where id=$this->id";
+		$sql = "update ".self::$tablename." set Categoria_id=NULL where id=$this->id";
 		Executor::doit($sql);
 	}
 
