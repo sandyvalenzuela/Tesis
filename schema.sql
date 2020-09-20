@@ -106,7 +106,7 @@ create table operation(
 	foreign key (sell_id) references sell(id)
 );
 
-/*
+/*455
 configuration kind
 1.- Boolean
 2.- Text

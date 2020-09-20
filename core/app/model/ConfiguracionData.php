@@ -1,11 +1,11 @@
 <?php
-class ConfigurationData {
-	public static $tablename = "configuration";
+class ConfiguracionData {
+	public static $tablename = "configuracion";
 
 
-	public function ConfigurationData(){
-		$this->name = "";
-		$this->lastname = "";
+	public function ConfiguracionData(){
+		$this->nombre = "";
+		$this->apellido = "";
 		$this->email = "";
 		$this->image = "";
 		$this->password = "";
@@ -13,8 +13,8 @@ class ConfigurationData {
 	}
 
 	public function add(){
-		$sql = "insert into user (name,lastname,email,password,created_at) ";
-		$sql .= "value (\"$this->name\",\"$this->lastname\",\"$this->email\",\"$this->password\",$this->created_at)";
+		$sql = "insert into usuario (nombre,apellido,email,password,created_at) ";
+		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->email\",\"$this->password\",$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -27,7 +27,7 @@ class ConfigurationData {
 		Executor::doit($sql);
 	}
 
-// partiendo de que ya tenemos creado un objecto ConfigurationData previamente utilizamos el contexto
+// partiendo de que ya tenemos creado un objecto ConfiguracionData previamente utilizamos el contexto
 	public function update(){
 		$sql = "update ".self::$tablename." set val=\"$this->val\" where id=$this->id";
 		Executor::doit($sql);
@@ -37,11 +37,11 @@ class ConfigurationData {
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
 		$found = null;
-		$data = new ConfigurationData();
+		$data = new ConfiguracionData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
-			$data->name = $r['name'];
-			$data->lastname = $r['lastname'];
+			$data->nombre = $r['nombre'];
+			$data->apellido = $r['apellido'];
 			$data->email = $r['email'];
 			$data->password = $r['password'];
 			$data->created_at = $r['created_at'];
@@ -57,10 +57,10 @@ class ConfigurationData {
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new ConfigurationData();
+			$array[$cnt] = new ConfiguracionData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->lastname = $r['lastname'];
+			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->apellido = $r['apellido'];
 			$array[$cnt]->email = $r['email'];
 			$array[$cnt]->password = $r['password'];
 			$array[$cnt]->created_at = $r['created_at'];
@@ -76,11 +76,11 @@ class ConfigurationData {
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new ConfigurationData();
+			$array[$cnt] = new ConfiguracionData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->short = $r['name'];
-			$array[$cnt]->name = $r['name'];
-			$array[$cnt]->kind = $r['kind'];
+			$array[$cnt]->titulo = $r['titulo'];
+			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->tipo = $r['tipo'];
 			$array[$cnt]->val = $r['val'];
 			$cnt++;
 		}
@@ -89,14 +89,14 @@ class ConfigurationData {
 
 
 	public static function getLike($q){
-		$sql = "select * from ".self::$tablename." where name like '%$q%'";
+		$sql = "select * from ".self::$tablename." where nombre like '%$q%'";
 		$query = Executor::doit($sql);
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new ConfigurationData();
+			$array[$cnt] = new ConfiguracionData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
+			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->mail = $r['mail'];
 			$array[$cnt]->password = $r['password'];
 			$array[$cnt]->created_at = $r['created_at'];

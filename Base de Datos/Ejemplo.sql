@@ -2,6 +2,29 @@ create database ejemplo;
 use ejemplo;
 set sql_mode='';
 
+
+create table configuracion(
+	id int not null auto_increment primary key,
+	titulo varchar(255) unique,
+	nombre varchar(255) unique,
+	tipo int,
+	val varchar(255)
+);
+insert into configuracion(titulo,nombre,tipo,val) value("titulo","sistema de pedidos",2,"Sistema de Pedidos");
+insert into configuracion(titulo,nombre,tipo,val) value("use_image_producto","Utilizar Imagenes en los productos",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_clientes","Activar clientes",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_providers","Activar proveedores",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_categorias","Activar categorias",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_reportes_word","Activar reportes en Word",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_reportes_excel","Activar reportes en Excel",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_reportes_pdf","Activar reportes en PDF",1,0);
+
+
+
+
+
+
+
 create table Usuario(
 	id int not null auto_increment primary key,
 	nombre varchar(50),

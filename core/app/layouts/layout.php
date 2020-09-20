@@ -116,7 +116,8 @@
                 <li><a href="./?view=res">Abastecimientos</a></li>
               </ul>
             </li>
-                        <li class="treeview">
+              
+               <li class="treeview">
               <a href="#"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=reports">Inventario</a></li>
@@ -129,10 +130,20 @@
               <a href="#"><i class='fa fa-cog'></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=Usuarios">Usuarios</a></li>
-                <li><a href="./?view=settings">Configuracion</a></li>
+            
               </ul>
             </li>
+
+            <li> <a href="./?view=Ajustes"><i class='fa fa-cog'></i> <span>Configuracion</span> </a></li>
+              
+            
           <?php endif;?>
+
+
+
+
+
+
 
           </ul><!-- /.sidebar-menu -->
         </section>
