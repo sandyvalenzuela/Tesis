@@ -23,10 +23,10 @@ $Categorias = CategoriaData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
     <div class="col-md-6">
-    <select name="categoria_id" class="form-control">
+    <select name="Categoria_id" class="form-control">
     <option value="">-- NINGUNA --</option>
-    <?php foreach($categorias as $categoria):?>
-      <option value="<?php echo $categoria->id;?>"><?php echo $categoria->nombre;?></option>
+    <?php foreach($Categorias as $Categoria):?>
+      <option value="<?php echo $Categoria->id;?>"><?php echo $Categoria->nombre;?></option>
     <?php endforeach;?>
       </select>    </div>
   </div>
@@ -57,15 +57,3 @@ $Categorias = CategoriaData::getAll();
 	</div>
 </div>
 
-<script>
-  $(document).ready(function(){
-    $("#product_code").keydown(function(e){
-        if(e.which==17 || e.which==74 ){
-            e.preventDefault();
-        }else{
-            console.log(e.which);
-        }
-    })
-});
-
-</script>

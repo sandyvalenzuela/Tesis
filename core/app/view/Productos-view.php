@@ -31,7 +31,7 @@ if(count($Productos)>0){
 if($page==1){
 $curr_productos = ProductoData::getAllByPage($Productos[0]->id,$limit);
 }else{
-$curr_products = ProductData::getAllByPage($Products[($page-1)*$limit]->id,$limit);
+$curr_productos = ProductData::getAllByPage($Products[($page-1)*$limit]->id,$limit);
 
 }
 $npaginas = floor(count($Productos)/$limit);
@@ -73,14 +73,14 @@ if($px<=$npaginas):
 				<img src="storage/productos/<?php echo $Producto->image;?>" style="width:64px;">
 			<?php endif;?>
 		</td>
-		<td><?php echo $producto->nombre; ?></td>
-		<td><?php if($producto->categoria_id!=null){echo $producto->getCategoria()->nombre;}else{ echo "<center>----</center>"; }  ?></td>
-		<td><?php if($producto->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
+		<td><?php echo $Producto->nombre; ?></td>
+		<td><?php if($Producto->Categoria_id!=null){echo $Producto->getCategoria()->nombre;}else{ echo "<center>----</center>"; }  ?></td>
+		<td><?php if($Producto->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
 		
 
 		<td style="width:70px;">
-		<a href="index.php?view=editProducto&id=<?php echo $producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
-		<a href="index.php?view=delProducto&id=<?php echo $producto->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+		<a href="index.php?view=editProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
+		<a href="index.php?view=delProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
 		</td>
 	</tr>
 	<?php endforeach;?>
@@ -95,7 +95,7 @@ for($i=0;$i<$npaginas;$i++){
 </div>
 <form class="form-inline">
 	<label for="limit">Limite</label>
-	<input type="hidden" name="view" value="productos">
+	<input type="hidden" name="view" value="Productos">
 	<input type="number" value=<?php echo $limit?> name="limit" style="width:60px;" class="form-control">
 </form>
 

@@ -3,6 +3,18 @@ use ejemplo;
 set sql_mode='';
 
 
+
+create table operacion_tipo(
+	id int not null auto_increment primary key,
+	nombre varchar(50)
+);
+
+insert into operacion_tipo (nombre) value ("Entrada");
+
+
+
+
+
 create table configuracion(
 	id int not null auto_increment primary key,
 	titulo varchar(255) unique,

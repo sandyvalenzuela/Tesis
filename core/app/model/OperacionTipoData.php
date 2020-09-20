@@ -1,14 +1,14 @@
 <?php
-class OperationTypeData {
-	public static $tablename = "operation_type";
+class OperacionTipoData {
+	public static $tablename = "operacion_tipo";
 
-	public function OperationTypeData(){
-		$this->name = "";
+	public function OperacionTipoData(){
+		$this->nombre = "";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (name) ";
-		$sql .= "value (\"$this->name\")";
+		$sql = "insert into ".self::$tablename." (nombre) ";
+		$sql .= "value (\"$this->nombre\")";
 		Executor::doit($sql);
 	}
 
@@ -27,24 +27,24 @@ class OperationTypeData {
 		 $sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
 		$found = null;
-		$data = new OperationTypeData();
+		$data = new OperacionTipoData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
-			$data->name = $r['name'];
+			$data->nombre = $r['nombre'];
 			$found = $data;
 			break;
 		}
 		return $found;
 	}
 
-	public static function getByName($name){
-		 $sql = "select * from ".self::$tablename." where name=\"$name\"";
+	public static function getByName($nombre){
+		 $sql = "select * from ".self::$tablename." where nombre=\"$nombre\"";
 		$query = Executor::doit($sql);
 		$found = null;
-		$data = new OperationTypeData();
+		$data = new OperacionTipoData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
-			$data->name = $r['name'];
+			$data->nombre = $r['nombre'];
 			$found = $data;
 			break;
 		}
@@ -58,9 +58,9 @@ class OperationTypeData {
 		$array = array();
 		$cnt = 0;
 		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new OperationTypeData();
+			$array[$cnt] = new OperacionTipoData();
 			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->name = $r['name'];
+			$array[$cnt]->nombre = $r['nombre'];
 			$cnt++;
 		}
 		return $array;

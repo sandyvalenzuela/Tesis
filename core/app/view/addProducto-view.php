@@ -7,7 +7,7 @@ if(count($_POST)>0){
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];
   $Categoria_id="NULL";
-  if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
+  if($_POST["Categoria_id"]!=""){ $Categoria_id=$_POST["Categoria_id"];}
   $Producto->Categoria_id=$Categoria_id;
   $Producto->Usuario_id = $_SESSION["Usuario_id"];
 
@@ -26,14 +26,14 @@ if(count($_POST)>0){
     }
   }
   else{
-  $prod= $producto->add();
+  $prod= $Producto->add();
 
   }
 
 if($_POST["q"]!="" || $_POST["q"]!="0"){
  $op = new OperacionData();
  $op->Producto_id = $prod[1] ;
- $op->operation_type_id=OperacionTypeData::getByName("entrada")->id;
+ $op->operacion_tipo_id=OperacionTipoData::getByName("entrada")->id;
  $op->q= $_POST["q"];
  $op->sell_id="NULL";
 $op->is_oficial=1;

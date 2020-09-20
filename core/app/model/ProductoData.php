@@ -4,7 +4,7 @@ class ProductoData {
 
 	public function ProductoData(){
 		$this->nombre = "";
-		$this->user_id = "";
+		$this->Usuario_id = "";
 		$this->presentacion = "0";
 		$this->created_at = "NOW()";
 	}
@@ -12,12 +12,12 @@ class ProductoData {
 	public function getCategoria(){ return CategoriaData::getById($this->categoria_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (nombre,description,user_id,presentacion,categoria_id,created_at) ";
+		$sql = "insert into ".self::$tablename." (nombre,description,Usuario_id,presentacion,categoria_id,created_at) ";
 		$sql .= "value (\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,unit,category_id,inventary_min) ";
+		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,categoria_id) ";
 		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id)";
 		return Executor::doit($sql);
 	}
