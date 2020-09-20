@@ -18,11 +18,7 @@ class PersonaData {
 		Executor::doit($sql);
 	}
 
-	public function add_provider(){
-		$sql = "insert into persona (nombre,apellido,direccion,email,telefono,kind,created_at) ";
-		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->direccion\",\"$this->email\",\"$this->telefono\",2,$this->created_at)";
-		Executor::doit($sql);
-	}
+	
 
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
@@ -44,10 +40,7 @@ class PersonaData {
 		Executor::doit($sql);
 	}
 
-	public function update_provider(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
-		Executor::doit($sql);
-	}
+
 
 	public function update_passwd(){
 		$sql = "update ".self::$tablename." set password=\"$this->password\" where id=$this->id";
@@ -116,24 +109,7 @@ class PersonaData {
 	}
 
 
-	public static function getProviders(){
-		$sql = "select * from ".self::$tablename." where kind=2 order by nombre,apellido";
-		$query = Executor::doit($sql);
-		$array = array();
-		$cnt = 0;
-		while($r = $query[0]->fetch_array()){
-			$array[$cnt] = new PersonaData();
-			$array[$cnt]->id = $r['id'];
-			$array[$cnt]->nombre = $r['nombre'];
-			$array[$cnt]->apellido = $r['apellido'];
-			$array[$cnt]->email = $r['email'];
-			$array[$cnt]->telefono = $r['telefono'];
-			$array[$cnt]->direccion = $r['direccion'];
-			$array[$cnt]->created_at = $r['created_at'];
-			$cnt++;
-		}
-		return $array;
-	}
+	
 
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where nombre like '%$q%'";
