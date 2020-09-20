@@ -103,7 +103,7 @@ create table operation(
 	created_at datetime,
 	foreign key (product_id) references product(id),
 	foreign key (operation_type_id) references operation_type(id),
-	foreign key (sell_id) references sell(id)
+	foreign key (sell_id) references sell(id),
 );
 
 /*455

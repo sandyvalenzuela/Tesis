@@ -2,7 +2,7 @@
 
 $Operaciones = OperacionData::getAllByProductoId($_GET["id"]);
 
-foreach ($operaciones as $op) {
+foreach ($Operaciones as $op) {
 	$op->del();
 }
 

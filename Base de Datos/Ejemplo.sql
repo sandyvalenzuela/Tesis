@@ -4,12 +4,43 @@ set sql_mode='';
 
 
 
+create table pedido(
+	id int not null auto_increment primary key,
+	persona_id int ,
+	Usuario_id int ,
+	operacion_tipo_id int default 2
+
+	foreign key (operacion_tipo_id) references operacion_tipo(id),
+	foreign key (Usuario_id) references Usuario(id),
+	foreign key (persona_id) references persona(id),
+	created_at datetime
+);
+
+
+create table operacion(
+	id int not null auto_increment primary key,
+	producto_id int,
+	dinero float,
+	operacion_tipo_id int,
+	pedido_id int,
+	
+	foreign key (producto_id) references producto(id),
+	foreign key (operacion_tipo_id) references operacion_tipo(id),
+	foreign key (pedido_id) references pedido(id),
+	created_at datetime
+);
+
+
+
+
+
 create table operacion_tipo(
 	id int not null auto_increment primary key,
 	nombre varchar(50)
 );
 
 insert into operacion_tipo (nombre) value ("Entrada");
+insert into operacion_tipo (nombre) value ("salida");
 
 
 

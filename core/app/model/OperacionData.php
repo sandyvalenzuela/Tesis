@@ -2,7 +2,7 @@
 class OperacionData {
 	public static $tablename = "operacion";
 
-	public function OperationData(){
+	public function OperacionData(){
 		$this->nombre = "";
 		$this->product_id = "";
 		$this->q = "";
