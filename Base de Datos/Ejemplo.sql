@@ -50,7 +50,7 @@ create table Usuario(
 	created_at datetime
 );
 
-insert into Usuario(nombre,apellido,email,password,is_active,is_admin,created_at) value ("Sandy", "Valenzuela","admin","90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad",1,1,NOW());
+insert into Usuario(nombre,apellido,email,password,is_active,is_admin,created_at) value ("Sandy", "Valenzuela","sandyvalenzuela1997@gmail.com","admin","90b9aa7e25f80cf4f64e990b78a9fc5ebd6cecad",1,1,NOW());
 
 create table categoria(
 	id int not null auto_increment primary key,

@@ -46,20 +46,8 @@ foreach($productos as $productos){
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3><?php echo count(PersonaData::getProviders());?></h3>
-
-              <p>Proveedores</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="./?view=providers" class="small-box-footer">Ver mas <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+        
+             
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
