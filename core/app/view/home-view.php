@@ -67,6 +67,10 @@ foreach($productos as $productos){
       </div>
       <!-- /.row -->
 
+<!-- ./col -->
+
+
+
 <div class="row">
 	<div class="col-md-12">
 <?php if($found):?>

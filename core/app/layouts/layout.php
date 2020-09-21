@@ -94,8 +94,8 @@
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["Usuario_id"])):?>
                         <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
-            <li><a href="./?view=sell"><i class='fa fa-usd'></i> <span>Vender</span></a></li>
-            <li><a href="./?view=sells"><i class='fa fa-shopping-cart'></i> <span>Ventas</span></a></li>
+            <li><a href="./?view=pedido"><i class='fa fa-usd'></i> <span>Pedido</span></a></li>
+            <li><a href="./?view=pedidos"><i class='fa fa-shopping-cart'></i> <span>Pedidos</span></a></li>
              <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
 
             <li class="treeview">
