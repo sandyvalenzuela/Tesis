@@ -30,15 +30,15 @@ if(count($_POST)>0){
 
   }
 
-if($_POST["q"]!="" || $_POST["q"]!="0"){
- $op = new OperacionData();
- $op->Producto_id = $prod[1] ;
- $op->operacion_tipo_id=OperacionTipoData::getByName("entrada")->id;
- $op->q= $_POST["q"];
- $op->sell_id="NULL";
-$op->is_oficial=1;
-$op->add();
-}
+  if($_POST["dinero"]!="" || $_POST["dinero"]!="0"){
+    $op = new OperacionData();
+    $op->Producto_id = $prod[1] ;
+    $op->operacion_tipo_id=OperacionTipoData::getByName("entrada")->id;
+    $op->dinero= $_POST["dinero"];
+    $op->pedido_id="NULL";
+   $op->is_oficial=1;
+   $op->add();
+   }
 
 print "<script>window.location='index.php?view=Productos';</script>";
 
