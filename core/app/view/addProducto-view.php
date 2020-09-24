@@ -25,21 +25,9 @@ if(count($_POST)>0){
   $prod= $Producto->add();
     }
   }
-  else{
-  $prod= $Producto->add();
+  
 
-  }
-
-  if($_POST["dinero"]!="" || $_POST["dinero"]!="0"){
-    $op = new OperacionData();
-    $op->Producto_id = $prod[1] ;
-    $op->operacion_tipo_id=OperacionTipoData::getByName("entrada")->id;
-    $op->dinero= $_POST["dinero"];
-    $op->pedido_id="NULL";
-   $op->is_oficial=1;
-   $op->add();
-   }
-
+  
 print "<script>window.location='index.php?view=Productos';</script>";
 
 
