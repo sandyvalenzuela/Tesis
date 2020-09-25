@@ -17,7 +17,7 @@ if($Producto!=null):
     <label for="inputEmail1" class="col-lg-3 control-label">Imagen*</label>
     <div class="col-md-8">
       <input type="file" name="image" id="nombre" placeholder="">
-<?php if($product->image!=""):?>
+<?php if($producto->image!=""):?>
   <br>
         <img src="storage/Productos/<?php echo $Producto->image;?>" class="img-responsive">
 

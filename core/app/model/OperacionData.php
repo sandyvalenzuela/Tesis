@@ -76,7 +76,7 @@ class OperacionData {
 
 	public static function getQYesF($producto_id){
 		$dinero=0;
-		$operaciones = self::getAllByProductId($producto_id);
+		$operaciones = self::getAllByProductoId($producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
 		foreach($operaciones as $operacion){

@@ -38,7 +38,7 @@ class ProductoData {
 		Executor::doit($sql);
 	}
 
-	public function del_category(){
+	public function del_categoria(){
 		$sql = "update ".self::$tablename." set Categoria_id=NULL where id=$this->id";
 		Executor::doit($sql);
 	}
@@ -80,7 +80,7 @@ class ProductoData {
 
 
 
-	public static function getAllByUserId($Usuario_id){
+	public static function getAllByUsuarioId($Usuario_id){
 		$sql = "select * from ".self::$tablename." where Usuario_id=$Usuario_id order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());

@@ -1,14 +1,8 @@
 	<?php
 	$found=true;
-$productos = ProductoData::getAll();
-foreach($productos as $productos){
-	$q=OperacionData::getQYesF($producto->id);	
-	if($q<=$producto->inventary_min){
-		$found=true;
-		break;
+$Productos = ProductoData::getAll();
 
-	}
-}
+
 	?>
 <div class="row">
 	<div class="col-md-12">
@@ -86,30 +80,28 @@ foreach($productos as $productos){
 
 </div>
 <div class="clearfix"></div>
-<?php if(count($productos)>0){?>
+<?php if(count($Productos)>0){?>
 <br><table class="table table-bordered table-hover">
 	<thead>
 		<th >Codigo</th>
 		<th>Nombre del producto</th>
-		<th></th>
+    <th>Categoria</th>
 	</thead>
-	<?php
-foreach($Productos as $Product):
-	$q=OperacionData::getQYesF($Product->id);
+  <?php
+foreach($Productos as $Producto):
+	$Categoria =  $Producto->getCategoria();
 	?>
-	<?php if($q<=$Producto->inventary_min):?>
-	<tr class="<?php if($q==0){ echo "danger"; }else if($q<=$producto->inventary_min/2){ echo "danger"; } else if($q<=$producto->inventary_min){ echo "warning"; } ?>">
+
+	<tr>
 		<td><?php echo $Producto->id; ?></td>
-		<td><?php echo $Producto->Nombre; ?></td>
-		<td><?php echo $q; ?></td>
-		<td>
-		<?php if($q==0){ echo "<span class='label label-danger'>No hay existencias.</span>";}else if($q<=$producto->inventary_min/2){ echo "<span class='label label-danger'>Quedan muy pocas existencias.</span>";} else if($q<=$product->inventary_min){ echo "<span class='label label-warning'>Quedan pocas existencias.</span>";} ?>
-		</td>
+		<td><?php echo $Producto->nombre; ?></td>
+		<td><?php echo $Categoria->nombre; ?></td>
 	</tr>
-<?php endif;?>
+
 <?php
 endforeach;
 ?>
+
 </table>
 
 <div class="clearfix"></div>
@@ -119,8 +111,7 @@ endforeach;
 	?>
 	<div class="jumbotron">
 		<h2>No hay alertas</h2>
-		<p>Por el momento no hay alertas de inventario, estas se muestran cuando el inventario ha alcanzado el nivel minimo.</p>
-	</div>
+		</div>
 	<?php
 }
 
