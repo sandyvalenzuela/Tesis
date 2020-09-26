@@ -64,58 +64,19 @@ $Productos = ProductoData::getAll();
 <!-- ./col -->
 
 
+<!-- ./solo vistas -->
 
-<div class="row">
-	<div class="col-md-12">
-<?php if($found):?>
-<div class="btn-group pull-right">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-download"></i> Descargar <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="report/alerts-word.php">Word 2010 (.docx)</a></li>
-  </ul>
-</div>
-<?php endif;?>
 
-</div>
-<div class="clearfix"></div>
-<?php if(count($Productos)>0){?>
-<br><table class="table table-bordered table-hover">
-	<thead>
-		<th >Codigo</th>
-		<th>Nombre del producto</th>
-    <th>Categoria</th>
-	</thead>
-  <?php
-foreach($Productos as $Producto):
-	$Categoria =  $Producto->getCategoria();
-	?>
 
-	<tr>
-		<td><?php echo $Producto->id; ?></td>
-		<td><?php echo $Producto->nombre; ?></td>
-		<td><?php echo $Categoria->nombre; ?></td>
-	</tr>
 
-<?php
-endforeach;
-?>
 
-</table>
 
-<div class="clearfix"></div>
 
-	<?php
-}else{
-	?>
-	<div class="jumbotron">
-		<h2>No hay alertas</h2>
-		</div>
-	<?php
-}
 
-?>
+
+
+
+
 <br><br><br><br><br><br><br><br><br><br>
 	</div>
 </div>
