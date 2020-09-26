@@ -95,7 +95,7 @@
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["Usuario_id"])):?>
-                        <li><a href="./index.php?view=home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
+                        <li><a href="./index.php?view=Home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
             <li><a href="./?view=pedido"><i class='fa fa-usd'></i> <span>Pedido</span></a></li>
             <li><a href="./?view=pedidos"><i class='fa fa-shopping-cart'></i> <span>Pedidos</span></a></li>
              <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
@@ -111,9 +111,8 @@
             <li class="treeview">
               <a href="#"><i class='fa fa-area-chart'></i> <span>Inventario</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=inventary">Inventario</a></li>
-                <li><a href="./?view=re">Abastecer</a></li>
-                <li><a href="./?view=res">Abastecimientos</a></li>
+                <li><a href="./?view=Inventario">Inventario</a></li>
+                
               </ul>
             </li>
               
@@ -161,7 +160,7 @@
 
         <footer class="main-footer">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.0
+          <b>Version</b> 1.0
         </div>
         <strong>Copyright &copy; 2020 
       </footer>

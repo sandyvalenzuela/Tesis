@@ -6,7 +6,7 @@
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/inventary-word.php">Word 2007 (.docx)</a></li>
+    <li><a href="report/Inventario-word.php">Word 2007 (.docx)</a></li>
   </ul>
 </div>
 		<h1><i class="glyphicon glyphicon-stats"></i> Inventario de Productos</h1>
@@ -22,17 +22,17 @@ $limit=10;
 if(isset($_GET["limit"]) && $_GET["limit"]!="" && $_GET["limit"]!=$limit){
 	$limit=$_GET["limit"];
 }
-$products = ProductData::getAll();
-if(count($products)>0){
+$productos = ProductoData::getAll();
+if(count($productos)>0){
 
 if($page==1){
-$curr_products = ProductData::getAllByPage($products[0]->id,$limit);
+$curr_productos = ProductoData::getAllByPage($productos[0]->id,$limit);
 }else{
-$curr_products = ProductData::getAllByPage($products[($page-1)*$limit]->id,$limit);
+$curr_productos = ProductoData::getAllByPage($productos[($page-1)*$limit]->id,$limit);
 
 }
-$npaginas = floor(count($products)/$limit);
- $spaginas = count($products)%$limit;
+$npaginas = floor(count($productos)/$limit);
+ $spaginas = count($productos)%$limit;
 
 if($spaginas>0){ $npaginas++;}
 
@@ -44,14 +44,14 @@ if($spaginas>0){ $npaginas++;}
 $px=$page-1;
 if($px>0):
 ?>
-<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=inventary&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
+<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=Inventario&limit=$limit&page=".($px); ?>"><i class="glyphicon glyphicon-chevron-left"></i> Atras </a>
 <?php endif; ?>
 
 <?php 
 $px=$page+1;
 if($px<=$npaginas):
 ?>
-<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=inventary&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
+<a class="btn btn-sm btn-default" href="<?php echo "index.php?view=Inventario&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
 <?php endif; ?>
 </div>
 <div class="clearfix"></div>
@@ -59,15 +59,15 @@ if($px<=$npaginas):
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
-		<th>Disponible</th>
+		<th></th>
 		<th></th>
 	</thead>
-	<?php foreach($curr_products as $product):
-	$q=OperationData::getQYesF($product->id);
+	<?php foreach($curr_productos as $producto):
+	$q=OperationData::getQYesF($producto->id);
 	?>
-	<tr class="<?php if($q<=$product->inventary_min/2){ echo "danger";}else if($q<=$product->inventary_min){ echo "warning";}?>">
-		<td><?php echo $product->id; ?></td>
-		<td><?php echo $product->name; ?></td>
+	<tr class="<?php if($q<=$producto->inventary_min/2){ echo "danger";}else if($q<=$product->inventary_min){ echo "warning";}?>">
+		<td><?php echo $producto->id; ?></td>
+		<td><?php echo $producto->name; ?></td>
 		<td>
 			
 			<?php echo $q; ?>
@@ -84,7 +84,7 @@ if($px<=$npaginas):
 <?php
 
 for($i=0;$i<$npaginas;$i++){
-	echo "<a href='index.php?view=inventary&limit=$limit&page=".($i+1)."' class='btn btn-default btn-sm'>".($i+1)."</a> ";
+	echo "<a href='index.php?view=Inventario&limit=$limit&page=".($i+1)."' class='btn btn-default btn-sm'>".($i+1)."</a> ";
 }
 ?>
 </div>

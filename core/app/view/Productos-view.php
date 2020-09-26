@@ -12,10 +12,11 @@
 </div>
 </div>
 		<h1>Lista de Productos</h1>
+
+
 		<div class="clearfix"></div>
 
-
-<?php
+		<?php
 $page = 1;
 if(isset($_GET["page"])){
 	$page=$_GET["page"];
@@ -57,7 +58,15 @@ if($px<=$npaginas):
 <a class="btn btn-sm btn-default" href="<?php echo "index.php?view=productos&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
 <?php endif; ?>
 </div>
-<div class="clearfix"></div>
+
+
+
+
+
+
+
+
+		<div class="clearfix"></div>	
 <br><table class="table table-bordered table-hover">
 	<thead>
 		<th>Imagen</th>
@@ -67,6 +76,7 @@ if($px<=$npaginas):
 		<th></th>
 	</thead>
 	<?php foreach($curr_productos as $Producto):?>
+	{
 	<tr>
 		<td>
 			<?php if($Producto->image!=""):?>
@@ -88,21 +98,8 @@ if($px<=$npaginas):
 <div class="btn-group pull-right">
 <?php
 
-for($i=0;$i<$npaginas;$i++){
-	echo "<a href='index.php?view=Productos&limit=$limit&page=".($i+1)."' class='btn btn-default btn-sm'>".($i+1)."</a> ";
 }
-?>
-</div>
-<form class="form-inline">
-	<label for="limit">Limite</label>
-	<input type="hidden" name="view" value="Productos">
-	<input type="number" value=<?php echo $limit?> name="limit" style="width:60px;" class="form-control">
-</form>
-
-<div class="clearfix"></div>
-
-	<?php
-}else{
+else{
 	?>
 	<div class="jumbotron">
 		<h2>No hay productos</h2>
