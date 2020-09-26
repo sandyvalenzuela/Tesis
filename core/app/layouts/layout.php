@@ -10,7 +10,7 @@
     <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="plugins/dist/css/AdminLTE.min.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/dist/css/skins/skin-blue-light.min.css" rel="stylesheet" type="text/css" />
+    <link href="plugins/dist/css/skins/skin-green-light.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -33,17 +33,19 @@
 
   </head>
 
-  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>  skin-blue-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
+  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>  
+  skin-green-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
     <div class="wrapper">
-      <!-- Main Header -->
+    <!-- Encabezado principal -->
       <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>
       <header class="main-header">
         <!-- Logo -->
         <a href="./" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>I</b>L</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Sistema</b>Pedidos</span>
+          <!-- mini logo r mini 50x50 pixels -->
+          <span class="logo-mini"><b>S</b>P</span>
+          <!-- logotipo para dispositivos móviles y estatales regulares -->
+        
+          <span class="logo-lg "><b>Sistema</b>Pedidos</span>
         </a>
 
         <!-- Header Navbar -->
