@@ -29,7 +29,7 @@ class PersonaData {
 		Executor::doit($sql);
 	}
 
-// partiendo de que ya tenemos creado un objecto PersonData previamente utilizamos el contexto
+// partiendo de que ya tenemos creado un objecto PersonaData previamente utilizamos el contexto
 	public function update(){
 		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
 		Executor::doit($sql);

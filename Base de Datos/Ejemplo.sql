@@ -93,6 +93,7 @@ create table categoria(
 create table producto(
 	id int not null auto_increment primary key,
 	image varchar(255),
+	codigo int,
 	nombre varchar(50),
 	descripcion text,
 	presentacion varchar(255),
