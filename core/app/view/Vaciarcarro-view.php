@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET["product_id"])){
+if(isset($_GET["Producto_id"])){
 	$cart=$_SESSION["cart"];
 	if(count($cart)==1){
 	 unset($_SESSION["cart"]);
@@ -7,7 +7,7 @@ if(isset($_GET["product_id"])){
 		$ncart = null;
 		$nx=0;
 		foreach($cart as $c){
-			if($c["product_id"]!=$_GET["product_id"]){
+			if($c["Producto_id"]!=$_GET["Producto_id"]){
 				$ncart[$nx]= $c;
 			}
 			$nx++;
@@ -19,6 +19,6 @@ if(isset($_GET["product_id"])){
  unset($_SESSION["cart"]);
 }
 
-print "<script>window.location='index.php?view=sell';</script>";
+print "<script>window.location='index.php?view=Pedido';</script>";
 
 ?>

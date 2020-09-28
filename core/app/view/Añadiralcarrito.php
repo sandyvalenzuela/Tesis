@@ -3,8 +3,8 @@
 if(!isset($_SESSION["cartn"])){
 
 
-	$product = array("product_id"=>$_POST["product_id"],"q"=>$_POST["q"]);
-	$_SESSION["cartn"] = array($product);
+	$Producto = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
+	$_SESSION["cartn"] = array($Producto);
 
 
 	$cart = $_SESSION["cartn"];
@@ -16,7 +16,7 @@ if(!isset($_SESSION["cartn"])){
 		foreach($cart as $c){
 
 			///
-			$q = OperationData::getQNoF($c["product_id"],$cut->id);
+			$q = OperacionData::getQNoF($c["Producto_id"],$cut->id);
 			print_r($c);
 			echo ">>".$q;
 			if($c["q"]<=$q){
@@ -24,7 +24,7 @@ if(!isset($_SESSION["cartn"])){
 
 
 			}else{
-				$error = array("product_id"=>$c["product_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
+				$error = array("Producto_id"=>$c["Producto_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
 				$errors[count($errors)] = $error;
 			}
 
@@ -40,7 +40,7 @@ if($process==false){
 $_SESSION["errorsn"] = $errors;
 	?>	
 <script>
-	window.location="index.php?view=selln";
+	window.location="index.php?view=Pedido";
 </script>
 <?php
 }
@@ -54,7 +54,7 @@ $found = false;
 $cart = $_SESSION["cartn"];
 $index=0;
 
-$q = OperationData::getQYesF($_POST["product_id"],$cut->id);
+$q = OperacionData::getQYesF($_POST["Producto_id"],$cut->id);
 
 
 
@@ -63,7 +63,7 @@ $q = OperationData::getQYesF($_POST["product_id"],$cut->id);
 $can = true;
 if($_POST["q"]<=$q){
 }else{
-	$error = array("product_id"=>$_POST["product_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
+	$error = array("Producto_id"=>$_POST["Producto_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
 	$errors[count($errors)] = $error;
 	$can=false;
 }
@@ -72,7 +72,7 @@ if($can==false){
 $_SESSION["errors"] = $errors;
 	?>	
 <script>
-	window.location="index.php?view=selln";
+	window.location="index.php?view=pedidos";
 </script>
 <?php
 }
@@ -81,7 +81,7 @@ $_SESSION["errors"] = $errors;
 <?php
 if($can==true){
 foreach($cart as $c){
-	if($c["product_id"]==$_POST["product_id"]){
+	if($c["Producto_id"]==$_POST["Producto_id"]){
 		echo "found";
 		$found=true;
 		break;
@@ -100,15 +100,15 @@ if($found==true){
 
 if($found==false){
     $nc = count($cart);
-	$product = array("product_id"=>$_POST["product_id"],"q"=>$_POST["q"]);
-	$cart[$nc] = $product;
+	$Producto = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
+	$cart[$nc] = $Producto;
 	print_r($cart);
 	$_SESSION["cartn"] = $cart;
 }
 
 }
 }
- print "<script>window.location='index.php?view=selln';</script>";
-// unset($_SESSION["cartn"]);
+ print "<script>window.location='index.php?view=Pedidos';</script>";
+
 
 ?>

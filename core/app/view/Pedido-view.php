@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-md-12">
-	<h1>Venta</h1>
+	<h1>Pedidos</h1>
 	<p><b>Buscar producto por nombre o por codigo:</b></p>
 		<form id="searchp">
 		<div class="row">
 			<div class="col-md-6">
-				<input type="hidden" name="view" value="sell">
-				<input type="text" id="product_code" name="product" class="form-control">
+				<input type="hidden" name="view" value="Pedido">
+				<input type="text" id="Producto_Codigo" name="Producto" class="form-control">
 			</div>
 			<div class="col-md-3">
 			<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Buscar</button>
@@ -16,16 +16,16 @@
 	</div>
 <div id="show_search_results"></div>
 <script>
-//jQuery.noConflict();
+
 
 $(document).ready(function(){
 	$("#searchp").on("submit",function(e){
 		e.preventDefault();
 		
-		$.get("./?action=searchproduct",$("#searchp").serialize(),function(data){
+		$.get("./?action=BuscarProducto",$("#searchp").serialize(),function(data){
 			$("#show_search_results").html(data);
 		});
-		$("#product_code").val("");
+		$("#Producto_codigo").val("");
 
 	});
 	});
