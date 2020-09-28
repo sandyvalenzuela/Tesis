@@ -22,7 +22,7 @@ if($found==true) {
 	$_SESSION['Usuario_id']=$userid ;
 
 	print "Cargando ... $user";
-	print "<script>window.location='index.php?view=home';</script>";
+	print "<script>window.location='index.php?view=Home';</script>";
 }else {
 	print "<script>window.location='index.php?view=login';</script>";
 }

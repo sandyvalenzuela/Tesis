@@ -42,7 +42,8 @@ $q= OperacionData::getQYesF($Producto->id);
 </table>
 
 	<?php
-}else{
+}
+else{
 	echo "<br><p class='alert alert-danger'>No se encontro el producto</p>";
 }
 ?>
