@@ -3,6 +3,7 @@ class ProductoData {
 	public static $tablename = "producto";
 
 	public function ProductoData(){
+		$this->codigo = "";
 		$this->nombre = "";
 		$this->Usuario_id = "";
 		$this->presentacion = "0";
@@ -12,13 +13,13 @@ class ProductoData {
 	public function getCategoria(){ return CategoriaData::getById($this->Categoria_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (nombre,description,Usuario_id,presentacion,Categoria_id,created_at) ";
-		$sql .= "value (\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id,NOW())";
+		$sql = "insert into ".self::$tablename." (codigo,nombre,description,Usuario_id,presentacion,Categoria_id,created_at) ";
+		$sql .= "value (\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (image,nombre,descripcion,Usuario_id,presentacion,Categoria_id) ";
-		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
+		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,Categoria_id) ";
+		$sql .= "value (\"$this->codigo\",\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
 		return Executor::doit($sql);
 	}
 

@@ -70,6 +70,7 @@ if($px<=$npaginas):
 <br><table class="table table-bordered table-hover">
 	<thead>
 		<th>Imagen</th>
+		<th>codigo</th>
 		<th>Nombre</th>
 		<th>Categoria</th>
 		<th>Activo</th>
@@ -83,6 +84,7 @@ if($px<=$npaginas):
 				<img src="storage/productos/<?php echo $Producto->image;?>" style="width:64px;">
 			<?php endif;?>
 		</td>
+		<td><?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
 		<td><?php if($Producto->Categoria_id!=null){echo $Producto->getCategoria()->nombre;}else{ echo "<center>----</center>"; }  ?></td>
 		<td><?php if($Producto->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>

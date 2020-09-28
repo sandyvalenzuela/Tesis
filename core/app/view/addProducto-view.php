@@ -3,6 +3,7 @@
 
 if(count($_POST)>0){
   $Producto = new ProductoData();
+  $Producto->codigo = $_POST["codigo"];
   $Producto->nombre = $_POST["nombre"];
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];

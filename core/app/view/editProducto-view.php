@@ -25,12 +25,20 @@ if($Producto!=null):
     </div>
   </div>
 
+
+  <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Codigo*</label>
+    <div class="col-md-8">
+      <input type="text" name="codigo" class="form-control" id="codigo" value="<?php echo $Producto->codigo; ?>" placeholder="Nombre del Producto">
+    </div>
   
     <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Nombre*</label>
     <div class="col-md-8">
       <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $Producto->nombre; ?>" placeholder="Nombre del Producto">
     </div>
+
+
   </div>
     <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Categoria</label>
@@ -52,7 +60,7 @@ if($Producto!=null):
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-3 control-label">Presentacion</label>
     <div class="col-md-8">
-      <input type="text" name="presentacion" class="form-control" id="inputEmail1" value="<?php echo $Producto->presentacion; ?>" placeholder="Presentacion del Producto">
+      <input type="text" name="presentacion" class="form-control" id="inputEmail" value="<?php echo $Producto->presentacion; ?>" placeholder="Presentacion del Producto">
     </div>
   </div>
  

@@ -3,7 +3,7 @@
 if(count($_POST)>0){
 	$producto = ProductoData::getById($_POST["producto_id"]);
 
-	
+	$producto->codigo = $_POST["codigo"];
 	$producto->nombre = $_POST["nombre"];
   $producto->descripcion = $_POST["descripcion"];
   $producto->presentacion = $_POST["presentacion"];
@@ -31,7 +31,7 @@ if(count($_POST)>0){
 	}
 
 	setcookie("prdupd","true");
-	print "<script>window.location='index.php?view=editProducto&id=$_POST[product_id]';</script>";
+	print "<script>window.location='index.php?view=editProducto&id=$_POST[Producto_id]';</script>";
 
 
 }
