@@ -91,9 +91,6 @@ $Clientes = PersonaData::getClientes();
 		<td><?php echo $Operacion->created_at; ?></td>
 	</tr>
 </table>
-			 <?php else:
-			 // si no hay operaciones
-			 ?>
 <script>
 	$("#wellcome").hide();
 </script>
@@ -102,8 +99,10 @@ $Clientes = PersonaData::getClientes();
 	<p>El rango de fechas seleccionado no proporciono ningun resultado de operaciones.</p>
 </div>
 
-			 <?php endif; ?>
+<?php endif; ?>
 <?php else:?>
+
+
 <script>
 	$("#wellcome").hide();
 </script>
@@ -111,9 +110,14 @@ $Clientes = PersonaData::getClientes();
 	<h2>Fecha Incorrectas</h2>
 	<p>Puede ser que no selecciono un rango de fechas, o el rango seleccionado es incorrecto.</p>
 </div>
+
 <?php endif;?>
 
-		<?php endif; ?>
+
+<?php endif; ?>
+
+
+		
 	</div>
 </div>
 
