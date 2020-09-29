@@ -58,14 +58,6 @@ if($px<=$npaginas):
 <a class="btn btn-sm btn-default" href="<?php echo "index.php?view=productos&limit=$limit&page=".($px); ?>">Adelante <i class="glyphicon glyphicon-chevron-right"></i></a>
 <?php endif; ?>
 </div>
-
-
-
-
-
-
-
-
 		<div class="clearfix"></div>	
 <br><table class="table table-bordered table-hover">
 	<thead>

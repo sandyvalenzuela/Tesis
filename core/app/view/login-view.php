@@ -1,7 +1,7 @@
 <?php
 
-if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!=""){
-		print "<script>window.location='index.php?view=home';</script>";
+if(isset($_SESSION["Usaurio_id"]) && $_SESSION["Usuario_id"]!=""){
+		print "<script>window.location='index.php?view=Home';</script>";
 }
 
 ?>
@@ -26,7 +26,7 @@ if(isset($_SESSION["user_id"]) && $_SESSION["user_id"]!=""){
 
 <div class="card">
                               <div class="card-header" data-background-color="green">
-                                  <h4 class="title">Acceder a Inventio Lite</h4>
+                                  <h4 class="title">Acceder a Sistema de Pedidos</h4>
                               </div>
                 <div class="card-content">
  
