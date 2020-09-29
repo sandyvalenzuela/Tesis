@@ -6,7 +6,7 @@
 
 <?php
 
-$Productos = PedidoData::getSells();
+$Productos = PedidoData::getPedidos();
 
 if(count($Productos)>0){
 
@@ -37,7 +37,7 @@ echo count($operaciones);
 
 		</td>
 		<td><?php echo $Pedido->created_at; ?></td>
-		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $sell->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
+		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 	</tr>
 
 <?php endforeach; ?>

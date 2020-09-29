@@ -51,11 +51,11 @@ $(document).ready(function(){
 	<th>Mensaje</th>
 </tr>
 <?php foreach ($_SESSION["errors"]  as $error):
-$product = ProductData::getById($error["product_id"]);
+$Producto = ProductoData::getById($error["Producto_id"]);
 ?>
 <tr class="danger">
-	<td><?php echo $product->id; ?></td>
-	<td><?php echo $product->name; ?></td>
+	<td><?php echo $Producto->id; ?></td>
+	<td><?php echo $Product->nombre; ?></td>
 	<td><b><?php echo $error["message"]; ?></b></td>
 </tr>
 
@@ -70,77 +70,41 @@ unset($_SESSION["errors"]);
 <?php if(isset($_SESSION["cart"])):
 $total = 0;
 ?>
-<h2>Lista de venta</h2>
+<h2>Lista de Pedidos</h2>
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:30px;">Codigo</th>
-	<th style="width:30px;">Cantidad</th>
-	<th style="width:30px;">Unidad</th>
-	<th>Producto</th>
-	<th style="width:30px;">Precio Unitario</th>
-	<th style="width:30px;">Precio Total</th>
+
 	<th ></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
-$product = ProductData::getById($p["product_id"]);
+$Producto = ProductoData::getById($p["Producto_id"]);
 ?>
 <tr >
-	<td><?php echo $product->id; ?></td>
+	<td><?php echo $Producto->id; ?></td>
 	<td ><?php echo $p["q"]; ?></td>
-	<td><?php echo $product->unit; ?></td>
-	<td><?php echo $product->name; ?></td>
-	<td><b>$ <?php echo number_format($product->price_out); ?></b></td>
-	<td><b>$ <?php  $pt = $product->price_out*$p["q"]; $total +=$pt; echo number_format($pt); ?></b></td>
-	<td style="width:30px;"><a href="index.php?view=clearcart&product_id=<?php echo $product->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
+	<td><?php echo $Producto->nombre; ?></td>
+	<td style="width:30px;"><a href="index.php?view=Vaciarcarro&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
 </tr>
 
 <?php endforeach; ?>
 </table>
-<form method="post" class="form-horizontal" id="processsell" action="index.php?view=processsell">
+<form method="post" class="form-horizontal" id="processsell" action="index.php?view=Procesopedido">
 <h2>Resumen</h2>
 <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Cliente</label>
+    <label for="inputEmail" class="col-lg-2 control-label">Cliente</label>
     <div class="col-lg-10">
     <?php 
-$clients = PersonData::getClients();
+$Clientes = PersonaData::getClientes();
     ?>
-    <select name="client_id" class="form-control">
+    <select name="Cliente_id" class="form-control">
     <option value="">-- NINGUNO --</option>
-    <?php foreach($clients as $client):?>
-    	<option value="<?php echo $client->id;?>"><?php echo $client->name." ".$client->lastname;?></option>
+    <?php foreach($Clientes as $Cliente):?>
+    	<option value="<?php echo $Cliente->id;?>"><?php echo $Cliente->nombre." ".$client->apellido;?></option>
     <?php endforeach;?>
     	</select>
     </div>
   </div>
-<div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Descuento</label>
-    <div class="col-lg-10">
-      <input type="text" name="discount" class="form-control" required value="0" id="discount" placeholder="Descuento">
-    </div>
-  </div>
- <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Efectivo</label>
-    <div class="col-lg-10">
-      <input type="text" name="money" required class="form-control" id="money" placeholder="Efectivo">
-    </div>
-  </div>
-      <input type="hidden" name="total" value="<?php echo $total; ?>" class="form-control" placeholder="Total">
-
-  <div class="row">
-<div class="col-md-6 col-md-offset-6">
-<table class="table table-bordered">
-<tr>
-	<td><p>Subtotal</p></td>
-	<td><p><b>$ <?php echo number_format($total*.84); ?></b></p></td>
-</tr>
-<tr>
-	<td><p>IVA</p></td>
-	<td><p><b>$ <?php echo number_format($total*.16); ?></b></p></td>
-</tr>
-<tr>
-	<td><p>Total</p></td>
-	<td><p><b>$ <?php echo number_format($total); ?></b></p></td>
-</tr>
 
 </table>
   <div class="form-group">
@@ -156,28 +120,14 @@ $clients = PersonData::getClients();
     <div class="col-lg-offset-2 col-lg-10">
       <div class="checkbox">
         <label>
-		<a href="index.php?view=clearcart" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
-        <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-usd"></i><i class="glyphicon glyphicon-usd"></i> Finalizar Venta</button>
+		<a href="index.php?view=Vaciarcarro" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
+        <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-usd"></i><i class="glyphicon glyphicon-usd"></i> Finalizar Pedido</button>
         </label>
       </div>
     </div>
   </div>
 </form>
-<script>
-	$("#processsell").submit(function(e){
-		discount = $("#discount").val();
-		money = $("#money").val();
-		if(money<(<?php echo $total;?>-discount)){
-			alert("No se puede efectuar la operacion");
-			e.preventDefault();
-		}else{
-			if(discount==""){ discount=0;}
-			go = confirm("Cambio: $"+(money-(<?php echo $total;?>-discount ) ) );
-			if(go){}
-				else{e.preventDefault();}
-		}
-	});
-</script>
+
 </div>
 </div>
 
