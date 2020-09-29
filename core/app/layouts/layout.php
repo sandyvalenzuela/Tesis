@@ -85,22 +85,24 @@
           </div>
         </nav>
       </header>
-      <!-- Left side column. contains the logo and sidebar -->
+      <!-- Columna del lado izquierdo. contiene el logo y la barra lateral -->
       <aside class="main-sidebar">
 
-        <!-- sidebar: style can be found in sidebar.less -->
+        <!-- barra lateral: el estilo se puede encontrar en la barra lateral. -->
         <section class="sidebar">
 
-          <!-- Sidebar Menu -->
+          <!-- Menú de la barra lateral -->
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
             <?php if(isset($_SESSION["Usuario_id"])):?>
                         <li><a href="./index.php?view=Home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
+                        <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+
+
             <li><a href="./?view=pedido"><i class='fa fa-usd'></i> <span>Pedido</span></a></li>
             <li><a href="./?view=pedidos"><i class='fa fa-shopping-cart'></i> <span>Pedidos</span></a></li>
-             <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
-
-            <li class="treeview">
+            
+              <li class="treeview">
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=categorias">Categorias</a></li>
@@ -119,8 +121,8 @@
                <li class="treeview">
               <a href="#"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=reports">Inventario</a></li>
-                <li><a href="./?view=sellreports">Ventas</a></li>
+                <li><a href="./?view=reportes">Inventario</a></li>
+                <li><a href="./?view=Pedidosreportes">Ventas</a></li>
               </ul>
             </li>
 

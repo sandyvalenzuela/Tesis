@@ -1,5 +1,5 @@
 <?php
-$products = ProductData::getAll();
+$Productos = ProductoData::getAll();
 ?>
 <section class="content">
 <div class="row">
@@ -7,14 +7,14 @@ $products = ProductData::getAll();
 	<h1>Reportes</h1>
 
 						<form>
-						<input type="hidden" name="view" value="reports">
+						<input type="hidden" name="view" value="Reportes">
 <div class="row">
 <div class="col-md-3">
 
-<select name="product_id" class="form-control">
+<select name="Producto_id" class="form-control">
 	<option value="">--  TODOS --</option>
-	<?php foreach($products as $p):?>
-	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+	<?php foreach($Productos as $p):?>
+	<option value="<?php echo $p->id;?>"><?php echo $p->nombre;?></option>
 	<?php endforeach; ?>
 </select>
 
@@ -31,13 +31,7 @@ $products = ProductData::getAll();
 </div>
 
 </div>
-<!--
-<br>
-<div class="row">
-<div class="col-md-4">
 
-<select name="mesero_id" class="form-control">
-	<option value="">--  MESEROS --</option>
 	<?php foreach($meseros as $p):?>
 	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
 	<?php endforeach; ?>
@@ -48,7 +42,7 @@ $products = ProductData::getAll();
 <div class="col-md-4">
 
 <select name="operation_type_id" class="form-control">
-	<option value="1">VENTA</option>
+	<option value="1">Pedido</option>
 </select>
 
 </div>
@@ -66,19 +60,19 @@ $products = ProductData::getAll();
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
 			<?php 
-			$operations = array();
+			$Operaciones = array();
 
-			if($_GET["product_id"]==""){
-			$operations = OperationData::getAllByDateOfficial($_GET["sd"],$_GET["ed"]);
+			if($_GET["Producto_id"]==""){
+			$Operacions = OperacionData::getAllByDateOfficial($_GET["sd"],$_GET["ed"]);
 			}
 			else{
-			$operations = OperationData::getAllByDateOfficialBP($_GET["product_id"],$_GET["sd"],$_GET["ed"]);
+			$Operacions = OperacionData::getAllByDateOfficialBP($_GET["Producto_id"],$_GET["sd"],$_GET["ed"]);
 			} 
 
 
 			 ?>
 
-			 <?php if(count($operations)>0):?>
+			 <?php if(count($Operaciones)>0):?>
 <table class="table table-bordered">
 	<thead>
 		<th>Id</th>
@@ -87,20 +81,20 @@ $products = ProductData::getAll();
 		<th>Operacion</th>
 		<th>Fecha</th>
 	</thead>
-<?php foreach($operations as $operation):?>
+<?php foreach($Operaciones as $Operacion):?>
 	<tr>
-		<td><?php echo $operation->id; ?></td>
-		<td><?php echo $operation->getProduct()->name; ?></td>
-		<td><?php echo $operation->q; ?></td>
-		<td><?php echo $operation->getOperationType()->name; ?></td>
-		<td><?php echo $operation->created_at; ?></td>
+		<td><?php echo $Operacion->id; ?></td>
+		<td><?php echo $Operacion->getProducto()->nombre; ?></td>
+		<td><?php echo $Operacion->q; ?></td>
+		<td><?php echo $Operacion->getOperacionTipo()->nombre; ?></td>
+		<td><?php echo $Operacion->created_at; ?></td>
 	</tr>
 <?php endforeach; ?>
 
 </table>
 
 			 <?php else:
-			 // si no hay operaciones
+
 			 ?>
 <script>
 	$("#wellcome").hide();
