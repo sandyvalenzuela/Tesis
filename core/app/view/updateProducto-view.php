@@ -1,31 +1,31 @@
 <?php
 
 if(count($_POST)>0){
-	$producto = ProductoData::getById($_POST["producto_id"]);
+	$Producto = ProductoData::getById($_POST["Producto_id"]);
 
-	$producto->codigo = $_POST["codigo"];
-	$producto->nombre = $_POST["nombre"];
-  $producto->descripcion = $_POST["descripcion"];
-  $producto->presentacion = $_POST["presentacion"];
-  $categoria_id="NULL";
-  if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
+	$Producto->codigo = $_POST["codigo"];
+	$Producto->nombre = $_POST["nombre"];
+  $Producto->descripcion = $_POST["descripcion"];
+  $Producto->presentacion = $_POST["presentacion"];
+  $Categoria_id="NULL";
+  if($_POST["Categoria_id"]!=""){ $Categoria_id=$_POST["Categoria_id"];}
 
   $is_active=0;
   if(isset($_POST["is_active"])){ $is_active=1;}
 
-  $producto->is_active=$is_active;
-  $producto->categoria_id=$categoria_id;
+  $Producto->is_active=$is_active;
+  $Producto->Categoria_id=$Categoria_id;
 
-	$producto->Usuario_id = $_SESSION["Usuario_id"];
-	$producto->update();
+	$Producto->Usuario_id = $_SESSION["Usuario_id"];
+	$Producto->update();
 
 	if(isset($_FILES["image"])){
 		$image = new Upload($_FILES["image"]);
 		if($image->uploaded){
 			$image->Process("storage/productos/");
 			if($image->processed){
-				$product->image = $image->file_dst_name;
-				$product->update_image();
+				$Producto->image = $image->file_dst_name;
+				$Producto->update_image();
 			}
 		}
 	}

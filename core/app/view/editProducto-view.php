@@ -14,10 +14,10 @@ if($Producto!=null):
 		<form class="form-horizontal" method="post" id="addProducto" enctype="multipart/form-data" action="index.php?view=updateProducto" role="form">
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Imagen*</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Imagen*</label>
     <div class="col-md-8">
       <input type="file" name="image" id="nombre" placeholder="">
-<?php if($producto->image!=""):?>
+      <?php if($producto->image!=""):?>
   <br>
         <img src="storage/Productos/<?php echo $Producto->image;?>" class="img-responsive">
 
@@ -27,13 +27,13 @@ if($Producto!=null):
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Codigo*</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Codigo*</label>
     <div class="col-md-8">
       <input type="text" name="codigo" class="form-control" id="codigo" value="<?php echo $Producto->codigo; ?>" placeholder="Nombre del Producto">
     </div>
   
     <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Nombre*</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Nombre*</label>
     <div class="col-md-8">
       <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $Producto->nombre; ?>" placeholder="Nombre del Producto">
     </div>
@@ -41,7 +41,7 @@ if($Producto!=null):
 
   </div>
     <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Categoria</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Categoria</label>
     <div class="col-md-8">
     <select name="Categoria_id" class="form-control">
     <option value="">-- NINGUNA --</option>
@@ -51,14 +51,14 @@ if($Producto!=null):
       </select>    </div>
   </div>
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Descripcion</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Descripcion</label>
     <div class="col-md-8">
       <textarea name="descripcion" class="form-control" id="descripcion" placeholder="Descripcion del Producto"><?php echo $Producto->descripcion;?></textarea>
     </div>
   </div>
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label">Presentacion</label>
+    <label for="inputEmail" class="col-lg-3 control-label">Presentacion</label>
     <div class="col-md-8">
       <input type="text" name="presentacion" class="form-control" id="inputEmail" value="<?php echo $Producto->presentacion; ?>" placeholder="Presentacion del Producto">
     </div>
@@ -66,7 +66,7 @@ if($Producto!=null):
  
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-3 control-label" >Esta activo</label>
+    <label for="inputEmail" class="col-lg-3 control-label" >Esta activo</label>
     <div class="col-md-8">
 <div class="checkbox">
     <label>
