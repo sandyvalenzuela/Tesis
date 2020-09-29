@@ -94,6 +94,8 @@
           <!-- Menú de la barra lateral -->
           <ul class="sidebar-menu">
             <li class="header">ADMINISTRACION</li>
+
+
             <?php if(isset($_SESSION["Usuario_id"])):?>
                         <li><a href="./index.php?view=Home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
                         <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
@@ -153,7 +155,7 @@
     <?php endif;?>
 
       <!-- Content Wrapper. Contains page content -->
-      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["Cliente_id"])):?>
       <div class="content-wrapper">
       <div class="content">
         <?php View::load("index");?>
@@ -170,7 +172,7 @@
 <div class="login-box">
       <div class="login-logo">
       <a href="./"><b>Sistema </b><b> de  </b><b> Pedidos</b></a>
-      <body style="background-color: cyan">
+      <body style="background-color: red">
       </div><!-- /.login-logo -->
       <img src="Imagenes/photo.jpg" height="255">
       <div class="login-box-body">

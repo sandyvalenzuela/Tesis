@@ -14,12 +14,12 @@ $found = false;
 $Usuarioid = null;
 while($r = $query->fetch_array()){
 	$found = true ;
-	$userid = $r['id'];
+	$Usuarioid = $r['id'];
 }
 
 if($found==true) {
 
-	$_SESSION['Usuario_id']=$Usaurioid ;
+	$_SESSION['Usuario_id']=$Usuarioid ;
 
 	print "Cargando ... $Usuario";
 	print "<script>window.location='index.php?view=Home';</script>";
