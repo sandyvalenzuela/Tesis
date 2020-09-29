@@ -1,19 +1,19 @@
 <?php
-$clients = PersonData::getClients();
+$Clientes = PersonaData::getClientes();
 ?>
 <section class="content">
 <div class="row">
 	<div class="col-md-12">
-	<h1>Reportes de Ventas</h1>
+	<h1>Reportes de Pedidos</h1>
 
 						<form>
-						<input type="hidden" name="view" value="sellreports">
+						<input type="hidden" name="view" value="Pedidoreportes">
 <div class="row">
 <div class="col-md-3">
 
-<select name="client_id" class="form-control">
+<select name="Cliente_id" class="form-control">
 	<option value="">--  TODOS --</option>
-	<?php foreach($clients as $p):?>
+	<?php foreach($Clientes as $p):?>
 	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
 	<?php endforeach; ?>
 </select>
@@ -66,43 +66,31 @@ $clients = PersonData::getClients();
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
 			<?php 
-			$operations = array();
+			$Operaciones = array();
 
-			if($_GET["client_id"]==""){
-			$operations = SellData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
+			if($_GET["Cliente_id"]==""){
+			$Operaciones = PedidoData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
 			}
 			else{
-			$operations = SellData::getAllByDateBCOp($_GET["client_id"],$_GET["sd"],$_GET["ed"],2);
+			$Operaciones = PedidoData::getAllByDateBCOp($_GET["Cliente_id"],$_GET["sd"],$_GET["ed"],2);
 			} 
 
 
 			 ?>
 
-			 <?php if(count($operations)>0):?>
-			 	<?php $supertotal = 0; ?>
+			 <?php if(count($Operaciones)>0):?>
+	
 <table class="table table-bordered">
 	<thead>
-		<th>Id</th>
-		<th>Subtotal</th>
-		<th>Descuento</th>
-		<th>Total</th>
+		<th>Id</th>	
 		<th>Fecha</th>
 	</thead>
-<?php foreach($operations as $operation):?>
+<?php foreach($Operaciones as $Operacion):?>
 	<tr>
-		<td><?php echo $operation->id; ?></td>
-		<td>$ <?php echo number_format($operation->total,2,'.',','); ?></td>
-		<td>$ <?php echo number_format($operation->discount,2,'.',','); ?></td>
-		<td>$ <?php echo number_format($operation->total-$operation->discount,2,'.',','); ?></td>
-		<td><?php echo $operation->created_at; ?></td>
+		<td><?php echo $Operacion->id; ?></td>
+		<td><?php echo $Operacion->created_at; ?></td>
 	</tr>
-<?php
-$supertotal+= ($operation->total-$operation->discount);
- endforeach; ?>
-
 </table>
-<h1>Total de ventas: $ <?php echo number_format($supertotal,2,'.',','); ?></h1>
-
 			 <?php else:
 			 // si no hay operaciones
 			 ?>
