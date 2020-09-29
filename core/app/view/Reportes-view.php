@@ -32,6 +32,14 @@ $Productos = ProductoData::getAll();
 
 </div>
 
+
+<!--
+<br>
+<div class="row">
+<div class="col-md-4">
+
+<select name="mesero_id" class="form-control">
+	<option value="">--  MESEROS --</option>
 	<?php foreach($meseros as $p):?>
 	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
 	<?php endforeach; ?>
@@ -42,13 +50,14 @@ $Productos = ProductoData::getAll();
 <div class="col-md-4">
 
 <select name="operation_type_id" class="form-control">
-	<option value="1">Pedido</option>
+	<option value="1">VENTA</option>
 </select>
 
 </div>
 
 </div>
 -->
+
 </form>
 
 	</div>
