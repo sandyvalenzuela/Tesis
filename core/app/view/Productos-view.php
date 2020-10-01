@@ -73,7 +73,7 @@ if($px<=$npaginas):
 	<tr>
 		<td>
 			<?php if($Producto->image!=""):?>
-				<img src="storage/productos/<?php echo $Producto->image;?>" style="width:64px;">
+				<img src="Imagenes/Productos/<?php echo $Producto->image;?>" style="width:64px;">
 			<?php endif;?>
 		</td>
 		<td><?php echo $Producto->codigo; ?></td>

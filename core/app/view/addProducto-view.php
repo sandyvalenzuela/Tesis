@@ -16,7 +16,7 @@ if(count($_POST)>0){
   if(isset($_FILES["image"])){
     $image = new Upload($_FILES["image"]);
     if($image->uploaded){
-      $image->Process("storage/Productos/");
+      $image->Process("Imagenes/Productos/");
       if($image->processed){
         $Producto->image = $image->file_dst_name;
         $prod = $Producto->add_with_image();

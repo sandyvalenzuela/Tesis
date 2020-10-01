@@ -39,7 +39,7 @@ class ProductoData {
 		Executor::doit($sql);
 	}
 
-	public function del_categoria(){
+	public function del_Categoria(){
 		$sql = "update ".self::$tablename." set Categoria_id=NULL where id=$this->id";
 		Executor::doit($sql);
 	}

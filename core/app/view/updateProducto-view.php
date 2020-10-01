@@ -22,7 +22,7 @@ if(count($_POST)>0){
 	if(isset($_FILES["image"])){
 		$image = new Upload($_FILES["image"]);
 		if($image->uploaded){
-			$image->Process("storage/productos/");
+			$image->Process("Imagenes/Productos/");
 			if($image->processed){
 				$Producto->image = $image->file_dst_name;
 				$Producto->update_image();

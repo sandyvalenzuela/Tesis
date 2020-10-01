@@ -11,3 +11,4 @@ Core::redir("./index.php?view=Categorias");
 
 
 ?>
+

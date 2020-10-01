@@ -17,19 +17,20 @@ if($Producto!=null):
     <label for="inputEmail" class="col-lg-3 control-label">Imagen*</label>
     <div class="col-md-8">
       <input type="file" name="image" id="nombre" placeholder="">
-      <?php if($producto->image!=""):?>
+      <?php if($Producto->image!=""):?>
   <br>
-        <img src="storage/Productos/<?php echo $Producto->image;?>" class="img-responsive">
+        <img src="Imagenes/Productos/<?php echo $Producto->image;?>" class="img-responsive">
 
 <?php endif;?>
     </div>
   </div>
+  
 
 
   <div class="form-group">
     <label for="inputEmail" class="col-lg-3 control-label">Codigo*</label>
     <div class="col-md-8">
-      <input type="text" name="codigo" class="form-control" id="codigo" value="<?php echo $Producto->codigo; ?>" placeholder="Nombre del Producto">
+      <input type="text" name="codigo" class="form-control" id="codigo" value="<?php echo $Producto->codigo; ?>" placeholder="Codigo del Producto">
     </div>
   
     <div class="form-group">
@@ -50,6 +51,9 @@ if($Producto!=null):
     <?php endforeach;?>
       </select>    </div>
   </div>
+
+
+  
   <div class="form-group">
     <label for="inputEmail" class="col-lg-3 control-label">Descripcion</label>
     <div class="col-md-8">
