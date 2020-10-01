@@ -15,8 +15,8 @@
 <br>
 		<?php
 
-		$usuarios = PersonaData::getClientes();
-		if(count($usuarios)>0){
+		$Usuarios = PersonaData::getClientes();
+		if(count($Usuarios)>0){
 		
 			?>
 

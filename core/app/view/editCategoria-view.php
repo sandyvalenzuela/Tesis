@@ -7,7 +7,7 @@
 
 
   <div class="form-group">
-    <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
+    <label for="inputEmail" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
       <input type="text" name="nombre" value="<?php echo $Usuario->nombre;?>" class="form-control" id="nombre" placeholder="Nombre">
     </div>

@@ -3,7 +3,7 @@ class PersonaData {
 	public static $tablename = "persona";
 
 
-	public function PersonData(){
+	public function PersonaData(){
 		$this->nombre = "";
 		$this->apellido = "";
 		$this->email = "";
@@ -12,7 +12,7 @@ class PersonaData {
 		$this->created_at = "NOW()";
 	}
 
-	public function add_cliente(){
+	public function add_Cliente(){
 		$sql = "insert into persona (nombre,apellido,direccion,email,telefono,kind,created_at) ";
 		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->direccion\",\"$this->email\",\"$this->telefono\",1,$this->created_at)";
 		Executor::doit($sql);
@@ -35,7 +35,7 @@ class PersonaData {
 		Executor::doit($sql);
 	}
 
-	public function update_client(){
+	public function update_Cliente(){
 		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
 		Executor::doit($sql);
 	}
