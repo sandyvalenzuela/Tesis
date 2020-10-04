@@ -32,7 +32,7 @@ if($Producto!=null):
     <div class="col-md-8">
       <input type="text" name="codigo" class="form-control" id="codigo" value="<?php echo $Producto->codigo; ?>" placeholder="Codigo del Producto">
     </div>
-    
+
     </div>
     <div class="form-group">
     <label for="inputEmail" class="col-lg-3 control-label">Nombre*</label>
