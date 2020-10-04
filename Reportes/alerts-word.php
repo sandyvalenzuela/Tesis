@@ -1,8 +1,8 @@
 <?php
 include "../core/autoload.php";
-include "../core/app/model/ProductData.php";
-include "../core/app/model/OperationData.php";
-include "../core/app/model/OperationTypeData.php";
+include "../core/app/model/ProductoData.php";
+include "../core/app/model/OperacionData.php";
+include "../core/app/model/OperacionTipoData.php";
 
 require_once '../PhpWord/Autoloader.php';
 use PhpOffice\PhpWord\Autoloader;
@@ -11,7 +11,7 @@ use PhpOffice\PhpWord\Settings;
 Autoloader::register();
 
 $word = new  PhpOffice\PhpWord\PhpWord();
-$products = ProductData::getAll();
+$Productos = ProductoData::getAll();
 
 
 $section1 = $word->AddSection();
