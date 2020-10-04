@@ -5,6 +5,7 @@ if(count($_POST)>0){
 
 	$Producto->codigo = $_POST["codigo"];
 	$Producto->nombre = $_POST["nombre"];
+	
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];
   $Categoria_id="NULL";
@@ -31,7 +32,7 @@ if(count($_POST)>0){
 	}
 
 	setcookie("prdupd","true");
-	print "<script>window.location='index.php?view=editProducto&id=$_POST[Producto_id]';</script>";
+	print "<script>window.location='index.php?view=Producto&id=$_POST[Producto_id]';</script>";
 
 
 }

@@ -5,15 +5,14 @@ class OperacionData {
 	public function OperacionData(){
 		$this->nombre = "";
 		$this->producto_id = "";
-		$this->dinero = "";
 		$this->cut_id = "";
 		$this->operacion_tipo_id = "";
 		$this->created_at = "NOW()";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (producto_id,dinero,operacion_tipo_id,pedido_id,created_at) ";
-		$sql .= "value (\"$this->producto_id\",\"$this->dinero\",$this->operacion_tipo_id,$this->pedido_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (producto_id,operacion_tipo_id,pedido_id,created_at) ";
+		$sql .= "value (\"$this->producto_id\",$this->operacion_tipo_id,$this->pedido_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -28,7 +27,7 @@ class OperacionData {
 
 // partiendo de que ya tenemos creado un objecto OperacionData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set producto_id=\"$this->producto_id\",dinero=\"$this->dinero\" where id=$this->id";
+		$sql = "update ".self::$tablename." set producto_id=\"$this->producto_id\", where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -89,14 +88,14 @@ class OperacionData {
 
 
 
-	public static function getAllByProductoIdCutId($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and cut_id=$cut_id order by created_at desc";
+	public static function getAllByProductoIdCutId($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
 
-	public static function getAllByProductoId($producto_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id  order by created_at desc";
+	public static function getAllByProductoId($Producto_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id  order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}

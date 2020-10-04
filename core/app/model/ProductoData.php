@@ -19,7 +19,7 @@ class ProductoData {
 	}
 	public function add_with_image(){
 		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,Categoria_id) ";
-		$sql .= "value (\"$this->codigo\",\"$this->image\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
+		$sql .= "value (\"$this->image\",\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
 		return Executor::doit($sql);
 	}
 
@@ -87,8 +87,8 @@ class ProductoData {
 		return Model::many($query[0],new ProductoData());
 	}
 
-	public static function getAllByCategoriaId($IdCategoria){
-		$sql = "select * from ".self::$tablename." where IdCategoria=$IdCategoria order by created_at desc";
+	public static function getAllByCategoriaId($Categoria_id){
+		$sql = "select * from ".self::$tablename." where IdCategoria=$Categoria_id order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}

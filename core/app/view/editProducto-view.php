@@ -82,7 +82,7 @@ if($Producto!=null):
 
   <div class="form-group">
     <div class="col-lg-offset-3 col-lg-8">
-    <input type="hidden" name="Producto_id" value="<?php echo $Producto->id; ?>">
+    <input type="hidden" name="Usuario_id" value="<?php echo $Usuario->id; ?>">
       <button type="submit" class="btn btn-success">Actualizar Producto</button>
     </div>
   </div>
