@@ -1,18 +1,19 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=NuevaCategoria" class="btn btn-default "><i class='fa fa-th-list'></i> Nueva Categoria</a>
+	<a href="index.php?view=NuevaClinica" class="btn btn-default "><i class='fa fa-th-list'></i> Nueva Clinica</a>
 </div>
-		<h1>Categorias</h1>
+		<h1>Clinicas</h1>
 <br>
 		<?php
 
-		$Usuarios = CategoriaData::getAll();
+		$Usuarios = ClinicaData::getAll();
 		if(count($Usuarios)>0){
 			?>
 
 			<table class="table table-bordered table-hover">
 			<thead>
+			<th>Codigo</th>
 			<th>Nombre</th>
 			</thead>
 			<?php
@@ -20,7 +21,7 @@
 				?>
 				<tr>
 				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
-				<td style="width:130px;"><a href="index.php?view=EditarCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td style="width:130px;"><a href="index.php?view=EditarClinica&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delClinica&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 			<?php
 			

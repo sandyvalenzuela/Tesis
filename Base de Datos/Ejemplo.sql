@@ -3,6 +3,14 @@ use ejemplo;
 set sql_mode='';
 
 
+create table clinica(
+	id int not null auto_increment primary key,
+	codigo int,
+	nombre varchar(50),
+	created_at datetime
+);
+
+
 
 create table pedido(
 	id int not null auto_increment primary key,

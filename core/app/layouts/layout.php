@@ -109,6 +109,7 @@
               <ul class="treeview-menu">
                 <li><a href="./?view=categorias">Categorias</a></li>
                 <li><a href="./?view=Personals">Personal de Enfermeria</a></li>
+                <li><a href="./?view=Clinicas">Clinicas</a></li>
               </ul>
             </li>
 

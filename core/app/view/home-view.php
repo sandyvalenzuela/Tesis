@@ -29,14 +29,14 @@ $Productos = ProductoData::getAll();
           <!-- small box -->
           <div class="small-box bg-purple">
             <div class="inner">
-              <h3><?php echo count(PersonaData::getClientes());?></h3>
+              <h3><?php echo count(PersonaData::getPersonals());?></h3>
 
-              <p>Clientes</p>
+              <p>Personal de Enfermeria</p>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
             </div>
-            <a href="./?view=clientes" class="small-box-footer">Ver mas <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="./?view=Personals" class="small-box-footer">Ver mas <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
