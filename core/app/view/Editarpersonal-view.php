@@ -1,9 +1,9 @@
 <?php $Usuario = PersonaData::getById($_GET["id"]);?>
 <div class="row">
 	<div class="col-md-12">
-	<h1>Editar Cliente</h1>
+	<h1>Editar Personal</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=updatecliente" role="form">
+		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=Actualizarpersonal" role="form">
 
 
   <div class="form-group">
@@ -44,7 +44,7 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
     <input type="hidden" name="Usuario_id" value="<?php echo $Usuario->id;?>">
-      <button type="submit" class="btn btn-primary">Actualizar Cliente</button>
+      <button type="submit" class="btn btn-primary">Actualizar Personal</button>
     </div>
   </div>
 </form>

@@ -108,7 +108,7 @@
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
                 <li><a href="./?view=categorias">Categorias</a></li>
-                <li><a href="./?view=clientes">Clientes</a></li>
+                <li><a href="./?view=Personals">Personal de Enfermeria</a></li>
               </ul>
             </li>
 

@@ -1,13 +1,13 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=newcliente" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Cliente</a>
+	<a href="index.php?view=Nuevopersonal" class="btn btn-default"><i class='fa fa-smile-o'></i> Nuevo Personal</a>
 <div class="btn-group pull-right">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/clientes-word.php">Word 2007 (.docx)</a></li>
+    <li><a href="Reportes/clientes-word.php">Word 2007 (.docx)</a></li>
   </ul>
 </div>
 </div>
@@ -15,7 +15,7 @@
 <br>
 		<?php
 
-		$Usuarios = PersonaData::getClientes();
+		$Usuarios = PersonaData::getPersonals();
 		if(count($Usuarios)>0){
 		
 			?>
@@ -32,23 +32,24 @@
 			foreach($Usuarios as $Usuario){
 				?>
 				<tr>
-				<td><?php echo $Usuario->nombre." ".$Usuarios->apellido; ?></td>
+				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
 				<td><?php echo $Usuario->direccion; ?></td>
 				<td><?php echo $Usuario->email; ?></td>
 				<td><?php echo $Usuario->telefono; ?></td>
 				<td style="width:130px;">
-				<a href="index.php?view=editcliente&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a>
-				<a href="index.php?view=delcliente&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
+				<a href="index.php?view=Editarpersonal&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a>
+				<a href="index.php?view=delPersonal&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a>
 				</td>
 				</tr>
 				<?php
 
 			}
+			echo "</table>";
 
 
 
 		}else{
-			echo "<p class='alert alert-danger'>No hay clientes</p>";
+			echo "<p class='alert alert-danger'>No hay Personal Ingresado</p>";
 		}
 
 
