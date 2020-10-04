@@ -20,7 +20,8 @@
 			foreach($Usuarios as $Usuario){
 				?>
 				<tr>
-				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
+				<td><?php echo $Usuario->codigo; ?></td>
+				<td><?php echo $Usuario->nombre; ?></td>
 				<td style="width:130px;"><a href="index.php?view=EditarClinica&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delClinica&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
 				</tr>
 			<?php
