@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-12">
-	<a href="index.php?view=newUsuario" class="btn btn-default pull-right"><i class='glyphicon glyphicon-Usearios'></i> Nuevo Usuario</a>
+	<a href="index.php?view=newUsuario" class="btn btn-default pull-right"><i class='glyphicon glyphicon-Usuarios'></i> Nuevo Usuario</a>
 		<h1>Lista de Usuarios</h1>
 <br>
 		
