@@ -1,7 +1,7 @@
 <?php
-if(isset($_GET["product_id"])):
-$product = ProductData::getById($_GET["product_id"]);
-$operations = OperationData::getAllByProductId($product->id);
+if(isset($_GET["Producto_id"])):
+$Producto = ProductoData::getById($_GET["Producto_id"]);
+$Operaciones = OperacionData::getAllByProductoId($Producto->id);
 ?>
 <div class="row">
 	<div class="col-md-12">
@@ -10,10 +10,10 @@ $operations = OperationData::getAllByProductId($product->id);
     <i class="fa fa-download"></i> Descargar <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="report/history-word.php?id=<?php echo $product->id;?>">Word 2007 (.docx)</a></li>
+    <li><a href="Reportes/Historial-word.php?id=<?php echo $Producto->id;?>">Word 2007 (.docx)</a></li>
   </ul>
 </div>
-<h1><?php echo $product->name;; ?> <small>Historial</small></h1>
+<h1><?php echo $Producto->nombre;; ?> <small>Historial</small></h1>
 	</div>
 	</div>
 
@@ -24,7 +24,7 @@ $operations = OperationData::getAllByProductId($product->id);
 
 
 	<?php
-$itotal = OperationData::GetInputQYesF($product->id);
+$itotal = OperacionData::GetInputQYesF($Producto->id);
 
 	?>
 <div class="jumbotron">

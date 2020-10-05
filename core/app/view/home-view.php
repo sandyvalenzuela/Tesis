@@ -58,6 +58,29 @@ $Productos = ProductoData::getAll();
           </div>
         </div>
         <!-- ./col -->
+
+ <!-- ./col -->
+ <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-orange">
+            <div class="inner">
+              <h3><?php echo count(ClinicaData::getall());?></h3>
+
+              <p>Clinicas</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="./?view=Clinicas" class="small-box-footer">Ver mas <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        
+
+
+
+
+
       </div>
       <!-- /.row -->
 

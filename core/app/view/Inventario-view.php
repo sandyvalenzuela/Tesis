@@ -63,19 +63,13 @@ if($px<=$npaginas):
 		<th></th>
 	</thead>
 	<?php foreach($curr_productos as $producto):
-	$q=OperationData::getQYesF($producto->id);
+	$q=OperacionData::getQYesF($producto->id);
 	?>
-	<tr class="<?php if($q<=$producto->inventary_min/2){ echo "danger";}else if($q<=$product->inventary_min){ echo "warning";}?>">
 		<td><?php echo $producto->id; ?></td>
-		<td><?php echo $producto->name; ?></td>
-		<td>
-			
-			<?php echo $q; ?>
-
-		</td>
+		<td><?php echo $producto->nombre; ?></td>
 		<td style="width:93px;">
-<!--		<a href="index.php?view=input&product_id=<?php echo $product->id; ?>" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-circle-arrow-up"></i> Alta</a>-->
-		<a href="index.php?view=history&product_id=<?php echo $product->id; ?>" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-time"></i> Historial</a>
+<!--		<a href="index.php?view=input&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-circle-arrow-up"></i> Alta</a>-->
+		<a href="index.php?view=Historial&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-time"></i> Historial</a>
 		</td>
 	</tr>
 	<?php endforeach;?>
@@ -88,11 +82,7 @@ for($i=0;$i<$npaginas;$i++){
 }
 ?>
 </div>
-<form class="form-inline">
-	<label for="limit">Limite</label>
-	<input type="hidden" name="view" value="inventary">
-	<input type="number" value=<?php echo $limit?> name="limit" style="width:60px;" class="form-control">
-</form>
+
 
 <div class="clearfix"></div>
 
@@ -101,7 +91,7 @@ for($i=0;$i<$npaginas;$i++){
 	?>
 	<div class="jumbotron">
 		<h2>No hay productos</h2>
-		<p>No se han agregado productos a la base de datos, puedes agregar uno dando click en el boton <b>"Agregar Producto"</b>.</p>
+		<p>No se han agregado productos <b>"Agregar Producto"</b>.</p>
 	</div>
 	<?php
 }
