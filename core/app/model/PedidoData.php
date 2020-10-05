@@ -69,8 +69,8 @@ class PedidoData {
 		return Model::many($query[0],new PedidoData());
 
 	}
-	public static function getAllByDateBCOp($Clienteid,$start,$end,$op){
- $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Cliente_id=$clientid  and Operaciontipo_id=$op order by created_at desc";
+	public static function getAllByDateBCOp($Personalid,$start,$end,$op){
+ $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Personal_id=$clientid  and Operaciontipo_id=$op order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PedidoData());
 
