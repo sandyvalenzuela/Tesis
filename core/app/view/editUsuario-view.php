@@ -6,6 +6,19 @@
 		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=updateUsuario" role="form">
 
 
+    <div class="form-group">
+    <label for="inputEmail1" class="col-lg-3 control-label">Imagen*</label>
+    <div class="col-md-8">
+      <input type="file" name="image" id="nombre" placeholder="">
+      <?php if($Usuario->image!=""):?>
+  <br>
+        <img src="Imagenes/Usuarios/<?php echo $Usuario->image;?>" class="img-responsive">
+
+<?php endif;?>
+    </div>
+  </div>
+
+
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">

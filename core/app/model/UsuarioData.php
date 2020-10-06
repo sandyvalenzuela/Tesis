@@ -18,7 +18,11 @@ class UsuarioData {
 		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->username\",\"$this->email\",\"$this->is_admin\",\"$this->password\",$this->created_at)";
 		Executor::doit($sql);
 	}
-
+	public function add_with_image(){
+		$sql = "insert into ".self::$tablename." (image,nombre,apellido,username,email,password) ";
+		$sql .= "value (\"$this->image\",\"$this->nombre\",\"$this->apellido\",$this->username,\"$this->email\",$this->password)";
+		return Executor::doit($sql);
+	}
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
 		Executor::doit($sql);

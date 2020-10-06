@@ -4,6 +4,13 @@
 	<br>
 		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=addUsuario" role="form">
 
+    <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Imagen</label>
+    <div class="col-md-6">
+      <input type="file" name="image" id="image" placeholder="">
+    </div>
+  </div>
+
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>

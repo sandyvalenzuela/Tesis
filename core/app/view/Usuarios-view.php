@@ -11,6 +11,7 @@
 			?>
 			<table class="table table-bordered table-hover">
 			<thead>
+			<th>Imagen</th>
 			<th>Nombre completo</th>
 			<th>Nombre de usuario</th>
 			<th>Email</th>
@@ -22,6 +23,11 @@
 			foreach($Usuarios as $Usuario){
 				?>
 				<tr>
+				<td>
+			<?php if($Usuario->image!=""):?>
+				<img src="Imagenes/Usuarios/<?php echo $Usuario->image;?>" style="width:64px;">
+			<?php endif;?>
+		</td>
 				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
 				<td><?php echo $Usuario->username; ?></td>
 				<td><?php echo $Usuario->email; ?></td>
