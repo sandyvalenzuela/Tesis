@@ -33,11 +33,11 @@
 
   </head>
 
-  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>  
+  <body class="<?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["Personal_id"])):?>  
   skin-green-light sidebar-mini <?php else:?>login-page<?php endif; ?>" >
     <div class="wrapper">
     <!-- Encabezado principal -->
-      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["cliente_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["Personal_id"])):?>
       <header class="main-header">
         <!-- Logo -->
         <a href="./" class="logo">
@@ -90,6 +90,14 @@
 
         <!-- barra lateral: el estilo se puede encontrar en la barra lateral. -->
         <section class="sidebar">
+
+
+
+
+
+
+
+
 
           <!-- Menú de la barra lateral -->
           <ul class="sidebar-menu">
@@ -156,7 +164,7 @@
     <?php endif;?>
 
       <!-- Content Wrapper. Contains page content -->
-      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["Cliente_id"])):?>
+      <?php if(isset($_SESSION["Usuario_id"]) || isset($_SESSION["Personal_id"])):?>
       <div class="content-wrapper">
       <div class="content">
         <?php View::load("index");?>
@@ -172,8 +180,9 @@
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">
+      <body style="background-image: url(Imagenes/Fondo2.jpg); background-size: 100% ">
       <a href="./"><b>Sistema </b><b> de  </b><b> Pedidos</b></a>
-      <body style="background-color: red">
+     
       </div><!-- /.login-logo -->
       <img src="Imagenes/photo.jpg" height="255">
       <div class="login-box-body">
