@@ -63,8 +63,7 @@ create table configuracion(
 );
 insert into configuracion(titulo,nombre,tipo,val) value("titulo","sistema de pedidos",2,"Sistema de Pedidos");
 insert into configuracion(titulo,nombre,tipo,val) value("use_image_producto","Utilizar Imagenes en los productos",1,0);
-insert into configuracion(titulo,nombre,tipo,val) value("active_clientes","Activar clientes",1,0);
-insert into configuracion(titulo,nombre,tipo,val) value("active_providers","Activar proveedores",1,0);
+insert into configuracion(titulo,nombre,tipo,val) value("active_personals","Activar personalss",1,0);
 insert into configuracion(titulo,nombre,tipo,val) value("active_categorias","Activar categorias",1,0);
 insert into configuracion(titulo,nombre,tipo,val) value("active_reportes_word","Activar reportes en Word",1,0);
 insert into configuracion(titulo,nombre,tipo,val) value("active_reportes_excel","Activar reportes en Excel",1,0);
