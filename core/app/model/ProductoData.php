@@ -14,12 +14,12 @@ class ProductoData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (codigo,nombre,description,Usuario_id,presentacion,categoria_id,created_at) ";
-		$sql .= "value (\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,NOW())";
+		$sql .= "value (\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,categoria_id) ";
-		$sql .= "value (\"$this->image\",\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id)";
+		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,categoria_id,created_at) ";
+		$sql .= "value (\"$this->image\",\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 	public static function delById($id){

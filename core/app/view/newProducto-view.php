@@ -1,5 +1,5 @@
     <?php 
-$Categorias = CategoriaData::getAll();
+$categorias = CategoriaData::getAll();
     ?>
 <div class="row">
 	<div class="col-md-12">
@@ -31,10 +31,10 @@ $Categorias = CategoriaData::getAll();
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Categoria</label>
     <div class="col-md-6">
-    <select name="Categoria_id" class="form-control">
+    <select name="categoria_id" class="form-control">
     <option value="">-- NINGUNA --</option>
-    <?php foreach($Categorias as $Categoria):?>
-      <option value="<?php echo $Categoria->id;?>"><?php echo $Categoria->nombre;?></option>
+    <?php foreach($categorias as $categoria):?>
+      <option value="<?php echo $categoria->id;?>"><?php echo $categoria->nombre;?></option>
     <?php endforeach;?>
       </select>    </div>
   </div>

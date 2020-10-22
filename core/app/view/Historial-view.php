@@ -22,94 +22,28 @@ $Operaciones = OperacionData::getAllByProductoId($Producto->id);
 
 	<div class="col-md-4">
 
-
-	<?php
-$itotal = OperacionData::GetInputQYesF($Producto->id);
-
-	?>
-<div class="jumbotron">
-<center>
-	<h2>Entradas</h2>
-	<h1><?php echo $itotal; ?></h1>
-</center>
-</div>
-
-<br>
-<?php
-?>
-
-</div>
-
-	<div class="col-md-4">
-	<?php
-$total = OperationData::GetQYesF($product->id);
-
-
-	?>
-<div class="jumbotron">
-<center>
-	<h2>Disponibles</h2>
-	<h1><?php echo $total; ?></h1>
-</center>
-</div>
-<div class="clearfix"></div>
-<br>
-<?php
-?>
-
-</div>
-
-	<div class="col-md-4">
-
-
-	<?php
-$ototal = -1*OperationData::GetOutputQYesF($product->id);
-
-	?>
-<div class="jumbotron">
-<center>
-	<h2>Salidas</h2>
-	<h1><?php echo $ototal; ?></h1>
-</center>
-</div>
-
-
-<div class="clearfix"></div>
-<br>
-<?php
-?>
-
-</div>
-
-
-
-
-
-
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<?php if(count($operations)>0):?>
+		<?php if(count($Operaciones)>0):?>
 			<table class="table table-bordered table-hover">
 			<thead>
 			<th></th>
-			<th>Cantidad</th>
-			<th>Tipo</th>
+
 			<th>Fecha</th>
 			<th></th>
 			</thead>
-			<?php foreach($operations as $operation):?>
+			<?php foreach($curr_productos as $Producto):?>
 			<tr>
 			<td></td>
-			<td><?php echo $operation->q; ?></td>
-			<td><?php echo $operation->getOperationType()->name; ?></td>
-			<td><?php echo $operation->created_at; ?></td>
-			<td style="width:40px;"><a href="#" id="oper-<?php echo $operation->id; ?>" class="btn tip btn-xs btn-danger" title="Eliminar"><i class="glyphicon glyphicon-trash"></i></a> </td>
-			<script>
-			$("#oper-"+<?php echo $operacion->id; ?>).click(function(){
-				x = confirm("Estas seguro que quieres eliminar esto ??");
-				if(x==true){
-					window.location = "index.php?view=deleteoperation&ref=history&pid=<?php echo $operation->product_id;?>&opid=<?php echo $operation->id;?>";
+			<td><?php if($Producto->create_at): ?><i class="fa fa-check"></i><?php endif;?></td>
+			
+			<td style="width:40px;"><script>
+			
+		//	$("#oper-"+<?php echo $operacion->id; ?>).click(function(){
+			//	x = confirm("Estas seguro que quieres eliminar esto ??");
+			//	if(x==true){
+					window.location = "index.php?view=EliminarOperacion&ref=history&pid=<?php echo $operacion->Producto_id;?>&opid=<?php echo $operacion->id;?>";
 				}
 			});
 

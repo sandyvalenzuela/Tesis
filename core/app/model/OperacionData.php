@@ -94,7 +94,7 @@ class OperacionData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
-
+///Historial
 	public static function getAllByProductoId($Producto_id){
 		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id  order by created_at desc";
 		$query = Executor::doit($sql);
@@ -148,9 +148,9 @@ class OperacionData {
 		return $dinero;
 	}
 
-	public static function getInputQYesF($producto_id){
+	public static function getInputQYesF($Producto_id){
 		$dinero=0;
-		$operaciones = self::getInputByProductId($producto_id);
+		$operaciones = self::getInputByProductoId($Producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		foreach($operaciones as $operacion){
 			if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
