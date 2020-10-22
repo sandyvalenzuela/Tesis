@@ -10,16 +10,16 @@ class ProductoData {
 		$this->created_at = "NOW()";
 	}
 
-	public function getCategoria(){ return CategoriaData::getById($this->Categoria_id);}
+	public function getCategoria(){ return CategoriaData::getById($this->categoria_id);}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (codigo,nombre,description,Usuario_id,presentacion,Categoria_id,created_at) ";
-		$sql .= "value (\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id,NOW())";
+		$sql = "insert into ".self::$tablename." (codigo,nombre,description,Usuario_id,presentacion,categoria_id,created_at) ";
+		$sql .= "value (\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id,NOW())";
 		return Executor::doit($sql);
 	}
 	public function add_with_image(){
-		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,Categoria_id) ";
-		$sql .= "value (\"$this->image\",\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->Categoria_id)";
+		$sql = "insert into ".self::$tablename." (image,codigo,nombre,descripcion,Usuario_id,presentacion,categoria_id) ";
+		$sql .= "value (\"$this->image\",\"$this->codigo\",\"$this->nombre\",\"$this->descripcion\",$this->Usuario_id,\"$this->presentacion\",$this->categoria_id)";
 		return Executor::doit($sql);
 	}
 	public static function delById($id){
@@ -37,7 +37,7 @@ class ProductoData {
 		Executor::doit($sql);
 	}
 	public function del_Categoria(){
-		$sql = "update ".self::$tablename." set Categoria_id=NULL where id=$this->id";
+		$sql = "update ".self::$tablename." set categoria_id=NULL where id=$this->id";
 		Executor::doit($sql);
 	}
 	public function update_image(){
@@ -70,8 +70,8 @@ class ProductoData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}
-	public static function getAllByCategoriaId($Categoria_id){
-		$sql = "select * from ".self::$tablename." where IdCategoria=$Categoria_id order by created_at desc";
+	public static function getAllByCategoriaId($categoria_id){
+		$sql = "select * from ".self::$tablename." where Idcategoria=$Idcategoria order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}

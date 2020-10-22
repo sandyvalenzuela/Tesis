@@ -28,14 +28,18 @@ if(count($Productos)>0){
 		<td>
 
 <?php
-$Operaciones = OperacionData::getAllProductosByPedidoId($Pedido->id);
-echo count($operaciones);
+//$Operaciones = OperacionData::getAllProductosByPedidoId($Pedido->id);
+//echo count($operaciones);
 ?>
-		<td>
+<?php
+//$total= $sell->total-$sell->discount;
+	//foreach($operations as $operation){
+		//$product  = $operation->getProduct();
+		//$total += $operation->q*$product->price_out;
+	//}
+		//echo "<b>$ ".number_format($total)."</b>";
 
-		
-
-		</td>
+?>		
 		<td><?php echo $Pedido->created_at; ?></td>
 		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 	</tr>

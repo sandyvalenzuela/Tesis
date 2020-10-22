@@ -146,7 +146,7 @@
               </ul>
             </li>
 
-            <li> <a href="./?view=Ajustes"><i class='fa fa-cog'></i> <span>Configuracion</span> </a></li>
+           
               
             
           <?php endif;?>

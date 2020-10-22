@@ -45,10 +45,10 @@ if($Producto!=null):
     <div class="form-group">
     <label for="inputEmail" class="col-lg-3 control-label">Categoria</label>
     <div class="col-md-8">
-    <select name="Categoria_id" class="form-control">
+    <select name="categoria_id" class="form-control">
     <option value="">-- NINGUNA --</option>
-    <?php foreach($Categorias as $Categoria):?>
-      <option value="<?php echo $Categoria->id;?>" <?php if($Producto->Categoria_id!=null&& $Producto->Categoria_id==$Categoria->id){ echo "selected";}?>><?php echo $Categoria->nombre;?></option>
+    <?php foreach($categorias as $categoria):?>
+      <option value="<?php echo $categoria->id;?>" <?php if($Producto->categoria_id!=null&& $Producto->categoria_id==$categoria->id){ echo "selected";}?>><?php echo $categoria->nombre;?></option>
     <?php endforeach;?>
       </select>    </div>
   </div>

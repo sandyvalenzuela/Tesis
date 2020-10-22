@@ -78,7 +78,7 @@ if($px<=$npaginas):
 		</td>
 		<td><?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
-		<td><?php if($Producto->Categoria_id!=null){echo $Producto->getCategoria()->nombre;}else{ echo "<center>----</center>"; }  ?></td>
+		<td><?php if($Producto->categoria_id!=null){echo $Producto->getCategoria()->nombre;}else { echo "<center>----</center>"; }  ?></td>
 		<td><?php if($Producto->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
 		
 
