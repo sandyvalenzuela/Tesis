@@ -22,33 +22,41 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="nombre" value="<?php echo $Usuario->nombre;?>" class="form-control" id="nombre" placeholder="Nombre">
+      <input type="text" name="nombre" value="<?php echo $Usuario->nombre;?>" class="form-control" id="nombre" placeholder="Nombre"
+      pattern="[A-Za-z]{1,25}" title="Debe de incluir letras en Mayuscula y en Minusculas " maxlength="25">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="apellido" value="<?php echo $Usuario->apellido;?>" required class="form-control" id="apellido" placeholder="Apellido">
+      <input type="text" name="apellido" value="<?php echo $Usuario->apellido;?>" required class="form-control" id="apellido" placeholder="Apellido"
+    pattern="[A-Za-z]{1,25}" title="Debe de incluir letras en Mayuscula y en Minusculas" maxlength="25">
     </div>
   </div>
+
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
-      <input type="text" name="username" value="<?php echo $Usuario->username;?>" class="form-control" required id="username" placeholder="Nombre de usuario">
+      <input type="text" name="username" value="<?php echo $Usuario->username;?>" class="form-control" required id="username" placeholder="Nombre de usuario"
+      pattern="[-A-Za-z0-9]{1,8}" title="Debe agreagar letras Mayusculas, Minusculas y Numeros" maxlength="8"> 
     </div>
   </div>
+  
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
     <div class="col-md-6">
-      <input type="text" name="email" value="<?php echo $Usuario->email;?>" class="form-control" id="email" placeholder="Email">
+      <input type="text" name="email" value="<?php echo $Usuario->email;?>" class="form-control" id="email" placeholder="Email"
+      pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})" title="Ingresar formato de correo electrónico @gmail.com " maxlength="50">
     </div>
   </div>
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a</label>
     <div class="col-md-6">
-      <input type="password" name="password" class="form-control" id="inputEmail" placeholder="Contrase&ntilde;a">
+      <input type="password" name="password" class="form-control" id="inputEmail" placeholder="Contrase&ntilde;a"
+      pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Debe agreagar letras Mayusculas, Minusculas, Numeros y Caracteres Especiales">
 <p class="help-block">La contrase&ntilde;a solo se modificara si escribes algo, en caso contrario no se modifica.</p>
+    
     </div>
   </div>
 

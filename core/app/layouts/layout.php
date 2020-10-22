@@ -177,6 +177,8 @@
         </div>
         <strong>Copyright &copy; 2020 
       </footer>
+
+      
       <?php else:?>
 <div class="login-box">
       <div class="login-logo">

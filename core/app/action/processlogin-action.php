@@ -1,6 +1,5 @@
 <?php
 
-
 if(!isset($_SESSION["Usuario_id"])) {
 $Usuario = $_POST['username'];
 $pass = sha1(md5($_POST['password']));

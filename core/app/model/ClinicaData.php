@@ -1,9 +1,6 @@
 <?php
 class ClinicaData {
 	public static $tablename = "clinica";
-
-
-
 	public function ClinicaData(){
 		$this->nombre = "";
 		$this->apellido = "";
@@ -12,13 +9,11 @@ class ClinicaData {
 		$this->password = "";
 		$this->created_at = "NOW()";
 	}
-
 	public function add_Clinica(){
 		$sql = "insert into clinica (codigo,nombre,created_at) ";
 		$sql .= "value (\"$this->codigo\",\"$this->nombre\",$this->created_at)";
 		Executor::doit($sql);
 	}
-
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
 		Executor::doit($sql);
@@ -27,14 +22,11 @@ class ClinicaData {
 		$sql = "delete from ".self::$tablename." where id=$this->id";
 		Executor::doit($sql);
 	}
-
 // partiendo de que ya tenemos creado un objecto ClinicaData previamente utilizamos el contexto
 	public function update(){
 		$sql = "update ".self::$tablename." set nombre=\"$this->codigo\",\"$this->nombre\" where id=$this->id";
 		Executor::doit($sql);
 	}
-
-
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
@@ -50,9 +42,6 @@ class ClinicaData {
 		}
 		return $found;
 	}
-
-
-
 	public static function getAll(){
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);

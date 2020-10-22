@@ -15,32 +15,40 @@
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">
-      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+      <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre"
+      pattern="[A-Za-z]{1,25}" title="Debe de incluir letras en Mayuscula y en Minusculas " maxlength="25">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Apellido*</label>
     <div class="col-md-6">
-      <input type="text" name="apellido" required class="form-control" id="apellido" placeholder="Apellido">
+      <input type="text" name="apellido" required class="form-control" id="apellido" placeholder="Apellido"
+      pattern="[A-Za-z]{1,25}" title="Debe de incluir letras en Mayuscula y en Minusculas" maxlength="25">
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
-      <input type="text" name="username" class="form-control" required id="username" placeholder="Nombre de usuario">
+      <input type="text" name="username" class="form-control" required id="username" placeholder="Nombre de usuario"
+      pattern="[-A-Za-z0-9]{1,8}" title="Debe agreagar letras Mayusculas, Minusculas y Numeros" maxlength="8">>
+    
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Email*</label>
     <div class="col-md-6">
-      <input type="text" name="email" class="form-control" id="email" placeholder="Email">
+      <input type="text" name="email" class="form-control" id="email" placeholder="Email"
+      pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})" title="Ingresar formato de correo electrónico @gmail.com " maxlength="50">
+    
     </div>
   </div>
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Contrase&ntilde;a</label>
     <div class="col-md-6">
-      <input type="password" name="password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a">
+      <input type="password" name="password" class="form-control" id="inputEmail1" placeholder="Contrase&ntilde;a"
+      pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Debe agreagar letras Mayusculas, Minusculas, Numeros y Caracteres Especiales">
+    
     </div>
   </div>
 

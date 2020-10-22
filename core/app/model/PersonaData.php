@@ -66,9 +66,6 @@ class PersonaData {
 		}
 		return $found;
 	}
-
-
-
 	public static function getAll(){
 		$sql = "select * from ".self::$tablename;
 		$query = Executor::doit($sql);
@@ -107,10 +104,6 @@ class PersonaData {
 		}
 		return $array;
 	}
-
-
-	
-
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where nombre like '%$q%'";
 		$query = Executor::doit($sql);
