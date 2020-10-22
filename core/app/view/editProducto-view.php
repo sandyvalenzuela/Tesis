@@ -1,6 +1,6 @@
 <?php
 $Producto = ProductoData::getById($_GET["id"]);
-$Categorias = CategoriaData::getAll();
+$categorias = CategoriaData::getAll();
 
 if($Producto!=null):
 ?>

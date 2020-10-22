@@ -33,7 +33,7 @@ class ProductoData {
 
 // partiendo de que ya tenemos creado un objecto ProductoData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",Categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
 		Executor::doit($sql);
 	}
 	public function del_Categoria(){

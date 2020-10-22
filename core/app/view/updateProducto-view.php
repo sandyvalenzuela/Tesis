@@ -4,18 +4,17 @@ if(count($_POST)>0){
 	$Producto = ProductoData::getById($_POST["Producto_id"]);
 
 	$Producto->codigo = $_POST["codigo"];
-	$Producto->nombre = $_POST["nombre"];
-	
+	$Producto->nombre = $_POST["nombre"];	
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];
-  $Categoria_id="NULL";
-  if($_POST["Categoria_id"]!=""){ $Categoria_id=$_POST["Categoria_id"];}
+  $categoria_id="NULL";
+  if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
 
   $is_active=0;
   if(isset($_POST["is_active"])){ $is_active=1;}
 
   $Producto->is_active=$is_active;
-  $Producto->Categoria_id=$Categoria_id;
+  $Producto->categoria_id=$categoria_id;
 
 	$Producto->Usuario_id = $_SESSION["Usuario_id"];
 	$Producto->update();
