@@ -69,7 +69,7 @@ if($px<=$npaginas):
 		<th></th>
 	</thead>
 	<?php foreach($curr_productos as $Producto):?>
-	{
+	
 	<tr>
 		<td>
 			<?php if($Producto->image!=""):?>
