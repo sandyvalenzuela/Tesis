@@ -59,6 +59,7 @@ if($px<=$npaginas):
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
+		<th>Fecha</th>
 		
 		<th></th>
 		<th></th>
@@ -68,10 +69,10 @@ if($px<=$npaginas):
 	?>
 		<td><?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
+		<td><?php echo $Producto->created_at; ?></td>
 		
 		<td style="width:93px;">
 
-		<a href="index.php?view=Historial&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-time"></i> Historial</a>
 		</td>
 	</tr>
 	<?php endforeach;?>
