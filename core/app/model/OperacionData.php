@@ -5,14 +5,15 @@ class OperacionData {
 	public function OperacionData(){
 		$this->nombre = "";
 		$this->producto_id = "";
-		$this->cut_id = "";
+		$this->q = "";
+		$this->dinero = "";
 		$this->operacion_tipo_id = "";
 		$this->created_at = "NOW()";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (producto_id,operacion_tipo_id,pedido_id,created_at) ";
-		$sql .= "value (\"$this->producto_id\",$this->operacion_tipo_id,$this->pedido_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (producto_id,q,operacion_tipo_id,pedido_id,created_at) ";
+		$sql .= "value (\"$this->producto_id\",$this->q\",$this->operacion_tipo_id,$this->pedido_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -27,7 +28,7 @@ class OperacionData {
 
 // partiendo de que ya tenemos creado un objecto OperacionData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set producto_id=\"$this->producto_id\", where id=$this->id";
+		$sql = "update ".self::$tablename." set producto_id=\"$this->producto_id\,q=\"$this->q\", where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -66,20 +67,20 @@ class OperacionData {
 		return Model::many($query[0],new OperacionData());
 	}
 
-	public function getProducto(){ return ProductoData::getById($this->producto_id);}
+	public function getProducto(){ return ProductoData::getById($this->Producto_id);}
 	public function getOperaciontipo(){ return OperacionTipoData::getById($this->operaciontipo_id);}
 
 
 
 
 
-	public static function getQYesF($producto_id){
+	public static function getQYesF($Producto_id){
 		$dinero=0;
-		$operaciones = self::getAllByProductoId($producto_id);
+		$operaciones = self::getAllByProductoId($Producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
 		foreach($operaciones as $operacion){
-				if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
+				if($Operacion->Operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
 				else if($operacion->operaciontipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
 		}
 		// print_r($data);

@@ -59,16 +59,18 @@ if($px<=$npaginas):
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
+		
 		<th></th>
 		<th></th>
 	</thead>
-	<?php foreach($curr_productos as $producto):
-	$q=OperacionData::getQYesF($producto->id);
+	<?php foreach($curr_productos as $Producto):
+	$q=OperacionData::getQYesF($Producto->id);
 	?>
-		<td><?php echo $producto->id; ?></td>
-		<td><?php echo $producto->nombre; ?></td>
+		<td><?php echo $Producto->codigo; ?></td>
+		<td><?php echo $Producto->nombre; ?></td>
+		
 		<td style="width:93px;">
-<!--		<a href="index.php?view=input&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-circle-arrow-up"></i> Alta</a>-->
+
 		<a href="index.php?view=Historial&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-time"></i> Historial</a>
 		</td>
 	</tr>
