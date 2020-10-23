@@ -20,6 +20,19 @@ if(count($_POST)>0){
 print "<script>alert('Se ha actualizado el password');</script>";
 
 	}
+	if(isset($_FILES["image"])){
+		$image = new Upload($_FILES["image"]);
+		if($image->uploaded){
+		  $image->Process("Imagenes/Usuarios/");
+		  if($image->processed){
+			$Producto->image = $image->file_dst_name;
+			$prod = $Producto->add_with_image();
+		  }
+		}else{
+	
+	  $prod= $Producto->add();
+		}
+	  }
 
 print "<script>window.location='index.php?view=Usuarios';</script>";
 
