@@ -11,9 +11,9 @@ $Personals = PersonaData::getPersonals();
 <div class="row">
 <div class="col-md-3">
 
-<select name="Persona_id" class="form-control">
+<select name="persona_id" class="form-control">
 	<option value="">--  TODOS --</option>
-	<?php foreach($Personas as $p):?>
+	<?php foreach($Personals as $p):?>
 	<option value="<?php echo $p->id;?>"><?php echo $p->nombre;?></option>
 	<?php endforeach; ?>
 </select>
@@ -79,7 +79,7 @@ $Personals = PersonaData::getPersonals();
 			 ?>
 
 			 <?php 
-			 if(count($Pedidos)>0):?>
+			 if(count($Pedido)>0):?>
 	
 <table class="table table-bordered">
 	<thead>
@@ -96,7 +96,7 @@ $Personals = PersonaData::getPersonals();
  endforeach; ?>
 </table>
 <?php else:
-			 // si no hay operaciones
+			 // si no hay pedidos
 			 ?>-->
 
 <script>

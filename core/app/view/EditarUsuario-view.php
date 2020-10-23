@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 	<h1>Editar Usuario</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=updateUsuario" role="form">
+		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=ActualizarUsuario" role="form">
 
 
     <div class="form-group">

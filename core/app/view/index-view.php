@@ -1,3 +1,3 @@
 <script>
-	window.location='./?view=home';
+	window.location='./?view=Home';
 </script>
