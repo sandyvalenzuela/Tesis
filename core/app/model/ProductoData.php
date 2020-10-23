@@ -44,8 +44,8 @@ class ProductoData {
 		$sql = "update ".self::$tablename." set image=\"$this->image\" where id=$this->id";
 		Executor::doit($sql);
 	}
-	public static function getById($id){
-		$sql = "select * from ".self::$tablename." where id=$id";
+	public static function getById($Producto_id){
+		$sql = "select * from ".self::$tablename." where id=$Producto_id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ProductoData());
 

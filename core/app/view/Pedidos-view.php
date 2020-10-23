@@ -7,7 +7,6 @@
 <?php
 
 $Productos = PedidoData::getPedidos();
-
 if(count($Productos)>0){
 
 	?>
@@ -19,6 +18,7 @@ if(count($Productos)>0){
 		<th>Fecha</th>
 		<th></th>
 	</thead>
+
 	<?php foreach($Productos as $Pedido):?>
 
 	<tr>
@@ -27,10 +27,11 @@ if(count($Productos)>0){
 
 		<td>
 
-<?php
-//$Operaciones = OperacionData::getAllProductosByPedidoId($Pedido->id);
-//echo count($operaciones);
-?>
+<<!--<?php
+//$operations = OperationData::getAllProductsBySellId($sell->id);
+//echo count($operations);
+?>-->
+		
 <?php
 //$total= $sell->total-$sell->discount;
 	//foreach($operations as $operation){
@@ -40,6 +41,7 @@ if(count($Productos)>0){
 		//echo "<b>$ ".number_format($total)."</b>";
 
 ?>		
+	
 		<td><?php echo $Pedido->created_at; ?></td>
 		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
 	</tr>

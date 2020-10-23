@@ -2,7 +2,7 @@
 <?php if(isset($_GET["Producto"]) && $_GET["Producto"]!=""):?>
 	<?php
 $Productos = ProductoData::getLike($_GET["Producto"]);
-if(count($productos)>0){
+if(count($Productos)>0){
 	?>
 <h3>Resultados de la Busqueda</h3>
 <table class="table table-bordered table-hover">
@@ -14,7 +14,7 @@ if(count($productos)>0){
 	<?php
 $Productos_in_cero=0;
 	 foreach($Productos as $Producto):
-$q= OperacionData::getQYesF($Producto->id);
+//$q= OperacionData::getQYesF($Producto->id);
 	?>
 	
 		<td style="width:80px;"><?php echo $Producto->id; ?></td>
@@ -26,6 +26,7 @@ $q= OperacionData::getQYesF($Producto->id);
 		<input type="hidden" name="Producto_id" value="<?php echo $Producto->id; ?>">
 
 <div class="input-group">
+<input type="" class="form-control" required name="q" placeholder="Cantidad ...">
       <span class="input-group-btn">
 		<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Agregar</button>
       </span>
@@ -36,6 +37,8 @@ $q= OperacionData::getQYesF($Producto->id);
 	</tr>
 
 </table>
+
+<?php if($Productos_in_cero>0){ echo "<p class='alert alert-warning'>Se omitieron <b>$Productos_in_cero productos</b> que no tienen existencias en el inventario. <a href='index.php?module=Inventario'>Ir al Inventario</a></p>"; }?>
 
 	<?php
 }

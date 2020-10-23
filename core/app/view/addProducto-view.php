@@ -7,9 +7,9 @@ if(count($_POST)>0){
   $Producto->nombre = $_POST["nombre"];
   $Producto->descripcion = $_POST["descripcion"];
   $Producto->presentacion = $_POST["presentacion"];
-  $Categoria_id="NULL";
-  if($_POST["categoria_id"]!=""){ $Categoria_id=$_POST["Categoria_id"];}
-  $Producto->Categoria_id=$Categoria_id;
+  $categoria_id="NULL";
+  if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
+  $Producto->categoria_id=$categoria_id;
   $Producto->Usuario_id = $_SESSION["Usuario_id"];
 
 

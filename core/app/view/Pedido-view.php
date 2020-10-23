@@ -6,7 +6,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<input type="hidden" name="view" value="Pedido">
-				<input type="text" id="Producto_Codigo" name="Producto" class="form-control">
+				<input type="text" id="Producto_codigo" name="Producto" class="form-control">
 			</div>
 			<div class="col-md-3">
 			<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Buscar</button>

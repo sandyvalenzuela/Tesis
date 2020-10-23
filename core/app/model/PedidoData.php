@@ -41,11 +41,16 @@ class PedidoData {
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new PedidoData());
 	}
+
 	public static function getPedidos(){
 		$sql = "select * from ".self::$tablename." where Operationtipo_id=2 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PedidoData());
 	}
+
+
+
+	
 	public static function getAllByDateOp($start,$end,$op){
   $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Operationtipo_id=$op order by created_at desc";
 		$query = Executor::doit($sql);
