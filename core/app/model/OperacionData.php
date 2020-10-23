@@ -80,8 +80,8 @@ class OperacionData {
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
 		foreach($Operaciones as $Operacion){
-				if($Operacion->Operaciontipo_id==$input_id){ $dinero+=$Operacion->dinero; }
-				else if($Operacion->Operaciontipo_id==$output_id){  $dinero+=(-$Operacion->dinero); }
+				if($Operacion->operacion_tipo_id==$input_id){ $dinero+=$Operacion->dinero; }
+				else if($Operacion->operacion_tipo_id==$output_id){  $dinero+=(-$Operacion->dinero); }
 		}
 		// print_r($data);
 		return $dinero;

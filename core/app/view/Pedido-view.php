@@ -66,7 +66,7 @@ unset($_SESSION["errors"]);
  endif; ?>
 
 
-<!--- Carrito de compras :) -->
+<!--- Carrito de pedidos :) -->
 <?php if(isset($_SESSION["cart"])):
 $total = 0;
 ?>

@@ -105,26 +105,36 @@
 
 
             <?php if(isset($_SESSION["Usuario_id"])):?>
-                        <li><a href="./index.php?view=Home"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
-                        <li><a href="./?view=Productos"><i class='fa fa-glass'></i> <span>Productos</span></a></li>
+                        <li><a href="./index.php?view=Home"><i class="fa fa-hospital-o" aria-hidden="true"></i> <span>Inicio</span></a></li>
+             
+              <li class="treeview">
+              <a href="#"><i class="fa fa-stethoscope" aria-hidden="true"></i> <span>Productos</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <ul class="treeview-menu">
+                <li><a href="./?view=newProducto"><i class="fa fa-eyedropper" aria-hidden="true"></i>Nuevo Producto</a></li>
+                <li><a href="./?view=Productos"><i class="fa fa-file" aria-hidden="true"></i>Listado de Productos</a></li>
+  
+              </ul>
+            </li>
 
 
-            <li><a href="./?view=pedido"><i class='fa fa-usd'></i> <span>Pedido</span></a></li>
-            <li><a href="./?view=pedidos"><i class='fa fa-shopping-cart'></i> <span>Pedidos</span></a></li>
+
+
+            <li><a href="./?view=pedido"><i class="fa fa-medkit" aria-hidden="true"></i></i><span>Pedido</span></a></li>
+            <li><a href="./?view=pedidos"><i class="fa fa-folder-o" aria-hidden="true"></i> <span>Pedidos</span></a></li>
             
               <li class="treeview">
               <a href="#"><i class='fa fa-database'></i> <span>Catalogos</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=categorias">Categorias</a></li>
-                <li><a href="./?view=Personals">Personal de Enfermeria</a></li>
-                <li><a href="./?view=Clinicas">Clinicas</a></li>
+                <li><a href="./?view=categorias"><i class="fa fa-briefcase" aria-hidden="true"></i>Categorias</a></li>
+                <li><a href="./?view=Personals"><i class="fa fa-user-plus" aria-hidden="true"></i>Personal de Enfermeria</a></li>
+                <li><a href="./?view=Clinicas"><i class="fa fa-home" aria-hidden="true"></i>Clinicas</a></li>
               </ul>
             </li>
 
             <li class="treeview">
               <a href="#"><i class='fa fa-area-chart'></i> <span>Inventario</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=Inventario">Inventario</a></li>
+                <li><a href="./?view=Inventario"><i class="fa fa-line-chart" aria-hidden="true"></i>Inventario</a></li>
                 
               </ul>
             </li>
@@ -132,16 +142,16 @@
                <li class="treeview">
               <a href="#"><i class='fa fa-file-text-o'></i> <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=reportes">Inventario</a></li>
-                <li><a href="./?view=Pedidoreportes">Pedido</a></li>
+                <li><a href="./?view=reportes"><i class="fa fa-bar-chart" aria-hidden="true"></i>Inventario</a></li>
+                <li><a href="./?view=Pedidoreportes"><i class="fa fa-file-text-o" aria-hidden="true"></i>Pedido</a></li>
               </ul>
             </li>
 
 
             <li class="treeview">
-              <a href="#"><i class='fa fa-cog'></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i></a>
+              <a href="#"><i class="fa fa-users" aria-hidden="true"></i></i> <span>Administracion</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
-                <li><a href="./?view=Usuarios">Usuarios</a></li>
+                <li><a href="./?view=Usuarios"><i class="fa fa-user-md" aria-hidden="true"></i>Usuarios</a></li>
             
               </ul>
             </li>
