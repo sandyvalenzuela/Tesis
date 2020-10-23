@@ -6,8 +6,8 @@ $Productos = ProductoData::getAll();
 	<div class="col-md-12">
 	<h1>Reportes</h1>
 
-						<form>
-						<input type="hidden" name="view" value="Reportes">
+<form>
+<input type="hidden" name="view" value="Reportes">
 <div class="row">
 <div class="col-md-3">
 
@@ -33,30 +33,6 @@ $Productos = ProductoData::getAll();
 </div>
 
 
-<!--
-<br>
-<div class="row">
-<div class="col-md-4">
-
-<select name="mesero_id" class="form-control">
-	<option value="">--  MESEROS --</option>
-	<?php foreach($meseros as $p):?>
-	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
-	<?php endforeach; ?>
-</select>
-
-</div>
-
-<div class="col-md-4">
-
-<select name="operation_type_id" class="form-control">
-	<option value="1">VENTA</option>
-</select>
-
-</div>
-
-</div>
--->
 
 </form>
 
@@ -69,40 +45,25 @@ $Productos = ProductoData::getAll();
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
 			<?php 
-			$Operaciones = array();
-
-			if($_GET["Producto_id"]==""){
-			$Operacions = OperacionData::getAllByDateOfficial($_GET["sd"],$_GET["ed"]);
-			}
-			else{
-			$Operacions = OperacionData::getAllByDateOfficialBP($_GET["Producto_id"],$_GET["sd"],$_GET["ed"]);
-			} 
-
-
+			
 			 ?>
 
-			 <?php if(count($Operaciones)>0):?>
+			 <?php if(count($Productos)>0):?>
 <table class="table table-bordered">
 	<thead>
 		<th>Id</th>
 		<th>Producto</th>
-		<th>Cantidad</th>
-		<th>Operacion</th>
 		<th>Fecha</th>
 	</thead>
-<?php foreach($Operaciones as $Operacion):?>
+<?php foreach($Productos as $Producto):?>
 	<tr>
-		<td><?php echo $Operacion->id; ?></td>
-		<td><?php echo $Operacion->getProducto()->nombre; ?></td>
-		<td><?php echo $Operacion->q; ?></td>
-		<td><?php echo $Operacion->getOperacionTipo()->nombre; ?></td>
-		<td><?php echo $Operacion->created_at; ?></td>
+		<td><?php echo $Producto->id; ?></td>
+		<td><?php echo $Producto->nombre; ?></td>
+			<td><?php echo $Producto->created_at; ?></td>
 	</tr>
 <?php endforeach; ?>
 
-</table>
-
-			 <?php else:
+</table>	 <?php else:
 
 			 ?>
 <script>
