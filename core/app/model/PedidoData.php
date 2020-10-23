@@ -17,12 +17,12 @@ class PedidoData {
 		$sql .= "value ($this->Usuario_id,1,$this->created_at)";
 		return Executor::doit($sql);
 	}
-	public function add_with_cliente(){
+	public function add_with_Personal(){
 		$sql = "insert into ".self::$tablename." (Persona_id,Usuario_id,created_at) ";
 		$sql .= "value ($this->Persona_id,$this->Usuario_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
-	public function add_re_with_cliente(){
+	public function add_re_with_Personal(){
 		$sql = "insert into ".self::$tablename." (Persona_id,Operaciontipo_id,Usuario_id,created_at) ";
 		$sql .= "value ($this->Persona_id,1,$this->Usuario_id,$this->created_at)";
 		return Executor::doit($sql);
@@ -43,7 +43,7 @@ class PedidoData {
 	}
 
 	public static function getPedidos(){
-		$sql = "select * from ".self::$tablename." where Operationtipo_id=2 order by created_at desc";
+		$sql = "select * from ".self::$tablename." where operacion_tipo_id=2 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PedidoData());
 	}
