@@ -44,8 +44,8 @@ class ProductoData {
 		$sql = "update ".self::$tablename." set image=\"$this->image\" where id=$this->id";
 		Executor::doit($sql);
 	}
-	public static function getById($Producto_id){
-		$sql = "select * from ".self::$tablename." where id=$Producto_id";
+	public static function getById($id){
+		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
 		return Model::one($query[0],new ProductoData());
 
@@ -60,11 +60,13 @@ class ProductoData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}
+	
 	public static function getLike($p){
 		$sql = "select * from ".self::$tablename." where nombre like '%$p%' or id like '%$p%'";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}
+
 	public static function getAllByUsuarioId($Usuario_id){
 		$sql = "select * from ".self::$tablename." where Usuario_id=$Usuario_id order by created_at desc";
 		$query = Executor::doit($sql);

@@ -1,43 +1,43 @@
 <?php
 
-if(!isset($_SESSION["cartn"])){
+if(!isset($_SESSION["cart"])){
 
 
 	$Producto = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
-	$_SESSION["cartn"] = array($Producto);
+	$_SESSION["cart"] = array($Producto);
 
 
-	$cart = $_SESSION["cartn"];
+	$cart = $_SESSION["cart"];
 
 ///////////////////////////////////////////////////////////////////
 		$num_succ = 0;
 		$process=false;
-		$errors = array();
+	//	$errors = array();
 		foreach($cart as $c){
 
 			///
 			$q = OperacionData::getQNoF($c["Producto_id"],$cut->id);
 			print_r($c);
-			echo ">>".$q;
-			if($c["q"]<=$q){
+		//	echo ">>".$q;
+			/*	if($c["q"]<=$q){
 				$num_succ++;
 
 
 			}else{
 				$error = array("Producto_id"=>$c["Producto_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
 				$errors[count($errors)] = $error;
-			}
+			}*/
 
 		}
 ///////////////////////////////////////////////////////////////////
 
-echo $num_succ;
+//echo $num_succ;
 if($num_succ==count($cart)){
 	$process = true;
 }
 if($process==false){
-	unset($_SESSION["cartn"]);
-$_SESSION["errorsn"] = $errors;
+	unset($_SESSION["cart"]);
+//$_SESSION["errorsn"] = $errors;
 	?>	
 <script>
 	window.location="index.php?view=Pedido";
@@ -51,7 +51,7 @@ $_SESSION["errorsn"] = $errors;
 }else {
 
 $found = false;
-$cart = $_SESSION["cartn"];
+$cart = $_SESSION["cart"];
 $index=0;
 
 $q = OperacionData::getQYesF($_POST["Producto_id"],$cut->id);
@@ -61,21 +61,22 @@ $q = OperacionData::getQYesF($_POST["Producto_id"],$cut->id);
 
 
 $can = true;
-if($_POST["q"]<=$q){
+/*if($_POST["q"]<=$q){
 }else{
 	$error = array("Producto_id"=>$_POST["Producto_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
 	$errors[count($errors)] = $error;
 	$can=false;
-}
+}*/
 
-if($can==false){
-$_SESSION["errors"] = $errors;
+//if($can==false){
+//$_SESSION["errors"] = $errors;
 	?>	
-<script>
+<!-- <script>
 	window.location="index.php?view=pedidos";
-</script>
+</script> -->
+
 <?php
-}
+
 ?>
 
 <?php
@@ -87,23 +88,23 @@ foreach($cart as $c){
 		break;
 	}
 	$index++;
-	print_r($c);
-	print "<br>";
+	//print_r($c);
+	//print "<br>";
 }
 
 if($found==true){
 	$q1 = $cart[$index]["q"];
 	$q2 = $_POST["q"];
 	$cart[$index]["q"]=$q1+$q2;
-	$_SESSION["cartn"] = $cart;
+	$_SESSION["cart"] = $cart;
 }
 
 if($found==false){
     $nc = count($cart);
 	$Producto = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
 	$cart[$nc] = $Producto;
-	print_r($cart);
-	$_SESSION["cartn"] = $cart;
+	//print_r($cart);
+	//$_SESSION["cartn"] = $cart;
 }
 
 }

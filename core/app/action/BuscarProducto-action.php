@@ -12,7 +12,7 @@ if(count($Productos)>0){
 		<th>Cantidad</th>
 	</thead>
 	<?php
-$Productos_in_cero=0;
+//$Productos_in_cero=0;
 	 foreach($Productos as $Producto):
 //$q= OperacionData::getQYesF($Producto->id);
 	?>
@@ -36,9 +36,12 @@ $Productos_in_cero=0;
 		</form></td>
 	</tr>
 
+<!--<?php //else:$products_in_cero++;
+?>-->
+<!--<?php  //endif; ?>-->
+	<?php endforeach;?>
 </table>
-
-<?php if($Productos_in_cero>0){ echo "<p class='alert alert-warning'>Se omitieron <b>$Productos_in_cero productos</b> que no tienen existencias en el inventario. <a href='index.php?module=Inventario'>Ir al Inventario</a></p>"; }?>
+<!--<?php //if($products_in_cero>0){ echo "<p class='alert alert-warning'>Se omitieron <b>$products_in_cero productos</b> que no tienen existencias en el inventario. <a href='index.php?module=inventary'>Ir al Inventario</a></p>"; }?>-->
 
 	<?php
 }
