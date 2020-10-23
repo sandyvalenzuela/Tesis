@@ -74,6 +74,8 @@ $total = 0;
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:30px;">Codigo</th>
+	<th style="width:30px;">Cantidad</th>
+	<th>Producto</th>
 
 	<th ></th>
 </thead>

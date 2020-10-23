@@ -109,7 +109,7 @@ if($found==false){
 
 }
 }
- print "<script>window.location='index.php?view=Pedidos';</script>";
+ print "<script>window.location='index.php?view=Pedido';</script>";
 
 
 ?>
