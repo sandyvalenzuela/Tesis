@@ -4,7 +4,12 @@
 	<br>
 		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=AñadirPersonal" role="form">
 
-
+    <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">IBM*</label>
+    <div class="col-md-6">
+      <input type="text" name="IBM" class="form-control" id="IBM" placeholder="IBM">
+    </div>
+  </div>
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">

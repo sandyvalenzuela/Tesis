@@ -1,14 +1,8 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group  pull-right">
-	<a href="index.php?view=newProducto" class="btn btn-default">Agregar Producto</a>
-<div class="btn-group pull-right">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    <i class="fa fa-download"></i> Descargar <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <li><a href="Repostes/Productos-word.php">Word 2007 (.docx)</a></li>
-  </ul>
+	<a href="index.php?view=newProducto" class="btn btn-success"><i class="fa fa-address-book-o"></i> Agregar Producto</a>
+
 </div>
 </div>
 		<h1>Lista de Productos</h1>
@@ -82,9 +76,9 @@ if($px<=$npaginas):
 		<td><?php if($Producto->is_active): ?><i class="fa fa-check"></i><?php endif;?></td>
 		
 
-		<td style="width:70px;">
-		<a href="index.php?view=editProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i></a>
-		<a href="index.php?view=delProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a>
+		<td style="width:270px;">
+		<a href="index.php?view=editProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i>  Editar   </i></a>
+		<a href="index.php?view=delProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Eliminar    </a>
 		</td>
 	</tr>
 	<?php endforeach;?>

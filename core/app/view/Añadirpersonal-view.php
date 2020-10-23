@@ -2,6 +2,7 @@
 
 if(count($_POST)>0){
 	$Usuario = new PersonaData();
+	$Usuario->IBM = $_POST["IBM"];
 	$Usuario->nombre = $_POST["nombre"];
 	$Usuario->apellido = $_POST["apellido"];
 	$Usuario->direccion = $_POST["direccion"];

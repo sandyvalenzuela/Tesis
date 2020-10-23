@@ -5,7 +5,12 @@
 	<br>
 		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=Actualizarpersonal" role="form">
 
-
+    <div class="form-group">
+    <label for="inputEmail" class="col-lg-2 control-label">IBM*</label>
+    <div class="col-md-6">
+      <input type="text" name="IBM" value="<?php echo $Usuario->IBM;?>" class="form-control" id="IBM" placeholder="IBM">
+    </div>
+  </div>
   <div class="form-group">
     <label for="inputEmail" class="col-lg-2 control-label">Nombre*</label>
     <div class="col-md-6">

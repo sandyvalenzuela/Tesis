@@ -5,7 +5,7 @@ $categorias = CategoriaData::getAll();
 	<div class="col-md-12">
 	<h1>Nuevo Producto</h1>
 	<br>
-		<form class="form-horizontal" method="post" enctype="multipart/form-data" id="addProducto" action="index.php?view=addProducto" role="form">
+		<form class="form-horizontal" method="post" enctype="multipart/form-data" id="addProducto" action="index.php?view=AñadirProducto" role="form">
 
   <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Imagen</label>
@@ -57,7 +57,7 @@ $categorias = CategoriaData::getAll();
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-primary">Agregar Producto</button>
+      <button type="submit" class="btn btn-success"><i class='fa fa-database'></i>   Agregar Producto</button>
     </div>
   </div>
 </form>

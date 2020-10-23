@@ -2,6 +2,7 @@
 
 if(count($_POST)>0){
 	$Usuario = PersonaData::getById($_POST["Usuario_id"]);
+	$Usuario->IBM = $_POST["IBM"];
 	$Usuario->nombre = $_POST["nombre"];
 	$Usuario->apellido = $_POST["apellido"];
 	$Usuario->direccion = $_POST["direccion"];

@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 	<h1>Agregar Usuario</h1>
 	<br>
-		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=addUsuario" role="form">
+		<form class="form-horizontal" method="post" id="addProducto" action="index.php?view=AñadirUsuario" role="form">
 
     <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Imagen</label>
@@ -67,7 +67,7 @@
 
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
-      <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+      <button type="submit" class="btn btn-success"><i class='fa fa-database'></i>  Agregar Usuario</button>
     </div>
   </div>
 </form>

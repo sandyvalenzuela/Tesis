@@ -4,6 +4,7 @@ class PersonaData {
 
 
 	public function PersonaData(){
+		$this->IBM = "";
 		$this->nombre = "";
 		$this->apellido = "";
 		$this->email = "";
@@ -13,8 +14,8 @@ class PersonaData {
 	}
 
 	public function add_Personal(){
-		$sql = "insert into persona (nombre,apellido,direccion,email,telefono,kind,created_at) ";
-		$sql .= "value (\"$this->nombre\",\"$this->apellido\",\"$this->direccion\",\"$this->email\",\"$this->telefono\",1,$this->created_at)";
+		$sql = "insert into persona (IBM,nombre,apellido,direccion,email,telefono,kind,created_at) ";
+		$sql .= "value (\"$this->IBM\",\"$this->nombre\",\"$this->apellido\",\"$this->direccion\",\"$this->email\",\"$this->telefono\",1,$this->created_at)";
 		Executor::doit($sql);
 	}
 
@@ -31,12 +32,12 @@ class PersonaData {
 
 // partiendo de que ya tenemos creado un objecto PersonaData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
+		$sql = "update ".self::$tablename." set IBM=\"$this->IBM\",nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
 	public function update_Personal(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
+		$sql = "update ".self::$tablename." set IBM=\"$this->IBM\",nombre=\"$this->nombre\",email=\"$this->email\",direccion=\"$this->direccion\",apellido=\"$this->apellido\",telefono=\"$this->telefono\" where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -55,6 +56,7 @@ class PersonaData {
 		$data = new PersonaData();
 		while($r = $query[0]->fetch_array()){
 			$data->id = $r['id'];
+			$data->IBM = $r['IBM'];
 			$data->nombre = $r['nombre'];
 			$data->apellido = $r['apellido'];
 			$data->direccion = $r['direccion'];
@@ -74,6 +76,7 @@ class PersonaData {
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new PersonaData();
 			$array[$cnt]->id = $r['id'];
+			$array[$cnt]->IBM = $r['IBM'];
 			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->apellido = $r['apellido'];
 			$array[$cnt]->email = $r['email'];
@@ -94,6 +97,7 @@ class PersonaData {
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new PersonaData();
 			$array[$cnt]->id = $r['id'];
+			$array[$cnt]->IBM = $r['IBM'];
 			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->apellido = $r['apellido'];
 			$array[$cnt]->email = $r['email'];
@@ -112,6 +116,7 @@ class PersonaData {
 		while($r = $query[0]->fetch_array()){
 			$array[$cnt] = new PersonaData();
 			$array[$cnt]->id = $r['id'];
+			$array[$cnt]->IBM = $r['IBM'];
 			$array[$cnt]->nombre = $r['nombre'];
 			$array[$cnt]->email = $r['email'];
 			$array[$cnt]->created_at = $r['created_at'];

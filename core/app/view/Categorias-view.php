@@ -20,7 +20,7 @@
 				?>
 				<tr>
 				<td><?php echo $Usuario->nombre." ".$Usuario->apellido; ?></td>
-				<td style="width:130px;"><a href="index.php?view=EditarCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs">Editar</a> <a href="index.php?view=delCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs">Eliminar</a></td>
+				<td style="width:230px;"><a href="index.php?view=EditarCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-pencil"></i> Editar</a><a href="index.php?view=delCategoria&id=<?php echo $Usuario->id;?>" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i>   Eliminar</a></td>
 				</tr>
 			<?php
 			
