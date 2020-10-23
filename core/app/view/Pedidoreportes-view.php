@@ -1,5 +1,5 @@
 <?php
-$Clientes = PersonaData::getClientes();
+$Personals = PersonaData::getPersonals();
 ?>
 <section class="content">
 <div class="row">
@@ -11,10 +11,10 @@ $Clientes = PersonaData::getClientes();
 <div class="row">
 <div class="col-md-3">
 
-<select name="Cliente_id" class="form-control">
+<select name="Persona_id" class="form-control">
 	<option value="">--  TODOS --</option>
-	<?php foreach($Clientes as $p):?>
-	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+	<?php foreach($Personas as $p):?>
+	<option value="<?php echo $p->id;?>"><?php echo $p->nombre;?></option>
 	<?php endforeach; ?>
 </select>
 
@@ -38,8 +38,8 @@ $Clientes = PersonaData::getClientes();
 
 <select name="mesero_id" class="form-control">
 	<option value="">--  MESEROS --</option>
-	<?php foreach($meseros as $p):?>
-	<option value="<?php echo $p->id;?>"><?php echo $p->name;?></option>
+		<?php foreach($meseros as $p):?>
+	<option value="<?php echo $p->id;?>"><?php echo $p->nombre;?></option>
 	<?php endforeach; ?>
 </select>
 
@@ -66,31 +66,39 @@ $Clientes = PersonaData::getClientes();
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
 			<?php 
-			$Operaciones = array();
+			//$Operaciones = array();
 
-			if($_GET["Cliente_id"]==""){
-			$Operaciones = PedidoData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
-			}
-			else{
-			$Operaciones = PedidoData::getAllByDateBCOp($_GET["Cliente_id"],$_GET["sd"],$_GET["ed"],2);
-			} 
+//			if($_GET["Pedido_id"]==""){
+			//$Operaciones = PedidoData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
+//			}
+//			else{
+//			$Operaciones = PedidoData::getAllByDateBCOp($_GET["Cliente_id"],$_GET["sd"],$_GET["ed"],2);
+//			} 
 
 
 			 ?>
 
-			 <?php if(count($Operaciones)>0):?>
+			 <?php 
+			 if(count($Pedidos)>0):?>
 	
 <table class="table table-bordered">
 	<thead>
 		<th>Id</th>	
 		<th>Fecha</th>
 	</thead>
-<?php foreach($Operaciones as $Operacion):?>
+<?php foreach($Pedidos as $Pedido):?>
 	<tr>
-		<td><?php echo $Operacion->id; ?></td>
-		<td><?php echo $Operacion->created_at; ?></td>
+		<td><?php echo $Pedido->id; ?></td>
+		<td><?php echo $Pedido->created_at; ?></td>
 	</tr>
+	<?php
+
+ endforeach; ?>
 </table>
+<?php else:
+			 // si no hay operaciones
+			 ?>-->
+
 <script>
 	$("#wellcome").hide();
 </script>
