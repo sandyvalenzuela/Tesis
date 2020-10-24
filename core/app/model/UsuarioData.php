@@ -37,6 +37,11 @@ class UsuarioData {
 		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",username=\"$this->username\",apellido=\"$this->apellido\",is_active=\"$this->is_active\",is_admin=\"$this->is_admin\" where id=$this->id";
 		Executor::doit($sql);
 	}
+	public function update_Clinica(){
+		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",email=\"$this->email\",username=\"$this->username\",apellido=\"$this->apellido\",is_active=\"$this->is_active\",is_admin=\"$this->is_admin\" where id=$this->id";
+		Executor::doit($sql);
+	}
+
 	public function update_passwd(){
 		$sql = "update ".self::$tablename." set password=\"$this->password\" where id=$this->id";
 		Executor::doit($sql);

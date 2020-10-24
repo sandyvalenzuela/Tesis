@@ -19,7 +19,11 @@ class PersonaData {
 		Executor::doit($sql);
 	}
 
-	
+	public function add_with_image(){
+		$sql = "insert into ".self::$tablename." (image,IBM,nombre,apellido,direccion,email,telefono,kind,created_at) ";
+		$sql .= "value (\"$this->IBM\",\"$this->nombre\",\"$this->apellido\",\"$this->direccion\",\"$this->email\",\"$this->telefono\",1,$this->created_at)";
+		return Executor::doit($sql);
+	}
 
 	public static function delById($id){
 		$sql = "delete from ".self::$tablename." where id=$id";
@@ -108,6 +112,7 @@ class PersonaData {
 		}
 		return $array;
 	}
+	
 	public static function getLike($q){
 		$sql = "select * from ".self::$tablename." where nombre like '%$q%'";
 		$query = Executor::doit($sql);

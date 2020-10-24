@@ -57,6 +57,22 @@ class ClinicaData {
 		}
 		return $array;
 	}
+	public static function getClinicas(){
+		$sql = "select * from ".self::$tablename." where kind=1 order by nombre";
+		$query = Executor::doit($sql);
+		$array = array();
+		$cnt = 0;
+		while($r = $query[0]->fetch_array()){
+			$array[$cnt] = new ClinicaData();
+			$array[$cnt]->id = $r['id'];
+			$array[$cnt]->codigo = $r['codigo'];
+			$array[$cnt]->nombre = $r['nombre'];
+			$array[$cnt]->created_at = $r['created_at'];
+			$cnt++;
+		}
+		return $array;
+	}
+
 
 
 	public static function getLike($q){

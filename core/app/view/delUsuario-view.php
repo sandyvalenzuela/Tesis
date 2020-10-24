@@ -1,7 +1,7 @@
 <?php
 
-$Usuario = UsuarioData::getById($_GET["id"]);
-$Usuario->del();
+$Usuarios = UsuarioData::getById($_GET["id"]);
+$Usuarios->del();
 Core::redir("./index.php?view=Usuarios");
 
 ?>

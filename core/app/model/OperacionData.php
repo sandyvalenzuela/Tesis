@@ -76,12 +76,12 @@ class OperacionData {
 
 	public static function getQYesF($Producto_id){
 		$dinero=0;
-		$Operaciones = self::getAllByProductoId($Producto_id);
+		$operaciones = self::getAllByProductoId($Producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
-		foreach($Operaciones as $Operacion){
-				if($Operacion->operacion_tipo_id==$input_id){ $dinero+=$Operacion->dinero; }
-				else if($Operacion->operacion_tipo_id==$output_id){  $dinero+=(-$Operacion->dinero); }
+		foreach($operaciones as $operacion){
+				if($operacion->operacion_tipo_id==$input_id){ $dinero+=$operacion->dinero; }
+				else if($Operacion->operacion_tipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
 		}
 		// print_r($data);
 		return $dinero;

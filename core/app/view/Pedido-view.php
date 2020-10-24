@@ -41,7 +41,7 @@ $(document).ready(function(){
 });
 </script>
 
-<?php if(isset($_SESSION["errors"])):?>
+<!---<?php //if(isset($_SESSION["errors"])):?>
 <h2>Errores</h2>
 <p></p>
 <table class="table table-bordered table-hover">
@@ -50,20 +50,20 @@ $(document).ready(function(){
 	<th>Producto</th>
 	<th>Mensaje</th>
 </tr>
-<?php foreach ($_SESSION["errors"]  as $error):
-$Producto = ProductoData::getById($error["Producto_id"]);
-?>
-<tr class="danger">
-	<td><?php echo $Producto->id; ?></td>
-	<td><?php echo $Product->nombre; ?></td>
-	<td><b><?php echo $error["message"]; ?></b></td>
+<?php //foreach ($_SESSION["errors"]  as $error):
+//$Producto = ProductoData::getById($error["Producto_id"]);
+?>-->
+<!---<tr class="danger">
+	<td><?php// echo $Producto->id; ?></td>
+	<td><?php //echo $Product->nombre; ?></td>
+	<td><b><?php// echo $error["message"]; ?></b></td>
 </tr>
 
-<?php endforeach; ?>
+<?php //endforeach; ?>
 </table>
 <?php
-unset($_SESSION["errors"]);
- endif; ?>
+//unset($_SESSION["errors"]);
+// endif; ?>-->
 
 
 <!--- Carrito de pedidos :) -->
@@ -93,20 +93,39 @@ $Producto = ProductoData::getById($p["Producto_id"]);
 </table>
 <form method="post" class="form-horizontal" id="processsell" action="index.php?view=Procesopedido">
 <h2>Resumen</h2>
+
+
 <div class="form-group">
-    <label for="inputEmail" class="col-lg-2 control-label">Cliente</label>
+    <label for="inputEmail" class="col-lg-2 control-label">Clinicas</label>
     <div class="col-lg-10">
     <?php 
-$Clientes = PersonaData::getClientes();
+$Clinicas = ClinicaData::getClinicas();
     ?>
-    <select name="Cliente_id" class="form-control">
+    <select name="Clinica_id" class="form-control">
     <option value="">-- NINGUNO --</option>
-    <?php foreach($Clientes as $Cliente):?>
-    	<option value="<?php echo $Cliente->id;?>"><?php echo $Cliente->nombre." ".$client->apellido;?></option>
+    <?php foreach($Clinicas as $Clinica):?>
+    	<option value="<?php echo $Clinica->id;?>"><?php echo $Clinica->nombre;?></option>
     <?php endforeach;?>
     	</select>
     </div>
   </div>
+
+  
+<div class="form-group">
+    <label for="inputEmail" class="col-lg-2 control-label">Personal que solicita el pedido</label>
+    <div class="col-lg-10">
+    <?php 
+$Personals = PersonaData::getPersonals();
+    ?>
+    <select name="Persona_id" class="form-control">
+    <option value="">-- NINGUNO --</option>
+    <?php foreach($Personals as $Personal):?>
+    	<option value="<?php echo $Personal->id;?>"><?php echo $Personal->nombre." ".$Personal->apellido;?></option>
+    <?php endforeach;?>
+    	</select>
+    </div>
+  </div>
+
 
 </table>
   <div class="form-group">
@@ -123,7 +142,7 @@ $Clientes = PersonaData::getClientes();
       <div class="checkbox">
         <label>
 		<a href="index.php?view=Vaciarcarro" class="btn btn-lg btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a>
-        <button class="btn btn-lg btn-primary"><i class="glyphicon glyphicon-usd"></i><i class="glyphicon glyphicon-usd"></i> Finalizar Pedido</button>
+        <button class="btn btn-lg btn-primary">Finalizar Pedido</button>
         </label>
       </div>
     </div>

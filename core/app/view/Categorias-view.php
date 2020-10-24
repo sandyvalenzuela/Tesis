@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group pull-right">
-	<a href="index.php?view=NuevaCategoria" class="btn btn-default "><i class='fa fa-th-list'></i> Nueva Categoria</a>
+	<a href="index.php?view=NuevaCategoria" class="btn btn-success "><i class='fa fa-th-list'></i> Nueva Categoria</a>
 </div>
 		<h1>Categorias</h1>
 <br>

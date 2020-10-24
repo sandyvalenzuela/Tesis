@@ -8,40 +8,40 @@ if(isset($_SESSION["cart"])){
 		
 		$num_succ = 0;
 		$process=false;
-		$errors = array();
-		foreach($cart as $c){
+		//$errors = array();
+		//foreach($cart as $c){
 
 			///
-			$q = OperacionData::getQYesF($c["Producto_id"]);
-			if($c["q"]<=$q){
-				if(isset($_POST["is_oficial"])){
-				$qyf =OperacionData::getQYesF($c["Producto_id"]); 
-				if($c["q"]<=$qyf){
-					$num_succ++;
-				}else{
-				$error = array("Producto_id"=>$c["Producto_id"],"message"=>"No hay suficiente cantidad de producto para facturar en inventario.");					
-				$errors[count($errors)] = $error;
-				}
-				}else{
+		//$q = OperacionData::getQYesF($c["Producto_id"]);
+			//if($c["q"]<=$q){
+			//	if(isset($_POST["is_oficial"])){
+			//	$qyf =OperacionData::getQYesF($c["Producto_id"]); 
+			//	if($c["q"]<=$qyf){
+			//		$num_succ++;
+			//	}else{
+			//	$error = array("Producto_id"=>$c["Producto_id"],"message"=>"No hay suficiente cantidad de producto para facturar en inventario.");					
+			//	$errors[count($errors)] = $error;
+			//	}
+			//	}else{
 					// si llegue hasta aqui y no voy a facturar, entonces continuo ...
-					$num_succ++;
-				}
-			}else{
-				$error = array("product_id"=>$c["product_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
-				$errors[count($errors)] = $error;
-			}
+			//		$num_succ++;
+			//	}
+			//}else{
+			//	$error = array("product_id"=>$c["product_id"],"message"=>"No hay suficiente cantidad de producto en inventario.");
+			//	$errors[count($errors)] = $error;
+			//}
 
-		}
+		//}
 
 if($num_succ==count($cart)){
 	$process = true;
 }
 
 if($process==false){
-$_SESSION["errors"] = $errors;
+//$_SESSION["errors"] = $errors;
 	?>	
 <script>
-	window.location="index.php?view=sell";
+	//window.location="index.php?view=Pedido";
 </script>
 <?php
 }
@@ -61,9 +61,9 @@ $_SESSION["errors"] = $errors;
 			$Pedido->discount = $_POST["discount"];
 
 
-			 if(isset($_POST["Cliente_id"]) && $_POST["Cliente_id"]!=""){
-			 	$Pedido->Persona_id=$_POST["cliente_id"];
- 				$s = $Pedido->add_with_cliente();
+			 if(isset($_POST["Personal_id"]) && $_POST["Personal_id"]!=""){
+			 	$Pedido->Persona_id=$_POST["Personal_id"];
+ 				$s = $Pedido->add_with_Personal();
 			 }else{
  				$s = $Pedido->add();
 			 }
@@ -74,7 +74,7 @@ $_SESSION["errors"] = $errors;
 
 			$op = new OperacionData();
 			 $op->Producto_id = $c["Producto_id"] ;
-			 $op->Operaciontipo_id=OperacionTipoData::getByName("salida")->id;
+			 $op->operaciontipo_id=OperacionTipoData::getByName("salida")->id;
 			 $op->Pedido_id=$s[1];
 			 $op->q= $c["q"];
 

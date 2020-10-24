@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 <div class="btn-group  pull-right">
-	<a href="index.php?view=newProducto" class="btn btn-success"><i class="fa fa-address-book-o"></i> Agregar Producto</a>
+	<a href="index.php?view=NuevoProducto" class="btn btn-success"><i class="fa fa-address-book-o"></i> Agregar Producto</a>
 
 </div>
 </div>
@@ -77,7 +77,7 @@ if($px<=$npaginas):
 		
 
 		<td style="width:270px;">
-		<a href="index.php?view=editProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i>  Editar   </i></a>
+		<a href="index.php?view=EditarProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-warning"><i class="glyphicon glyphicon-pencil"></i>  Editar   </i></a>
 		<a href="index.php?view=delProducto&id=<?php echo $Producto->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Eliminar    </a>
 		</td>
 	</tr>

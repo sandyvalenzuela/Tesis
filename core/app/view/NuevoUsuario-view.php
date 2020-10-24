@@ -30,7 +30,7 @@
     <label for="inputEmail1" class="col-lg-2 control-label">Nombre de usuario*</label>
     <div class="col-md-6">
       <input type="text" name="username" class="form-control" required id="username" placeholder="Nombre de usuario"
-      pattern="[-A-Za-z0-9]{1,8}" title="Debe agreagar letras Mayusculas, Minusculas y Numeros" maxlength="8">>
+      pattern="[-A-Za-z0-9]{1,8}" title="Debe agreagar letras Mayusculas, Minusculas y Numeros" maxlength="25">
     
     </div>
   </div>
