@@ -83,7 +83,6 @@ class OperacionData {
 				if($operacion->operacion_tipo_id==$input_id){ $dinero+=$operacion->dinero; }
 				else if($Operacion->operacion_tipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
 		}
-		// print_r($data);
 		return $dinero;
 	}
 

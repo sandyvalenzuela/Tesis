@@ -9,7 +9,7 @@ if(count($Productos)>0){
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
-		<th>Cantidad</th>
+
 	</thead>
 	<?php
 //$Productos_in_cero=0;
@@ -17,11 +17,9 @@ if(count($Productos)>0){
 //$q= OperacionData::getQYesF($Producto->id);
 	?>
 	
-		<td style="width:80px;"><?php echo $Producto->id; ?></td>
-		<td><?php echo $Producto->codigo; ?></td>
+		<td style="width:80px;">	<?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
-		<td>
-		</td>
+	
 		<td style="width:250px;"><form method="post" action="index.php?view=Añadiralcarrito">
 		<input type="hidden" name="Producto_id" value="<?php echo $Producto->id; ?>">
 

@@ -18,12 +18,12 @@ if(isset($_COOKIE["vendido"])){
 
 ?>
 <table class="table table-bordered">
-<?php if($Pedido->Persona_id!=""):
-$Cliente = $Pedido->getPersona();
+<?php if($Pedido->Clinica_id!=""):
+$Clinica = $Pedido->getClinica();
 ?>
 <tr>
-	<td style="width:150px;">Cliente</td>
-	<td><?php echo $Cliente->nombre." ".$Cliente->apellido;?></td>
+	<td style="width:150px;">clinica</td>
+	<td><?php echo $Clinica->nombre." ".$Cliente->apellido;?></td>
 </tr>
 
 <?php endif; ?>

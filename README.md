@@ -2,11 +2,11 @@
 Sistema de Pedidos   desarrollado con PHP y MySQL.
 
 ## Modulos
+-Inicio
 - Productos
-- Categorias
-- Personal de enfermeria
+- pedido
 - Pedidos
-- Clinicass
+- Catalogo
 - Inventario
-- Usuarios
-
+- Reportes
+- Administracion

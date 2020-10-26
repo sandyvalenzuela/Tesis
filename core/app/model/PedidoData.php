@@ -22,6 +22,11 @@ class PedidoData {
 		$sql .= "value ($this->Persona_id,$this->Usuario_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
+	public function add_with_Clinica(){
+		$sql = "insert into ".self::$tablename." (Clinica_id,Usuario_id,created_at) ";
+		$sql .= "value ($this->Clinica_id,$this->Usuario_id,$this->created_at)";
+		return Executor::doit($sql);
+	}
 	public function add_re_with_Personal(){
 		$sql = "insert into ".self::$tablename." (Persona_id,Operaciontipo_id,Usuario_id,created_at) ";
 		$sql .= "value ($this->Persona_id,1,$this->Usuario_id,$this->created_at)";

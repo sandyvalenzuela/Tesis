@@ -10,8 +10,8 @@ class ClinicaData {
 		$this->created_at = "NOW()";
 	}
 	public function add_Clinica(){
-		$sql = "insert into clinica (codigo,nombre,created_at) ";
-		$sql .= "value (\"$this->codigo\",\"$this->nombre\",$this->created_at)";
+		$sql = "insert into clinica (codigo,nombre,kind,created_at) ";
+		$sql .= "value (\"$this->codigo\",\"$this->nombre\",1,$this->created_at)";
 		Executor::doit($sql);
 	}
 	public static function delById($id){

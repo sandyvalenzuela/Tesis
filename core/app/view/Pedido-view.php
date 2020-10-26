@@ -41,29 +41,6 @@ $(document).ready(function(){
 });
 </script>
 
-<!---<?php //if(isset($_SESSION["errors"])):?>
-<h2>Errores</h2>
-<p></p>
-<table class="table table-bordered table-hover">
-<tr class="danger">
-	<th>Codigo</th>
-	<th>Producto</th>
-	<th>Mensaje</th>
-</tr>
-<?php //foreach ($_SESSION["errors"]  as $error):
-//$Producto = ProductoData::getById($error["Producto_id"]);
-?>-->
-<!---<tr class="danger">
-	<td><?php// echo $Producto->id; ?></td>
-	<td><?php //echo $Product->nombre; ?></td>
-	<td><b><?php// echo $error["message"]; ?></b></td>
-</tr>
-
-<?php //endforeach; ?>
-</table>
-<?php
-//unset($_SESSION["errors"]);
-// endif; ?>-->
 
 
 <!--- Carrito de pedidos :) -->
@@ -74,8 +51,9 @@ $total = 0;
 <table class="table table-bordered table-hover">
 <thead>
 	<th style="width:30px;">Codigo</th>
+  <th style="width:30px;">Producto</th>
 	<th style="width:30px;">Cantidad</th>
-	<th>Producto</th>
+	
 
 	<th ></th>
 </thead>
@@ -84,8 +62,9 @@ $Producto = ProductoData::getById($p["Producto_id"]);
 ?>
 <tr >
 	<td><?php echo $Producto->id; ?></td>
+  <td><?php echo $Producto->nombre; ?></td>
 	<td ><?php echo $p["q"]; ?></td>
-	<td><?php echo $Producto->nombre; ?></td>
+
 	<td style="width:30px;"><a href="index.php?view=Vaciarcarro&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
 </tr>
 
@@ -96,7 +75,7 @@ $Producto = ProductoData::getById($p["Producto_id"]);
 
 
 <div class="form-group">
-    <label for="inputEmail" class="col-lg-2 control-label">Clinicas</label>
+    <label for="inputEmail1" class="col-lg-2 control-label">Clinicas</label>
     <div class="col-lg-10">
     <?php 
 $Clinicas = ClinicaData::getClinicas();

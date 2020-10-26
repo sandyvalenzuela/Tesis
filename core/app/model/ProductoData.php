@@ -33,7 +33,7 @@ class ProductoData {
 
 // partiendo de que ya tenemos creado un objecto ProductoData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
+		$sql = "update ".self::$tablename." set codigo=\"$this->codigo\"nombre=\"$this->nombre\",presentacion=\"$this->presentacion\",categoria_id=$this->categoria_id,descripcion=\"$this->descripcion\",is_active=\"$this->is_active\" where id=$this->id";
 		Executor::doit($sql);
 	}
 	public function del_Categoria(){
@@ -55,6 +55,7 @@ class ProductoData {
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new ProductoData());
 	}
+	
 	public static function getAllByPage($start_from,$limit){
 		$sql = "select * from ".self::$tablename." where id>=$start_from limit $limit";
 		$query = Executor::doit($sql);

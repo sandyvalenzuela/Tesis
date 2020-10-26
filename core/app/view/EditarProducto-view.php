@@ -8,10 +8,10 @@ if($Producto!=null):
 	<div class="col-md-8">
 	<h1><?php echo $Producto->nombre ?> <small>Editar Producto</small></h1>
   <?php if(isset($_COOKIE["prdupd"])):?>
-    <p class="alert alert-info">La informacion del producto se ha actualizado exitosamente.</p>
+  <p class="alert alert-info">La informacion del producto se ha actualizado exitosamente.</p>
   <?php setcookie("prdupd","",time()-18600); endif; ?>
 	<br><br>
-		<form class="form-horizontal" method="post" id="addProducto" enctype="multipart/form-data" action="index.php?view=ActualizarProducto" role="form">
+		<form class="form-horizontal" method="post" id="AñadirProducto" enctype="multipart/form-data" action="index.php?view=ActualizarProducto" role="form">
 
   <div class="form-group">
     <label for="inputEmail" class="col-lg-3 control-label">Imagen*</label>
@@ -83,7 +83,7 @@ if($Producto!=null):
 
   <div class="form-group">
     <div class="col-lg-offset-3 col-lg-8">
-    <input type="hidden" name="Usuario_id" value="<?php echo $Usuario->id; ?>">
+    <input type="hidden" name="Producto_id" value="<?php echo $Producto->id; ?>">
       <button type="submit" class="btn btn-success">Actualizar Producto</button>
     </div>
   </div>
