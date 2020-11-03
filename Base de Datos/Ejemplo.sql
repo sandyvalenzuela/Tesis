@@ -65,30 +65,6 @@ INSERT INTO `clinica` (`id`, `codigo`, `nombre`, `created_at`) VALUES
 
 -- --------------------------------------------------------
 
---
--- Estructura de tabla para la tabla `configuracion`
---
-
-CREATE TABLE `configuracion` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(255) DEFAULT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `tipo` int(11) DEFAULT NULL,
-  `val` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `configuracion`
---
-
-INSERT INTO `configuracion` (`id`, `titulo`, `nombre`, `tipo`, `val`) VALUES
-(1, 'titulo', 'sistema de pedidos', 2, 'Sistema de Pedidos'),
-(2, 'use_image_producto', 'Utilizar Imagenes en los productos', 1, '0'),
-(3, 'active_personals', 'Activar personals', 1, '0'),
-(4, 'active_categorias', 'Activar categorias', 1, '0'),
-(5, 'active_reportes_word', 'Activar reportes en Word', 1, '0'),
-(6, 'active_reportes_excel', 'Activar reportes en Excel', 1, '0'),
-(7, 'active_reportes_pdf', 'Activar reportes en PDF', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -267,7 +243,8 @@ ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id`),
   ADD KEY `operacion_tipo_id` (`operacion_tipo_id`),
   ADD KEY `Usuario_id` (`Usuario_id`),
-  ADD KEY `persona_id` (`persona_id`);
+  ADD KEY `persona_id` (`persona_id`),
+  ADD KEY `Clinica_id` (`Clinica_id`);
 
 --
 -- Indices de la tabla `persona`

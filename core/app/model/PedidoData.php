@@ -6,12 +6,16 @@ class PedidoData {
 	}
 	public function getPersona(){ return PersonaData::getById($this->persona_id);}
 	public function getUsuario(){ return UsuarioData::getById($this->Usuario_id);}
+	public function getClinica(){ return ClinicaData::getById($this->Clinica_id);}
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (Usuario_id,created_at) ";
 		$sql .= "value ($this->Usuario_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
+
+
+	
 	public function add_re(){
 		$sql = "insert into ".self::$tablename." (Usuario_id,Operaciontipo_id,created_at) ";
 		$sql .= "value ($this->Usuario_id,1,$this->created_at)";

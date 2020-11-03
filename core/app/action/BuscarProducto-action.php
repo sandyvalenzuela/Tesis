@@ -16,8 +16,9 @@ if(count($Productos)>0){
 	 foreach($Productos as $Producto):
 //$q= OperacionData::getQYesF($Producto->id);
 	?>
-	
-		<td style="width:80px;">	<?php echo $Producto->codigo; ?></td>
+	<!--<?php 
+	//if($q>0):?>-->
+		<td style="width:80px;"><?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
 	
 		<td style="width:250px;"><form method="post" action="index.php?view=Añadiralcarrito">

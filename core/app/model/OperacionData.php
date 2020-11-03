@@ -12,8 +12,8 @@ class OperacionData {
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (producto_id,q,operacion_tipo_id,pedido_id,created_at) ";
-		$sql .= "value (\"$this->producto_id\",$this->q\",$this->operacion_tipo_id,$this->pedido_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (Producto_id,q,dinero,operacion_tipo_id,pedido_id,created_at) ";
+		$sql .= "value (\"$this->Producto_id\",$this->q\",$this->dinero\",$this->operacion_tipo_id,$this->Pedido_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -107,8 +107,8 @@ class OperacionData {
 	}
 
 
-	public static function getAllProductosBySellId($pedido_id){
-		$sql = "select * from ".self::$tablename." where pedido_id=$pedido_id order by created_at desc";
+	public static function getAllProductosByPedidoId($Pedido_id){
+		$sql = "select * from ".self::$tablename." where pedido_id=$Pedido_id order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}

@@ -1,24 +1,21 @@
 
-<?php if(isset($_GET["product"])):?>
+<?php if(isset($_GET["Producto"])):?>
 	<?php
-$products = ProductData::getLike($_GET["product"]);
-if(count($products)>0){
+$Productos = ProductoData::getLike($_GET["Producto"]);
+if(count($Productos)>0){
 	?>
 <h3>Resultados de la Busqueda</h3>
 <table class="table table-bordered table-hover">
 	<thead>
 		<th>Codigo</th>
 		<th>Nombre</th>
-		<th>Unidad</th>
-		<th>Precio unitario</th>
-		<th>En inventario</th>
 		<th>Cantidad</th>
 		<th style="width:100px;"></th>
 	</thead>
 	<?php
-$products_in_cero=0;
-	 foreach($products as $product):
-$q= OperationData::getQYesF($product->id);
+$productos_in_cero=0;
+	 foreach($productos as $Producto):
+$q= OperacionData::getQYesF($Producto->id);
 	?>
 	<?php 
 	if($q>0):?>

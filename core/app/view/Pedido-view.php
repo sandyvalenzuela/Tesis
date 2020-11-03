@@ -17,7 +17,7 @@
 <div id="show_search_results"></div>
 <script>
 
-
+//jQuery.noConflict();
 $(document).ready(function(){
 	$("#searchp").on("submit",function(e){
 		e.preventDefault();
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 
 $(document).ready(function(){
-    $("#product_code").keydown(function(e){
+    $("#product_codigo").keydown(function(e){
         if(e.which==17 || e.which==74){
             e.preventDefault();
         }else{
@@ -41,9 +41,33 @@ $(document).ready(function(){
 });
 </script>
 
+<?php if(isset($_SESSION["errors"])):?>
+<h2>Errores</h2>
+<p></p>
+<table class="table table-bordered table-hover">
+<tr class="danger">
+	<th>Codigo</th>
+	<th>Producto</th>
+	<th>Mensaje</th>
+</tr>
+<?php foreach ($_SESSION["errors"]  as $error):
+$Producto = ProductoData::getById($error["Producto_id"]);
+?>
+<tr class="danger">
+	<td><?php echo $Producto->id; ?></td>
+	<td><?php echo $Product->nombre; ?></td>
+	<td><b><?php echo $error["message"]; ?></b></td>
+	
+</tr>
+
+<?php endforeach; ?>
+</table>
+<?php
+unset($_SESSION["errors"]);
+ endif; ?>
 
 
-<!--- Carrito de pedidos :) -->
+<!--- Carrito de pedidos -->
 <?php if(isset($_SESSION["cart"])):
 $total = 0;
 ?>
@@ -53,28 +77,24 @@ $total = 0;
 	<th style="width:30px;">Codigo</th>
   <th style="width:30px;">Producto</th>
 	<th style="width:30px;">Cantidad</th>
-	
-
 	<th ></th>
 </thead>
 <?php foreach($_SESSION["cart"] as $p):
 $Producto = ProductoData::getById($p["Producto_id"]);
 ?>
-<tr >
-	<td><?php echo $Producto->id; ?></td>
+<tr>
+	<td><?php echo $Producto->codigo; ?></td>
   <td><?php echo $Producto->nombre; ?></td>
 	<td ><?php echo $p["q"]; ?></td>
-
+	<td><b><?php  $pt //= $product->price_out*$p["q"]; $total +=$pt; 	//echo number_format($pt); ?></b></td>
 	<td style="width:30px;"><a href="index.php?view=Vaciarcarro&Producto_id=<?php echo $Producto->id; ?>" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancelar</a></td>
 </tr>
-
 <?php endforeach; ?>
 </table>
-<form method="post" class="form-horizontal" id="processsell" action="index.php?view=Procesopedido">
-<h2>Resumen</h2>
+<form method="post" class="form-horizontal" id="processopedido" action="index.php?view=Procesopedido">
+<h2></h2>
 
-
-<div class="form-group">
+  <div class="form-group">
     <label for="inputEmail1" class="col-lg-2 control-label">Clinicas</label>
     <div class="col-lg-10">
     <?php 
@@ -89,21 +109,36 @@ $Clinicas = ClinicaData::getClinicas();
     </div>
   </div>
 
-  
-<div class="form-group">
-    <label for="inputEmail" class="col-lg-2 control-label">Personal que solicita el pedido</label>
+<!--<div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Descuento</label>
     <div class="col-lg-10">
-    <?php 
-$Personals = PersonaData::getPersonals();
-    ?>
-    <select name="Persona_id" class="form-control">
-    <option value="">-- NINGUNO --</option>
-    <?php foreach($Personals as $Personal):?>
-    	<option value="<?php echo $Personal->id;?>"><?php echo $Personal->nombre." ".$Personal->apellido;?></option>
-    <?php endforeach;?>
-    	</select>
+      <input type="text" name="discount" class="form-control" required value="0" id="discount" placeholder="Descuento">
     </div>
   </div>
+ <div class="form-group">
+    <label for="inputEmail1" class="col-lg-2 control-label">Efectivo</label>
+    <div class="col-lg-10">
+      <input type="text" name="money" required class="form-control" id="money" placeholder="Efectivo">
+    </div>
+  </div>
+      <input type="hidden" name="total" value="<?php //echo $total; ?>" class="form-control" placeholder="Total">-->
+
+      <div class="row">
+<div class="col-md-6 col-md-offset-6">
+<table class="table table-bordered">
+<!--<tr>
+	<td><p>Subtotal</p></td>
+	<td><p><b>$ <?php //echo number_format($total*.84); ?></b></p></td>
+</tr>
+<tr>
+	<td><p>IVA</p></td>
+	<td><p><b>$ <?php //echo number_format($total*.16); ?></b></p></td>
+</tr>
+<tr>
+	<td><p>Total</p></td>
+	<td><p><b>$ <?php //echo number_format($total); ?></b></p></td>
+</tr>-->
+
 
 
 </table>
