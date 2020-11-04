@@ -58,8 +58,8 @@ class OperacionData {
 		return Model::many($query[0],new OperacionData());
 	}
 
-	public static function getAllByDateOfficialBP($producto, $start,$end){
- $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and producto_id=$producto order by created_at desc";
+	public static function getAllByDateOfficialBP($Producto, $start,$end){
+ $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Producto_id=$Producto order by created_at desc";
 		if($start == $end){
 		 $sql = "select * from ".self::$tablename." where date(created_at) = \"$start\" order by created_at desc";
 		}
@@ -109,8 +109,8 @@ class OperacionData {
 	}
 
 
-	public static function getAllProductosByPedidoId($pedido_id){
-		$sql = "select * from ".self::$tablename." where pedido_id=$pedido_id order by created_at desc";
+	public static function getAllProductosByPedidoId($Pedido_id){
+		$sql = "select * from ".self::$tablename." where Pedido_id=$Pedido_id order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
@@ -123,54 +123,54 @@ class OperacionData {
 	}
 
 ////////////////////////////////////////////////////////////////////
-	public static function getOutputQ($producto_id,$cut_id){
-		$dinero=0;
-		$operaciones = self::getOutputByProductoIdCutId($producto_id,$cut_id);
+	public static function getOutputQ($Producto_id,$cut_id){
+		$q=0;
+		$Operaciones = self::getOutputByProductoIdCutId($Producto_id,$cut_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
-		foreach($operaciones as $operacion){
-			if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
-			else if($operacion->operaciontipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
+		foreach($Operaciones as $Operacion){
+			if($Operacion->Operacion_tipo_id==$input_id){ $q+=$Operacion->q; }
+			else if($Operacion->Operacion_tipo_id==$output_id){  $q+=(-$Operacion->q); }
 		}
 		// print_r($data);
-		return $dinero;
+		return $q;
 	}
 
-	public static function getOutputQYesF($producto_id){
-		$dinero=0;
-		$operaciones = self::getOutputByProductId($producto_id);
+	public static function getOutputQYesF($Producto_id){
+		$q=0;
+		$Operaciones = self::getOutputByProductId($Producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
-		foreach($operaciones as $operacion){
-			if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
-			else if($operacion->operaciontipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
+		foreach($Operaciones as $Operacion){
+			if($Operacion->Operacion_tipo_id==$input_id){ $q+=$Operacion->q; }
+			else if($operacion->operacion_tipo_id==$output_id){  $q+=(-$Operacion->q); }
 		}
 		// print_r($data);
-		return $dinero;
+		return $q;
 	}
 
 	public static function getInputQYesF($Producto_id){
-		$dinero=0;
-		$operaciones = self::getInputByProductoId($Producto_id);
+		$q=0;
+		$Operaciones = self::getInputByProductoId($Producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
-		foreach($operaciones as $operacion){
-			if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
+		foreach($Operaciones as $Operacion){
+			if($Operacion->Operacion_tipo_id==$input_id){ $q+=$Operacion->q; }
 		}
 		// print_r($data);
-		return $dinero;
+		return $q;
 	}
 
 
 
-	public static function getOutputByProductoIdCutId($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$product_id and cut_id=$cut_id and operaciontipo_id=2 order by created_at desc";
+	public static function getOutputByProductoIdCutId($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id and Operacion_tipo_id=2 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
 
 
-	public static function getOutputByProductoId($producto_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and operacion_tipo_id=2 order by created_at desc";
+	public static function getOutputByProductoId($Producto_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and Operacion_tipo_id=2 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
@@ -179,32 +179,32 @@ class OperacionData {
 	public static function getInputQ($producto_id,$cut_id){
 		$q=0;
 		return Model::many($query[0],new OperacionData());
-		$operaciones = self::getInputByProductoId($producto_id);
+		$Operaciones = self::getInputByProductoId($producto_id);
 		$input_id = OperacionTipoData::getByName("entrada")->id;
 		$output_id = OperacionTipoData::getByName("salida")->id;
-		foreach($operaciones as $operacion){
-			if($operacion->operaciontipo_id==$input_id){ $dinero+=$operacion->dinero; }
-			else if($operacion->operaciontipo_id==$output_id){  $dinero+=(-$operacion->dinero); }
+		foreach($Operaciones as $Operacion){
+			if($Operacion->Operacion_tipo_id==$input_id){ $q+=$Operacion->q; }
+			else if($Operacion->Operacion_tipo_id==$output_id){  $q+=(-$Operacion->q); }
 		}
 		// print_r($data);
 		return $q;
 	}
 
 
-	public static function getInputByProductoIdCutId($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and cut_id=$cut_id and operaciontipo_id=1 order by created_at desc";
+	public static function getInputByProductoIdCutId($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id and Operacion_tipo_id=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
 
-	public static function getInputByProductoId($producto_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and operaciontipo_id=1 order by created_at desc";
+	public static function getInputByProductoId($Producto_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and Operacion_tipo_id=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}
 
-	public static function getInputByProductoIdCutIdYesF($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and cut_id=$cut_id and operaciontipo_id=1 order by created_at desc";
+	public static function getInputByProductoIdCutIdYesF($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id and Operacion_tipo_id=1 order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new OperacionData());
 	}

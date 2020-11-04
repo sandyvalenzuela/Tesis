@@ -23,13 +23,13 @@ if(count($Productos)>0){
 
 	<tr>
 		<td style="width:30px;">
-		<a href="index.php?view=onePedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-default"><i class="glyphicon glyphicon-eye-open"></i></a></td>
+		<a href="index.php?view=onePedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-success"><i class="glyphicon glyphicon-eye-open"></i>  Mostrar</a></td>
 
 		<td>
 
-<<!--<?php
-//$operations = OperationData::getAllProductsBySellId($sell->id);
-//echo count($operations);
+<!--<?php
+$Operaciones = OperacionData::getAllProductosByPedidoId($Pedido->id);
+echo count($Operaciones);
 ?>-->
 		
 <?php
@@ -43,7 +43,7 @@ if(count($Productos)>0){
 ?>		
 	
 		<td><?php echo $Pedido->created_at; ?></td>
-		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i></a></td>
+		<td style="width:30px;"><a href="index.php?view=delPedido&id=<?php echo $Pedido->id; ?>" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>  Eliminar</a></td>
 	</tr>
 
 <?php endforeach; ?>

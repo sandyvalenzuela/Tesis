@@ -1,5 +1,4 @@
 
-
 <h1>Resumen de Pedido</h1>
 <?php if(isset($_GET["id"]) && $_GET["id"]!=""):?>
 <?php
@@ -39,7 +38,7 @@ $Clinica = $Pedido->getClinica();
 
 
 <?php if($Pedido->Usuario_id!=""):
-$user = $Pedido->getUsuario();
+$Usuario = $Pedido->getUsuario();
 ?>
 <tr>
 	<td>Usuario</td>
@@ -50,8 +49,8 @@ $user = $Pedido->getUsuario();
 <br><table class="table table-bordered table-hover">
 	<thead>
 		<th>Codigo</th>
-		<th>Cantidad</th>
 		<th>Nombre del Producto</th>
+		<th>Cantidad</th>
 		
 	</thead>
 <?php
@@ -60,8 +59,9 @@ $user = $Pedido->getUsuario();
 ?>
 <tr>
 	<td><?php echo $Producto->codigo ;?></td>
-	<td><?php echo $Operacion->q ;?></td>
 	<td><?php echo $Producto->nombre ;?></td>
+	<td><?php echo $Operacion->q ;?></td>
+	
 	<!--<td>$ <?php //echo number_format($product->price_out,2,".",",") ;?></td>-->
 	<!--<td><b>$ <?php //echo number_format($operation->q*$product->price_out,2,".",",");$total+=$operation->q*$product->price_out;?></b></td>-->
 </tr>

@@ -78,7 +78,7 @@ $_SESSION["errors"] = $errors;
 
 			$op = new OperacionData();
 			 $op->Producto_id = $c["Producto_id"] ;
-			 $op->operacion_tipo_id=OperacionTipoData::getByName("salida")->id;
+			 $op->Operacion_tipo_id=OperacionTipoData::getByName("salida")->id;
 			 $op->Pedido_id=$s[1];
 			 $op->q= $c["q"];
 

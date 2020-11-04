@@ -61,13 +61,13 @@ class PedidoData {
 
 	
 	public static function getAllByDateOp($start,$end,$op){
-  $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Operationtipo_id=$op order by created_at desc";
+  $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Operation_tipo_id=$op order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PedidoData());
 
 	}
-	public static function getAllByDateBCOp($Personalid,$start,$end,$op){
- $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Personal_id=$Personal_id  and Operaciontipo_id=$op order by created_at desc";
+	public static function getAllByDateBCOp($Clinica_id,$start,$end,$op){
+ $sql = "select * from ".self::$tablename." where date(created_at) >= \"$start\" and date(created_at) <= \"$end\" and Clinica_id=$Clinica_id  and Operacion_tipo_id=$op order by created_at desc";
 		$query = Executor::doit($sql);
 		return Model::many($query[0],new PedidoData());
 

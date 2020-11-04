@@ -1,5 +1,5 @@
 <?php
-$Personals = PersonaData::getPersonals();
+$Clinicas = ClinicaData::getClinicas();
 ?>
 <section class="content">
 <div class="row">
@@ -11,9 +11,9 @@ $Personals = PersonaData::getPersonals();
 <div class="row">
 <div class="col-md-3">
 
-<select name="persona_id" class="form-control">
+<select name="Clinica_id" class="form-control">
 	<option value="">--  TODOS --</option>
-	<?php foreach($Personals as $p):?>
+	<?php foreach($Clinicas as $p):?>
 	<option value="<?php echo $p->id;?>"><?php echo $p->nombre;?></option>
 	<?php endforeach; ?>
 </select>
@@ -66,30 +66,30 @@ $Personals = PersonaData::getPersonals();
 		<?php if(isset($_GET["sd"]) && isset($_GET["ed"]) ):?>
 <?php if($_GET["sd"]!=""&&$_GET["ed"]!=""):?>
 			<?php 
-			//$Operaciones = array();
+			$Operaciones = array();
 
-//			if($_GET["Pedido_id"]==""){
-			//$Operaciones = PedidoData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
-//			}
-//			else{
-//			$Operaciones = PedidoData::getAllByDateBCOp($_GET["Cliente_id"],$_GET["sd"],$_GET["ed"],2);
-//			} 
+			if($_GET["Clinica_id"]==""){
+			$Operaciones = PedidoData::getAllByDateOp($_GET["sd"],$_GET["ed"],2);
+			}
+			else{
+			$Operaciones = PedidoData::getAllByDateBCOp($_GET["Clinica_id"],$_GET["sd"],$_GET["ed"],2);
+			} 
 
 
 			 ?>
 
 			 <?php 
-			 if(count($Pedido)>0):?>
+			 if(count($Operaciones)>0):?>
 	
 <table class="table table-bordered">
 	<thead>
 		<th>Id</th>	
 		<th>Fecha</th>
 	</thead>
-<?php foreach($Pedidos as $Pedido):?>
+<?php foreach($Operaciones as $Operacion):?>
 	<tr>
-		<td><?php echo $Pedido->id; ?></td>
-		<td><?php echo $Pedido->created_at; ?></td>
+		<td><?php echo $Operacion->id; ?></td>
+		<td><?php echo $Operacion->created_at; ?></td>
 	</tr>
 	<?php
 
@@ -97,7 +97,7 @@ $Personals = PersonaData::getPersonals();
 </table>
 <?php else:
 			 // si no hay pedidos
-			 ?>-->
+			 ?>
 
 <script>
 	$("#wellcome").hide();
