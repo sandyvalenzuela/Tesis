@@ -17,7 +17,7 @@ class PedidoData {
 
 	
 	public function add_re(){
-		$sql = "insert into ".self::$tablename." (Usuario_id,Operaciontipo_id,created_at) ";
+		$sql = "insert into ".self::$tablename." (Usuario_id,Operacion_tipo_id,created_at) ";
 		$sql .= "value ($this->Usuario_id,1,$this->created_at)";
 		return Executor::doit($sql);
 	}
@@ -32,7 +32,7 @@ class PedidoData {
 		return Executor::doit($sql);
 	}
 	public function add_re_with_Personal(){
-		$sql = "insert into ".self::$tablename." (Persona_id,Operaciontipo_id,Usuario_id,created_at) ";
+		$sql = "insert into ".self::$tablename." (Persona_id,Operacion_tipo_id,Usuario_id,created_at) ";
 		$sql .= "value ($this->Persona_id,1,$this->Usuario_id,$this->created_at)";
 		return Executor::doit($sql);
 	}

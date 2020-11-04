@@ -4,16 +4,16 @@ class OperacionData {
 
 	public function OperacionData(){
 		$this->nombre = "";
-		$this->producto_id = "";
+		$this->Producto_id = "";
 		$this->q = "";
-		$this->dinero = "";
-		$this->operacion_tipo_id = "";
+		$this->Operacion_tipo_id = "";
+		$this->Pedido_id = "";
 		$this->created_at = "NOW()";
 	}
 
 	public function add(){
-		$sql = "insert into ".self::$tablename." (Producto_id,q,dinero,operacion_tipo_id,pedido_id,created_at) ";
-		$sql .= "value (\"$this->Producto_id\",$this->q\",$this->dinero\",$this->operacion_tipo_id,$this->Pedido_id,$this->created_at)";
+		$sql = "insert into ".self::$tablename." (Producto_id,q,Operacion_tipo_id,Pedido_id,created_at) ";
+		$sql .= "value (\"$this->Producto_id\",$this->q\",$this->Operacion_tipo_id,$this->Pedido_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -28,7 +28,7 @@ class OperacionData {
 
 // partiendo de que ya tenemos creado un objecto OperacionData previamente utilizamos el contexto
 	public function update(){
-		$sql = "update ".self::$tablename." set producto_id=\"$this->producto_id\,q=\"$this->q\", where id=$this->id";
+		$sql = "update ".self::$tablename." set Producto_id=\"$this->Producto_id\,q=\"$this->q\", where id=$this->id";
 		Executor::doit($sql);
 	}
 
@@ -68,7 +68,7 @@ class OperacionData {
 	}
 
 	public function getProducto(){ return ProductoData::getById($this->Producto_id);}
-	public function getOperaciontipo(){ return OperacionTipoData::getById($this->operacion_tipo_id);}
+	public function getOperaciontipo(){ return OperacionTipoData::getById($this->Operacion_tipo_id);}
 
 
 

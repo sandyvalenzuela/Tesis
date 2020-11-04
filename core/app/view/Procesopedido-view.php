@@ -58,10 +58,7 @@ $_SESSION["errors"] = $errors;
 			$Pedido = new PedidoData();
 			$Pedido->Usuario_id = $_SESSION["Usuario_id"];
 
-			//$sell->total = $_POST["total"];
-			//$sell->discount = $_POST["discount"];
-
-
+		
 			    if(isset($_POST["Clinica_id"]) && $_POST["Clinica_id"]!=""){
 				 $Pedido->Clinica_id=$_POST["Clinica_id"];
 				  if(isset($_POST["Clinica_id"]) && $_POST["Clinica_id"]!=""){
