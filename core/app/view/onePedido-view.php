@@ -25,8 +25,27 @@ if(isset($_COOKIE["selled"])){
 	}
 	setcookie("selled","",time()-18600);
 }
-
 ?>
+<table class="table table-bordered">
+<?php if($Pedido->Clinica_id!=""):
+$Clinica = $Pedido->getClinica();
+?>
+<tr>
+	<td style="width:150px;">Clinica</td>
+	<td><?php echo $Clinica->nombre;?></td>
+</tr>
+
+<?php endif; ?>
+
+
+<?php if($Pedido->Usuario_id!=""):
+$user = $Pedido->getUsuario();
+?>
+<tr>
+	<td>Usuario</td>
+	<td><?php echo $Usuario->nombre." ".$Usuario->apellido;?></td>
+</tr>
+<?php endif; ?>
 </table>
 <br><table class="table table-bordered table-hover">
 	<thead>

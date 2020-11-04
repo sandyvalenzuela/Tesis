@@ -18,9 +18,15 @@ if(count($Productos)>0){
 	?>
 	<!--<?php 
 	//if($q>0):?>-->
+
+<tr class=""> <!--<?php //if($q<=$product->inventary_min){ echo "danger"; }?>-->
 		<td style="width:80px;"><?php echo $Producto->codigo; ?></td>
 		<td><?php echo $Producto->nombre; ?></td>
-	
+		<!--<td><?php //echo $product->unit; ?></td>
+		<td><b>$<?php //echo $product->price_out; ?></b></td>-->
+		<!--<td>
+		<?php //echo $q; ?>
+		</td>-->
 		<td style="width:250px;"><form method="post" action="index.php?view=Añadiralcarrito">
 		<input type="hidden" name="Producto_id" value="<?php echo $Producto->id; ?>">
 

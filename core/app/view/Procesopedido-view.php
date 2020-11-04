@@ -56,7 +56,7 @@ $_SESSION["errors"] = $errors;
 //////////////////////////////////
 		if($process==true){
 			$Pedido = new PedidoData();
-			$Pedido->user_id = $_SESSION["user_id"];
+			$Pedido->Usuario_id = $_SESSION["Usuario_id"];
 
 			//$sell->total = $_POST["total"];
 			//$sell->discount = $_POST["discount"];
@@ -65,7 +65,7 @@ $_SESSION["errors"] = $errors;
 			    if(isset($_POST["Clinica_id"]) && $_POST["Clinica_id"]!=""){
 				 $Pedido->Clinica_id=$_POST["Clinica_id"];
 				  if(isset($_POST["Clinica_id"]) && $_POST["Clinica_id"]!=""){
-				  $Pedido->person_id2=$_POST["Clinica_id"];
+				  $Pedido->Clinica_id2=$_POST["Clinica_id"];
 				  }
  				$s = $Pedido->add_with_Clinica();
 			 }else{

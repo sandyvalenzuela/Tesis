@@ -55,7 +55,7 @@ $Producto = ProductoData::getById($error["Producto_id"]);
 ?>
 <tr class="danger">
 	<td><?php echo $Producto->id; ?></td>
-	<td><?php echo $Product->nombre; ?></td>
+	<td><?php echo $Producto->nombre; ?></td>
 	<td><b><?php echo $error["message"]; ?></b></td>
 	
 </tr>

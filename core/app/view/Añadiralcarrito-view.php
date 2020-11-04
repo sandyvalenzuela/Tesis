@@ -102,7 +102,7 @@ if($found==true){
 
 if($found==false){
     $nc = count($cart);
-	$product = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
+	$Producto = array("Producto_id"=>$_POST["Producto_id"],"q"=>$_POST["q"]);
 	$cart[$nc] = $Producto;
 
 	$_SESSION["cart"] = $cart;
