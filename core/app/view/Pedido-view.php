@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 	<h1>Pedidos</h1>
-	<p><b>Buscar producto por nombre o por codigo:</b></p>
+	<p><b>Buscar producto por el Nombre o por el Codigo:</b></p>
 		<form id="searchp">
 		<div class="row">
 			<div class="col-md-6">
@@ -91,7 +91,7 @@ $Producto = ProductoData::getById($p["Producto_id"]);
 </tr>
 <?php endforeach; ?>
 </table>
-<form method="post" class="form-horizontal" id="processopedido" action="index.php?view=Procesopedido">
+<form method="post" class="form-horizontal" id="Procesopedido" action="index.php?view=Procesopedido">
 <h2></h2>
 
   <div class="form-group">

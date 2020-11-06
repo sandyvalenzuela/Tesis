@@ -27,10 +27,10 @@ if(count($Productos)>0){
 
 		<td>
 
-<!--<?php
+<?php
 $Operaciones = OperacionData::getAllProductosByPedidoId($Pedido->id);
 echo count($Operaciones);
-?>-->
+?>
 		
 <?php
 //$total= $sell->total-$sell->discount;

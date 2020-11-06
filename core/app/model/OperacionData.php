@@ -6,6 +6,7 @@ class OperacionData {
 		$this->nombre = "";
 		$this->Producto_id = "";
 		$this->q = "";
+		$this->cut_id = "";
 		$this->Operacion_tipo_id = "";
 		$this->Pedido_id = "";
 		$this->created_at = "NOW()";
@@ -13,7 +14,7 @@ class OperacionData {
 
 	public function add(){
 		$sql = "insert into ".self::$tablename." (Producto_id,q,Operacion_tipo_id,Pedido_id,created_at) ";
-		$sql .= "value (\"$this->Producto_id\",$this->q\",$this->Operacion_tipo_id,$this->Pedido_id,$this->created_at)";
+		$sql .= "value (\"$this->Producto_id\",\"$this->q\",$this->Operacion_tipo_id,$this->Pedido_id,$this->created_at)";
 		return Executor::doit($sql);
 	}
 
@@ -96,15 +97,18 @@ class OperacionData {
 		return Model::many($query[0],new OperacionData());
 	}
 ///Historial
-	public static function getAllByProductoId($Producto_id){
-		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id  order by created_at desc";
-		$query = Executor::doit($sql);
-		return Model::many($query[0],new OperacionData());
-	}
+public static function getAllByProductoId($Producto_id){
+	$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id  order by created_at desc";
+	echo '<script>';
+  echo 'console.log("QUREY","'. $sql .'")';
+  echo '</script>';
+	$query = Executor::doit($sql);
+	return Model::many($query[0],new OperacionData());
+}
 
 
-	public static function getAllByProductoIdCutIdOficial($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where producto_id=$producto_id and cut_id=$cut_id order by created_at desc";
+	public static function getAllByProductoIdCutIdOficial($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id order by created_at desc";
 		return Model::many($query[0],new OperacionData());
 	}
 
@@ -116,8 +120,8 @@ class OperacionData {
 	}
 
 
-	public static function getAllByProductoIdCutIdYesF($producto_id,$cut_id){
-		$sql = "select * from ".self::$tablename." where product_id=$producto_id and cut_id=$cut_id order by created_at desc";
+	public static function getAllByProductoIdCutIdYesF($Producto_id,$cut_id){
+		$sql = "select * from ".self::$tablename." where Producto_id=$Producto_id and cut_id=$cut_id order by created_at desc";
 		return Model::many($query[0],new OperacionData());
 		return $array;
 	}

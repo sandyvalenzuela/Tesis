@@ -46,13 +46,6 @@ $_SESSION["errors"] = $errors;
 }
 
 
-
-
-
-
-
-
-
 //////////////////////////////////
 		if($process==true){
 			$Pedido = new PedidoData();
@@ -71,8 +64,6 @@ $_SESSION["errors"] = $errors;
 
 
 		foreach($cart as  $c){
-
-
 			$op = new OperacionData();
 			 $op->Producto_id = $c["Producto_id"] ;
 			 $op->Operacion_tipo_id=OperacionTipoData::getByName("salida")->id;
