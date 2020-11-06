@@ -4,8 +4,8 @@ if(count($_POST)>0){
 	$Producto = ProductoData::getById($_POST["Producto_id"]);
 	$Producto->codigo = $_POST["codigo"];
 	$Producto->nombre = $_POST["nombre"];	
-  $Producto->descripcion = $_POST["descripcion"];
-  $Producto->presentacion = $_POST["presentacion"];
+  	$Producto->descripcion = $_POST["descripcion"];
+ 	 $Producto->presentacion = $_POST["presentacion"];
   $categoria_id="NULL";
   if($_POST["categoria_id"]!=""){ $categoria_id=$_POST["categoria_id"];}
 
@@ -26,7 +26,13 @@ if(count($_POST)>0){
 				$Producto->image = $image->file_dst_name;
 				$Producto->update_image();
 			}
-		}
+		}else{
+
+			$prod= $Producto->add();
+			  }
+			}
+			else{
+			$prod= $Producto->add();
 	}
 	setcookie("prdupd","true");
 	print "<script>window.location='index.php?view=Productos';</script>";

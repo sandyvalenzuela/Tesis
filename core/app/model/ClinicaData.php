@@ -2,11 +2,8 @@
 class ClinicaData {
 	public static $tablename = "clinica";
 	public function ClinicaData(){
+		$this->codigo = "";
 		$this->nombre = "";
-		$this->apellido = "";
-		$this->email = "";
-		$this->image = "";
-		$this->password = "";
 		$this->created_at = "NOW()";
 	}
 	public function add_Clinica(){
@@ -27,6 +24,11 @@ class ClinicaData {
 		$sql = "update ".self::$tablename." set nombre=\"$this->codigo\",\"$this->nombre\" where id=$this->id";
 		Executor::doit($sql);
 	}
+	public function update_Clinica(){
+		$sql = "update ".self::$tablename." set codigo\"$this->codigo\",nombre=\"$this->nombre\" where id=$this->id";
+		Executor::doit($sql);
+	}
+
 	public static function getById($id){
 		$sql = "select * from ".self::$tablename." where id=$id";
 		$query = Executor::doit($sql);
